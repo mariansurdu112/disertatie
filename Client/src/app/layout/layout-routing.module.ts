@@ -21,7 +21,7 @@ const routes: Routes = [
             {path: 'crewmanagement', loadChildren: './crew-management/crew-management.module#CrewManagementModule'},
             {path: 'aircraftmanagement', loadChildren: './aircraft-management/aircraft-management.module#AircraftManagementModule'},
             {path: 'training', loadChildren: './training-management/training-management.module#TrainingManagementModule'},
-            {path: 'aircrafts', loadChildren: './aircraft-management/aircraft-management.module#AircraftManagementModule'},
+            {path: 'aircrafts', loadChildren: './aircraft-tracking/aircraft-tracking.module#AircraftTrackingModule'},
             {path: 'airportsm', loadChildren: './airport-management/airport-management.module#AirportManagementModule'}
         ]
     }

@@ -1,3 +1,10 @@
-<p>
-  aircraft-tracking works!
-</p>
+
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"  [markerDraggable]="true"></agm-marker>
+    <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+                [radius]="5000"
+                [fillColor]="'red'"
+                [circleDraggable]="true"
+                [editable]="true">
+    </agm-circle>
+</agm-map>
