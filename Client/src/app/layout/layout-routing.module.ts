@@ -15,7 +15,14 @@ const routes: Routes = [
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
             { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
-            { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' }
+            { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
+            {path: 'administration', loadChildren: './administration/administration.module#AdministrationModule'},
+            {path: 'schedule', loadChildren: './schedule/schedule.module#ScheduleModule'},
+            {path: 'crewmanagement', loadChildren: './crew-management/crew-management.module#CrewManagementModule'},
+            {path: 'aircraftmanagement', loadChildren: './aircraft-management/aircraft-management.module#AircraftManagementModule'},
+            {path: 'training', loadChildren: './training-management/training-management.module#TrainingManagementModule'},
+            {path: 'aircrafts', loadChildren: './aircraft-management/aircraft-management.module#AircraftManagementModule'},
+            {path: 'airportsm', loadChildren: './airport-management/airport-management.module#AirportManagementModule'}
         ]
     }
 ];

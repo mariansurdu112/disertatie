@@ -10,6 +10,7 @@ import {
     ChatComponent
 } from './components';
 import { StatModule } from '../../shared';
+import {FlightComponent} from "./components/flight/flight.component";
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { StatModule } from '../../shared';
         DashboardComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent
+        ChatComponent,
+        FlightComponent
     ]
 })
 export class DashboardModule {}

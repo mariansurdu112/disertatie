@@ -1,6 +1,6 @@
 <div [@routerTransition]>
-    <h2 class="text-muted">Dashboard <small>Statistics Overview</small></h2>
-    <div class="row">
+    <h2 class="text-muted">Flights <small>Overview</small></h2>
+   <!-- <div class="row">
         <div class="col-md-12">
             <ngb-carousel>
                 <ng-template ngbSlide *ngFor="let slider of sliders">
@@ -12,8 +12,8 @@
                 </ng-template>
             </ngb-carousel>
         </div>
-    </div>
-    <hr>
+    </div>-->
+<!--    <hr>
     <div class="row">
         <div class="col-xl-3 col-lg-6">
             <app-stat [bgClass]="'primary'" [icon]="'fa-comments'" [count]="26" [label]="'New Comments!'" ></app-stat>
@@ -30,12 +30,12 @@
     </div>
     <hr />
     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
-    <hr />
+    <hr />-->
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card card-default">
                 <div class="card-header">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                    <i class="fa fa-clock-o fa-fw"></i> Flights
                 </div>
                 <!-- /.card-header -->
                 <app-timeline></app-timeline>
@@ -44,20 +44,20 @@
             <!-- /.card -->
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
+       <!-- <div class="col-lg-4">
             <div class="card card-default mb-3">
                 <div class="card-header">
                     <i class="fa fa-bell fa-fw"></i> Notifications card
                 </div>
-                <!-- /.card-header -->
+                &lt;!&ndash; /.card-header &ndash;&gt;
                 <app-notification></app-notification>
-                <!-- /.card-body -->
+                &lt;!&ndash; /.card-body &ndash;&gt;
             </div>
-            <!-- /.card -->
+            &lt;!&ndash; /.card &ndash;&gt;
 
             <app-chat></app-chat>
-            <!-- /.card .chat-card -->
-        </div>
+            &lt;!&ndash; /.card .chat-card &ndash;&gt;
+        </div>-->
         <!-- /.col-lg-4 -->
     </div>
 </div>
