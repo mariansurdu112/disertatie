@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace MarAirAdmin.Models
+{
+    public class Licences
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [ForeignKey("Crew")]
+        public int CrewId { get; set; }
+        public virtual Crews Crew { get; set; }
+
+        public string Type { get; set; }
+
+        public DateTime ExpiryDate { get; set; }
+
+
+    }
+
+}

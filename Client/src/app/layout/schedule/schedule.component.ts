@@ -89,7 +89,7 @@ export class ScheduleComponent implements AfterViewInit  {
         return appointments;
     }
 
-    date: any = new jqx.date(2016, 11, 23);
+    date: any = new jqx.date();
 
     source: any =
         {
