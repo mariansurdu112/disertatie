@@ -101,6 +101,7 @@ namespace MarAirRoles.Controllers
                     Email = model.Email,
                     EmailConfirmed = true,
                 };
+            //adad
                 var passwd = Membership.GeneratePassword(10, 5);
                 string newPassword = PasswordChecker(passwd);
               
