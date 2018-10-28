@@ -10,6 +10,7 @@ namespace MarAirAdmin.Models
     public class ScheduleChanges
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [ForeignKey("Crew")]

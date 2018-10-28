@@ -10,6 +10,7 @@ namespace MarAirAdmin.Models
     public class Assignments
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public DateTime StartTime { get; set; }
@@ -43,7 +44,7 @@ namespace MarAirAdmin.Models
         public virtual Positionings Positioning { get; set; }
 
         [ForeignKey("User")]
-        public string ModifiedBy { get; set; }
+        public int ModifiedBy { get; set; }
         public virtual ApplicationUser User { get; set; }
 
         public DateTime LastUpdate { get; set; }

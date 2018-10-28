@@ -90,4 +90,4 @@ E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.d
 E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.pdb
 E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.Migrations.First.resources
 E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.csproj.GenerateResource.Cache
-E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.Migrations.datatables_first_version.resources
+E:\disertatie\disertatie\Backend\MarAirAdmin\MarAirAdmin\obj\Debug\MarAirAdmin.Migrations.last.resources

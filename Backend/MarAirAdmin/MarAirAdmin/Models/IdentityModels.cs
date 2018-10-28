@@ -4,13 +4,28 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace MarAirAdmin.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
+    public class CustomUserLogin : IdentityUserLogin<int> {
+        [Key]
+        public int Id { get; set; }
+    }
+    public class CustomUserRole : IdentityUserRole<int> {
+        [Key]
+        public int Id { get; set; }
+    }
+    public class ApplicationRole : IdentityRole<int, CustomUserRole>
     {
-        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
+        public ApplicationRole() { }
+        public ApplicationRole(string name) { Name = name; }
+    }
+    public class CustomUserClaim : IdentityUserClaim<int> { }
+    public class ApplicationUser : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim>
+    {
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser,int> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, authenticationType);
@@ -19,22 +34,31 @@ namespace MarAirAdmin.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class CustomRoleStore : RoleStore<ApplicationRole, int, CustomUserRole>
+    {
+        public CustomRoleStore(ApplicationDbContext context)
+            : base(context)
+        {
+        }
+    }
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IdentityUserLogin>().HasKey(c =>new { c.UserId,c.LoginProvider,c.ProviderKey }).ToTable("IdentityUserLogin");
+            modelBuilder.Entity<IdentityUserClaim>()
+          .HasKey(r => new { r.Id })
+          .ToTable("AspNetUserClaims");
+            /*modelBuilder.Entity<IdentityUserLogin>().HasKey(c =>new { c.UserId,c.LoginProvider,c.ProviderKey }).ToTable("IdentityUserLogin");
             modelBuilder.Entity<IdentityUserRole>()
             .HasKey(r => new { r.UserId, r.RoleId })
             .ToTable("AspNetUserRoles");
-            modelBuilder.Entity<IdentityUserClaim>()
-           .HasKey(r => new { r.Id })
-           .ToTable("AspNetUserClaims");
+           
             modelBuilder.Entity<IdentityUserLogin>()
           .HasKey(r => new { r.UserId,r.LoginProvider,r.ProviderKey })
           .ToTable("AspNetUserLogins");
@@ -58,7 +82,7 @@ namespace MarAirAdmin.Models
             modelBuilder.Entity<Rules>().HasKey(c => c.Id);
             modelBuilder.Entity<ScheduleChanges>().HasKey(c => c.Id);
             modelBuilder.Entity<SSRs>().HasKey(c => c.Id);
-            modelBuilder.Entity<TextMessages>().HasKey(c => c.Id);
+            modelBuilder.Entity<TextMessages>().HasKey(c => c.Id);*/
 
         }
 

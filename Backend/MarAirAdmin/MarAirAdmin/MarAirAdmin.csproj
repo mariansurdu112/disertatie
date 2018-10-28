@@ -234,18 +234,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssignmentsController.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804221829033_First.cs" />
-    <Compile Include="Migrations\201804221829033_First.Designer.cs">
-      <DependentUpon>201804221829033_First.cs</DependentUpon>
+    <Compile Include="Helpers\IdentityHelper.cs" />
+    <Compile Include="Infrastructure\ApplicationRoleManager.cs" />
+    <Compile Include="Migrations\201810272201317_First.cs" />
+    <Compile Include="Migrations\201810272201317_First.Designer.cs">
+      <DependentUpon>201810272201317_First.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810272029151_datatables_first_version.cs" />
-    <Compile Include="Migrations\201810272029151_datatables_first_version.Designer.cs">
-      <DependentUpon>201810272029151_datatables_first_version.cs</DependentUpon>
+    <Compile Include="Migrations\201810272311196_last.cs" />
+    <Compile Include="Migrations\201810272311196_last.Designer.cs">
+      <DependentUpon>201810272311196_last.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -349,11 +354,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804221829033_First.resx">
-      <DependentUpon>201804221829033_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810272201317_First.resx">
+      <DependentUpon>201810272201317_First.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810272029151_datatables_first_version.resx">
-      <DependentUpon>201810272029151_datatables_first_version.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810272311196_last.resx">
+      <DependentUpon>201810272311196_last.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

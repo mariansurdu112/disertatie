@@ -10,6 +10,7 @@ namespace MarAirAdmin.Models
     public class Rules
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [ForeignKey("NomRule")]

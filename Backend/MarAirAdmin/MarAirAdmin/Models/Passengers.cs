@@ -10,6 +10,7 @@ namespace MarAirAdmin.Models
     public class Passengers
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string PCode { get; set; }
         public int No { get; set; }

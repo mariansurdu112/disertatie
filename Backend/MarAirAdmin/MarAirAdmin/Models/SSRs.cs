@@ -10,6 +10,7 @@ namespace MarAirAdmin.Models
     public class SSRs
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public string SSRCode { get; set; }

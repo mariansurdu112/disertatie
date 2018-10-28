@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using MarAirAdmin.Models;
 using MarAirAdmin.Providers;
 using MarAirAdmin.Results;
+using MarAirAdmin.Helpers;
 
 namespace MarAirAdmin.Controllers
 {
@@ -78,8 +79,8 @@ namespace MarAirAdmin.Controllers
         [Route("ManageInfo")]
         public async Task<ManageInfoViewModel> GetManageInfo(string returnUrl, bool generateState = false)
         {
-            IdentityUser user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-
+            IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim> user =
+                            await UserManager.FindByIdAsync(User.Identity.GetUserId().ToInt());
             if (user == null)
             {
                 return null;
@@ -87,7 +88,7 @@ namespace MarAirAdmin.Controllers
 
             List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (IdentityUserLogin linkedAccount in user.Logins)
+            foreach (IdentityUserLogin<int> linkedAccount in user.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
@@ -123,7 +124,7 @@ namespace MarAirAdmin.Controllers
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
+            IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId().ToInt(), model.OldPassword,
                 model.NewPassword);
             
             if (!result.Succeeded)
@@ -143,7 +144,7 @@ namespace MarAirAdmin.Controllers
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await UserManager.AddPasswordAsync(User.Identity.GetUserId(), model.NewPassword);
+            IdentityResult result = await UserManager.AddPasswordAsync(User.Identity.GetUserId().ToInt(), model.NewPassword);
 
             if (!result.Succeeded)
             {
@@ -180,7 +181,7 @@ namespace MarAirAdmin.Controllers
                 return BadRequest("The external login is already associated with an account.");
             }
 
-            IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId(),
+            IdentityResult result = await UserManager.AddLoginAsync(User.Identity.GetUserId().ToInt(),
                 new UserLoginInfo(externalData.LoginProvider, externalData.ProviderKey));
 
             if (!result.Succeeded)
@@ -204,11 +205,11 @@ namespace MarAirAdmin.Controllers
 
             if (model.LoginProvider == LocalLoginProvider)
             {
-                result = await UserManager.RemovePasswordAsync(User.Identity.GetUserId());
+                result = await UserManager.RemovePasswordAsync(User.Identity.GetUserId().ToInt());
             }
             else
             {
-                result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(),
+                result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId().ToInt(),
                     new UserLoginInfo(model.LoginProvider, model.ProviderKey));
             }
 
