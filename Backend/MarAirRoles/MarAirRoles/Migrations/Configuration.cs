@@ -19,35 +19,45 @@ namespace MarAirRoles.Migrations
         protected override void Seed(MarAirRoles.Models.ApplicationDbContext context)
         {
             var manager = new UserManager<ApplicationUser,int>(new CustomUserStore(new ApplicationDbContext()));
-            var user = new ApplicationUser()
+           /* var user = new ApplicationUser()
             {
                 UserName = "admin",
                 Email = "admin@gmail.com",
                 EmailConfirmed = true,
-            };
+            };*/
            // manager.Create(user, "MySuperP@ss!");
             var roleManager = new RoleManager<CustomRole, int>(new RoleStore<CustomRole, int, CustomUserRole>(context));
             if (!roleManager.RoleExists("Admin"))
             {
-                //first we create Admin rool   
                 var role = new CustomRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
             }
-            manager.AddToRoles(1, "Admin");
-
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (!roleManager.RoleExists("Scheduler"))
+            {
+                var role = new CustomRole();
+                role.Name = "Scheduler";
+                roleManager.Create(role);
+            }
+            if (!roleManager.RoleExists("Manager"))
+            {
+                var role = new CustomRole();
+                role.Name = "Manager";
+                roleManager.Create(role);
+            }
+            if (!roleManager.RoleExists("HResource"))
+            {
+                var role = new CustomRole();
+                role.Name = "HResource";
+                roleManager.Create(role);
+            }
+            if (!roleManager.RoleExists("Logistic"))
+            {
+                var role = new CustomRole();
+                role.Name = "Logistic";
+                roleManager.Create(role);
+            }
+            // manager.AddToRoles(1, "Admin");
         }
     }
 }
