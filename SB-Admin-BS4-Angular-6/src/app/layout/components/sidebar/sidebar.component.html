@@ -49,22 +49,25 @@
             <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Aircrafts' | translate }}</span></a>
+                        <a routerLink="/noms/activity" [routerLinkActive]="['router-link-active']"><span>{{ 'Activities' | translate }}</span></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Crews' | translate }}</span></a>
+                        <a routerLink="/noms/aircrafts" [routerLinkActive]="['router-link-active']"><span>{{ 'Aircrafts' | translate }}</span></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Rules' | translate }}</span></a>
+                        <a routerLink="/noms/crews" [routerLinkActive]="['router-link-active']"><span>{{ 'Crews' | translate }}</span></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Crew Positions' | translate }}</span></a>
+                        <a routerLink="/noms/rules" [routerLinkActive]="['router-link-active']"><span>{{ 'Rules' | translate }}</span></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Journeys' | translate }}</span></a>
+                        <a routerLink="/noms/positions" [routerLinkActive]="['router-link-active']"><span>{{ 'Crew Positions' | translate }}</span></a>
                     </li>
                     <li>
-                        <a href="javascript:void(0)"><span>{{ 'Airports' | translate }}</span></a>
+                        <a routerLink="/noms/journeys" [routerLinkActive]="['router-link-active']"><span>{{ 'Journeys' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a routerLink="/noms/airports" [routerLinkActive]="['router-link-active']"><span>{{ 'Airports' | translate }}</span></a>
                     </li>
                     <li>
                         <a href="javascript:void(0)"><span>{{ 'Training Courses' | translate }}</span></a>

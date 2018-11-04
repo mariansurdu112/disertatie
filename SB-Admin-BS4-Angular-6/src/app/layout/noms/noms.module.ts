@@ -6,10 +6,11 @@ import { RulesComponent } from './rules/rules.component';
 import { PositionsComponent } from './positions/positions.component';
 import { ActivityComponent } from './activity/activity.component';
 import { AirportsComponent } from './airports/airports.component';
+import {NomsRoutingModule} from './noms-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule , NomsRoutingModule
   ],
   declarations: [AircraftsComponent, CrewsComponent, RulesComponent, PositionsComponent, ActivityComponent, AirportsComponent]
 })
