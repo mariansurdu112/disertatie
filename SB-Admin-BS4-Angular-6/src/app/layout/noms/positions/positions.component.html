@@ -1,3 +1,42 @@
-<p>
-  positions works!
-</p>
+<div class="main-container">
+    <div class="jumbotron-fluid">
+        <jqxGrid #myGrid class="grid"
+                 [width]="getWidth()" [source]="dataAdapter" [pageable]="true"
+                 [autoheight]="true" [columns]="columns" >
+        </jqxGrid>
+        <jqxWindow #myWindow [width]="250" [height]="230" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
+            <div>Edit</div>
+            <div style="overflow: hidden;">
+                <table>
+
+                    <tr>
+                        <td align="right">Code:</td>
+                        <td align="left">
+                            <jqxInput #name [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Code:</td>
+                        <td align="left">
+                            <jqxInput #code [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right">
+                            <jqxButton style="margin-right: 5px;" (onClick)="saveBtn()">
+                                Save
+                            </jqxButton>
+                            <jqxButton style="margin-right: 5px;" (onClick)="cancelBtn()">
+                                Cancel
+                            </jqxButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </jqxWindow>
+
+    </div>
+</div>
