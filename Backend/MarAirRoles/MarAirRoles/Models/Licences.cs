@@ -16,9 +16,7 @@ namespace MarAirAdmin.Models
         [ForeignKey("Crew")]
         public int CrewId { get; set; }
         public virtual Crews Crew { get; set; }
-
         public string Type { get; set; }
-
         public DateTime ExpiryDate { get; set; }
 
 

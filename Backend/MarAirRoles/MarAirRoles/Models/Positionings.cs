@@ -17,6 +17,7 @@ namespace MarAirAdmin.Models
         public string DepartureTime { get; set; }
         public string ArrivalTime { get; set; }
         public string From { get; set; }
+        public string FlightNumber { get; set; }
         public string To { get; set; }
         public DateTime End { get; set; }
         public string Remarks { get; set; }

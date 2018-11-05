@@ -13,9 +13,7 @@ namespace MarAirAdmin.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [ForeignKey("Crew")]
         public int CrewId { get; set; }
-        public virtual Crews Crew { get; set; }
         public string Phone { get; set; }
         public string CarrierCode { get; set; }
         public string Email { get; set; }
