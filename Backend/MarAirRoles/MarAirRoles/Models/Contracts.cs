@@ -18,6 +18,10 @@ namespace MarAirAdmin.Models
         public virtual Crews Crew { get; set; }
         public DateTime ExpiryDate { get; set; }
         public int Implied { get; set; }
+        public string Signed { get; set; }
+        public string EmployeeType { get; set; }
+        public string AcfDomainLicense { get; set; }
+
       }
 
 }

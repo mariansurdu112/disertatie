@@ -15,6 +15,8 @@ namespace MarAirAdmin.Models
 
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+        public string AlphaCode { get; set; }
+        public string Sex { get; set; }
 
     }
 }
