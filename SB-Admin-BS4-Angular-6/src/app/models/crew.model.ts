@@ -14,6 +14,6 @@ export class Crew {
         this.Lastname = options.Lastname;
         this.Alphacode = options.Alphacode;
         this.Sex = options.Sex;
-        this.PersonalData = PersonalData;
+        this.PersonalData = options.PersonalData;
     }
 }
