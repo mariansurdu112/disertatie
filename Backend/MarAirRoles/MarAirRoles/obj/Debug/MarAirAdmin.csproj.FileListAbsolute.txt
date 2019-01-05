@@ -85,7 +85,6 @@ E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\Microsoft.Owin.Secu
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\Microsoft.Owin.Security.Twitter.xml
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\System.Web.Http.Owin.xml
-E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csprojResolveAssemblyReference.cache
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.Frist.resources
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csproj.GenerateResource.Cache
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.dll
@@ -185,3 +184,9 @@ D:\DISERTATIE\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.c
 D:\DISERTATIE\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.dll
 D:\DISERTATIE\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.pdb
 D:\DISERTATIE\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables.resources
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csprojAssemblyReference.cache
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables.resources
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables2.resources
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables3.resources
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csproj.CoreCompileInputs.cache
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csproj.CopyComplete

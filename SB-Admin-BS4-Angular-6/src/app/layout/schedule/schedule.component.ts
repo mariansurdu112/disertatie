@@ -13,84 +13,10 @@ export class ScheduleComponent implements AfterViewInit  {
         this.myScheduler.ensureAppointmentVisible('id1');
     }
 
-    generateAppointments() {
-        const appointments = new Array();
-        const appointment1 = {
-            id: 'id1',
-            description: 'George brings projector for presentations.',
-            location: '',
-            subject: 'Quarterly Project Review Meeting',
-            calendar: 'Room 1',
-            start: new Date(2016, 10, 23, 9, 0, 0),
-            end: new Date(2016, 10, 23, 10, 0, 0)
-        };
-        const appointment7 = {
-            id: 'id7',
-            description: 'George brings projector for presentations.',
-            location: '',
-            subject: 'Quarterly Project Review Meeting',
-            calendar: 'Room 1',
-            start: new Date(2016, 10, 23, 8, 0, 0),
-            end: new Date(2016, 10, 23, 10, 0, 0)
-        };
-        const appointment2 = {
-            id: 'id2',
-            description: '',
-            location: '',
-            subject: 'IT Group Mtg.',
-            calendar: 'Room 2',
-            start: new Date(2016, 10, 23, 7, 0, 0),
-            end: new Date(2016, 10, 23, 7, 30, 0)
-        };
-        const appointment3 = {
-            id: 'id3',
-            description: '',
-            location: '',
-            subject: 'Course Social Media',
-            calendar: 'Room 3',
-            start: new Date(2016, 10, 27, 11, 0, 0),
-            end: new Date(2016, 10, 27, 13, 0, 0)
-        };
-        const appointment4 = {
-            id: 'id4',
-            description: '',
-            location: '',
-            subject: 'New Projects Planning',
-            calendar: 'Room 2',
-            start: new Date(2016, 10, 23, 16, 0, 0),
-            end: new Date(2016, 10, 23, 18, 0, 0)
-        };
-        const appointment5 = {
-            id: 'id5',
-            description: '',
-            location: '',
-            subject: 'Interview with James',
-            calendar: 'Room 1',
-            start: new Date(2016, 10, 25, 15, 0, 0),
-            end: new Date(2016, 10, 25, 17, 0, 0)
-        };
-        const appointment6 = {
-            id: 'id6',
-            description: '',
-            location: '',
-            subject: 'Interview with Nancy',
-            calendar: 'Room 2',
-            start: new Date(2016, 10, 26, 14, 0, 0),
-            end: new Date(2016, 10, 26, 16, 0, 0)
-        };
-        appointments.push(appointment1);
-        appointments.push(appointment2);
-        appointments.push(appointment3);
-        appointments.push(appointment4);
-        appointments.push(appointment5);
-        appointments.push(appointment6);
-        appointments.push(appointment7);
-
-        return appointments;
-    }
-
+    // tslint:disable-next-line:member-ordering
     date: any = new jqx.date();
 
+    // tslint:disable-next-line:member-ordering
     source: any =
         {
             dataType: 'array',
@@ -107,8 +33,10 @@ export class ScheduleComponent implements AfterViewInit  {
             localData: this.generateAppointments()
         };
 
+    // tslint:disable-next-line:member-ordering
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
+    // tslint:disable-next-line:member-ordering
     resources: any =
         {
             colorScheme: 'scheme04',
@@ -116,6 +44,7 @@ export class ScheduleComponent implements AfterViewInit  {
             source: new jqx.dataAdapter(this.source)
         };
 
+    // tslint:disable-next-line:member-ordering
     appointmentDataFields: any =
         {
             from: 'start',
@@ -127,6 +56,7 @@ export class ScheduleComponent implements AfterViewInit  {
             resourceId: 'calendar'
         };
 
+    // tslint:disable-next-line:member-ordering
     views: string[] | any[] =
         [
             'dayView',
@@ -135,8 +65,35 @@ export class ScheduleComponent implements AfterViewInit  {
             'agendaView'
         ];
 
+    generateAppointments() {
+        console.log('Executed');
+        const appointments = new Array();
+        const appointment1 = {
+            id: 'id1',
+            description: 'OTP->FCO',
+            location: '',
+            subject: 'Otopeni via Fimicino',
+            calendar: 'FLT',
+            start: new Date(),
+            end: new Date(2019, 1, 5, 9, 0, 0)
+        };
+        const appointment7 = {
+            id: 'id7',
+            description: 'Positioning Blue Air Company Flight OTP->FCO',
+            location: '',
+            subject: 'Positioning',
+            calendar: 'POG',
+            start: new Date(),
+            end: new Date(2019, 1, 5, 9, 0, 0)
+        };
+        appointments.push(appointment1);
+        appointments.push(appointment7);
+
+        return appointments;
+    }
+
     contextMenuItemClick = (menu, appointment, event) => {
-        let args = event.args;
+        const args = event.args;
         switch (args.id) {
             case 'delete':
                 this.myScheduler.deleteAppointment(appointment.id);
@@ -154,9 +111,9 @@ export class ScheduleComponent implements AfterViewInit  {
                 this.myScheduler.setAppointmentProperty(appointment.id, 'status', 'busy');
                 return true;
         }
-    };
+    }
     contextMenuCreate = (menu, settings) => {
-        let source = settings.source;
+        const source = settings.source;
         source.push({ id: 'delete', label: 'Delete Appointment' });
         source.push({
             id: 'status', label: 'Set Status', items:
@@ -167,7 +124,7 @@ export class ScheduleComponent implements AfterViewInit  {
                     { label: 'Busy', id: 'busy' }
                 ]
         });
-    };
+    }
 
     contextMenuOpen = (menu, appointment, event) => {
         if (!appointment) {
@@ -177,8 +134,8 @@ export class ScheduleComponent implements AfterViewInit  {
             menu.jqxMenu('showItem', 'delete');
             menu.jqxMenu('showItem', 'status');
         }
-    };
+    }
 
     contextMenuClose = () => {
-    };
+    }
 }

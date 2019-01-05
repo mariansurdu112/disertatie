@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Flight} from "./flight.model";
+import {Flight} from './flight.model';
 
 @Component({
     selector: 'app-flt',
