@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -277,11 +278,16 @@
     <Compile Include="Migrations\201811051634116_other_tables3.Designer.cs">
       <DependentUpon>201811051634116_other_tables3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901061113196_crewpos.cs" />
+    <Compile Include="Migrations\201901061113196_crewpos.Designer.cs">
+      <DependentUpon>201901061113196_crewpos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignments.cs" />
     <Compile Include="Models\Contracts.cs" />
+    <Compile Include="Models\CrewPosition.cs" />
     <Compile Include="Models\Crews.cs" />
     <Compile Include="Models\DelayCodes.cs" />
     <Compile Include="Models\EmailModel.cs" />
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811051634116_other_tables3.resx">
       <DependentUpon>201811051634116_other_tables3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901061113196_crewpos.resx">
+      <DependentUpon>201901061113196_crewpos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

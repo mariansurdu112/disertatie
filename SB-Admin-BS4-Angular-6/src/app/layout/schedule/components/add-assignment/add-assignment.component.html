@@ -18,6 +18,7 @@
                     <app-flight-asg [activity]='activity' *ngIf="activity=='FLT'"></app-flight-asg>
                   </div>
                   <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="saveAssignment()">Save</button>
                       <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                   </div>
               </ng-template>

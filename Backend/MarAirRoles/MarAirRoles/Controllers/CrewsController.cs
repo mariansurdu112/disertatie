@@ -103,6 +103,27 @@ namespace MarAirRoles.Controllers
             return Ok(crews);
         }
 
+        [AllowAnonymous]
+        [Route("api/getcrewsbyposition")]
+        [HttpGet]
+        public IHttpActionResult GetCrewsByPosition()
+        {
+            try
+            {
+
+                
+                return Ok();
+                
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+            
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

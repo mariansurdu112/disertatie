@@ -6,7 +6,7 @@
               <form class="form-inline mb-3">
                   <div class="form-group">
                       <div class="input-group datepicker-input">
-                        <label>From</label>
+                        <label>Start</label>
                           <input class="form-control" placeholder="dd-mm-yyyy"
                               name="dp" [(ngModel)]="from" ngbDatepicker #start="ngbDatepicker">
                           <button class="input-group-addon" (click)="start.toggle()" type="button">
@@ -20,7 +20,7 @@
 
                   <div class="form-group" style="margin-left: 20%;">
                       <div class="input-group datepicker-input">
-                        <label>To</label>
+                        <label>End</label>
                           <input class="form-control" placeholder="dd-mm-yyyy"
                               name="dp1" [(ngModel)]="to" ngbDatepicker #end="ngbDatepicker">
                           <button class="input-group-addon" (click)="end.toggle()" type="button">
@@ -32,8 +32,8 @@
                   </div>
               </form>
               <div class="alert alert-info mb-0">
-                  <strong>From: </strong> {{ from | json }}
-                  <strong>From: </strong> {{ to | json }}
+                  <strong>Start: </strong> {{ from | json }}
+                  <strong>End: </strong> {{ to | json }}
               </div>
           </div>
       </div>

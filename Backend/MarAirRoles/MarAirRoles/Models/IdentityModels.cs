@@ -84,6 +84,7 @@ namespace MarAirRoles.Models
         public DbSet<DelayCodes> DelayCodes { get; set; }
         public DbSet<FlightExperience> FlightExperience { get; set; }
         public DbSet<Passports> Passports { get; set; }
+        public DbSet<CrewPosition> CrewPositions { get; set; }
 
     }
 }
