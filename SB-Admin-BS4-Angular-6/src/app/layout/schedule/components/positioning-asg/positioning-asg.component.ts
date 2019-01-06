@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-positioning-asg',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positioning-asg.component.scss']
 })
 export class PositioningAsgComponent implements OnInit {
-
+  @Input() activity: string;
   constructor() { }
 
   ngOnInit() {

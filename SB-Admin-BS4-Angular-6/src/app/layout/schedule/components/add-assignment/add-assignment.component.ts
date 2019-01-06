@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ActivitySelectComponent } from './../activity-select/activity-select.component';
+import { AccessDeniedModule } from './../../../../access-denied/access-denied.module';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,6 +10,8 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddAssignmentComponent  {
   closeResult: string;
+  activity: string;
+  
   constructor(private modalService: NgbModal) { }
 
   open(content) {
@@ -26,6 +30,11 @@ export class AddAssignmentComponent  {
       } else {
           return  `with: ${reason}`;
       }
+  }
+
+  activitySelected($event) {
+      console.log($event);
+    this.activity = $event;
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-leave-asg',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leave-asg.component.scss']
 })
 export class LeaveAsgComponent implements OnInit {
-
+  @Input() activity: string;
   constructor() { }
 
   ngOnInit() {

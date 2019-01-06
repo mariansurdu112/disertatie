@@ -2,11 +2,14 @@
         <div class="row">
           <div class="col">
               <div ngbDropdown class="d-inline-block dropdown">
-                  <button class="btn btn-outline-primary" ngbDropdownToggle>Select activity</button>
+                  <button class="btn btn-outline-primary" ngbDropdownToggle>
+                      <span *ngIf="!activitySelected">Select activity</span>
+                      <span *ngIf="activitySelected">{{activitySelected}}</span>
+                    </button>
                   <div ngbDropdownMenu>
-                      <button class="dropdown-item">Flight</button>
-                      <button class="dropdown-item">Positioning</button>
-                      <button class="dropdown-item">Ground Course</button>
+                      <button class="dropdown-item" *ngFor="let activity of ['FLT','POG','OTH','GCO','LEA','RES']" 
+                      (click)="changeActivity(activity)">{{activity}}</button>
+                      
                   </div>
               </div>
           </div>

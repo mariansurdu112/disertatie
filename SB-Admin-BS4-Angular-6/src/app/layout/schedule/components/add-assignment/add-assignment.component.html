@@ -8,9 +8,14 @@
                       </button>
                   </div>
                   <div class="modal-body">
-                  <app-activity-select></app-activity-select>
-                  <app-positioning-asg></app-positioning-asg>
-                    <app-flight-asg></app-flight-asg>
+                      {{child}}
+                  <app-activity-select (messageEvent)="activitySelected($event)"></app-activity-select>
+                  <app-other-asg [activity]='activity' *ngIf="activity=='OTH'"></app-other-asg>
+                  <app-ground-course-asg [activity]='activity' *ngIf="activity=='GCO'"></app-ground-course-asg>
+                  <app-leave-asg [activity]='activity' *ngIf="activity=='LEA'"></app-leave-asg>
+                  <app-rest-asg [activity]='activity' *ngIf="activity=='RES'"></app-rest-asg>
+                  <app-positioning-asg [activity]='activity' *ngIf="activity=='POG'"></app-positioning-asg>
+                    <app-flight-asg [activity]='activity' *ngIf="activity=='FLT'"></app-flight-asg>
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>

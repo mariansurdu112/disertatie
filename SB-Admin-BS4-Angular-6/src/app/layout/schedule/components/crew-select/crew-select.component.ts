@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Input } from '@angular/core';
 import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox';
 
 @Component({
@@ -7,7 +7,7 @@ import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxl
   styleUrls: ['./crew-select.component.scss']
 })
 export class CrewSelectComponent  implements AfterViewInit  {
-
+  @Input() activity: string;
   @ViewChild('jqxListBox') myListBox: jqxListBoxComponent;
   @ViewChild('Events') Events: ElementRef;
   @ViewChild('CheckedItems') CheckedItems: ElementRef;
