@@ -1,0 +1,40 @@
+<div class="row" style="padding-top:5px">
+    <div class="col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">Time Select</div>
+            <div class="card-body">
+              <div class="row">
+              <div class="col">
+                  <div class="alert alert-info">
+                      <b>Start time: </b>{{start | json}}
+                  </div>
+                  <ngb-timepicker [(ngModel)]="start" name="start"></ngb-timepicker>
+              </div>
+              <div class="col">
+                  <div class="alert alert-info">
+                      <b>End time: </b>{{end | json}}
+                  </div>
+                  <ngb-timepicker [(ngModel)]="end" name="end"></ngb-timepicker>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-info">
+                        <b>Take off time: </b>{{takeoff | json}}
+                    </div>
+                    <ngb-timepicker [(ngModel)]="takeoff" name="takeoff"></ngb-timepicker>
+                </div>
+                <div class="col">
+                    <div class="alert alert-info">
+                        <b>Landing time: </b>{{landing | json}}
+                    </div>
+                    <ngb-timepicker [(ngModel)]="landing" name="landing"></ngb-timepicker>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  
+  

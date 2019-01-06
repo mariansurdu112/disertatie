@@ -2,13 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox';
 
 @Component({
-  selector: 'app-crew-select',
-  templateUrl: './crew-select.component.html',
-  styleUrls: ['./crew-select.component.scss']
+  selector: 'app-crew-selector',
+  templateUrl: './crew-selector.component.html',
+  styleUrls: ['./crew-selector.component.scss']
 })
-export class CrewSelectComponent  implements AfterViewInit  {
-
-  @ViewChild('jqxListBox') myListBox: jqxListBoxComponent;
+export class CrewSelectorComponent implements AfterViewInit {
+ @ViewChild('jqxListBox') myListBox: jqxListBoxComponent;
   @ViewChild('Events') Events: ElementRef;
   @ViewChild('CheckedItems') CheckedItems: ElementRef;
 

@@ -1,3 +1,62 @@
-<p>
-  crew-select works!
-</p>
+
+<div class="row" style="padding-top:5px">
+    <div class="col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">Crew Select</div>
+            <div class="card-body">
+                <div class="row">
+                        <div class="col-lg-12">
+                                <div class="card mb-3">
+                                    <div class="card-header">PIC Select</div>
+                                    <div class="card-body">
+                                            <jqxListBox #jqxListBox
+                                            (onCheckChange)="checkChange($event)"
+                                            [source]="source"
+                                            [checkboxes]="true"
+                                            [width]="200"
+                                            [height]="250">
+                                </jqxListBox>
+                                <div style="font-size: 13px; font-family: Verdana; margin-top: 20px;" #Events></div>
+                                <div style="font-size: 13px; font-family: Verdana; margin-top: 10px;" #CheckedItems></div>
+                                        </div>
+                                        </div>
+                            </div>
+                            <div class="col-lg-12">
+                                    <div class="card mb-3">
+                                        <div class="card-header">F/O Select</div>
+                                        <div class="card-body">
+                                                <jqxListBox #jqxListBox
+                                                (onCheckChange)="checkChange($event)"
+                                                [source]="source"
+                                                [checkboxes]="true"
+                                                [width]="200"
+                                                [height]="250">
+                                    </jqxListBox>
+                                    <div style="font-size: 13px; font-family: Verdana; margin-top: 20px;" #Events></div>
+                                    <div style="font-size: 13px; font-family: Verdana; margin-top: 10px;" #CheckedItems></div>
+                                            </div>
+                                            </div>
+                                </div>
+                                <div class="col-lg-12">
+                                        <div class="card mb-3">
+                                            <div class="card-header">Cabin Crew Select</div>
+                                            <div class="card-body">
+                                                    <jqxListBox #jqxListBox
+                                                    (onCheckChange)="checkChange($event)"
+                                                    [source]="source"
+                                                    [checkboxes]="true"
+                                                    [width]="200"
+                                                    [height]="250">
+                                        </jqxListBox>
+                                        <div style="font-size: 13px; font-family: Verdana; margin-top: 20px;" #Events></div>
+                                        <div style="font-size: 13px; font-family: Verdana; margin-top: 10px;" #CheckedItems></div>
+                                                </div>
+                                                </div>
+                                    </div>
+                                        
+                </div>
+
+</div>
+</div>
+</div>
+</div>

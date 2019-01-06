@@ -1,3 +1,4 @@
-.modal-content {
-    width:1000px;
+.hugeModal > .modal-dialog {
+    max-width: 90% !important;
+   width: 90% !important;
 }

@@ -1,3 +1,4 @@
+import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -20,16 +21,19 @@ import { GroundCourseAsgComponent } from './components/ground-course-asg/ground-
 import { RestAsgComponent } from './components/rest-asg/rest-asg.component';
 import { LeaveAsgComponent } from './components/leave-asg/leave-asg.component';
 import { OtherAsgComponent } from './components/other-asg/other-asg.component';
+import { TimeSelectComponent } from './components/time-select/time-select.component';
+import { AircraftDetailsComponent } from './components/aircraft-details/aircraft-details.component';
+import { CrewSelectorComponent } from './components/crew-selector/crew-selector.component';
 
 @NgModule({
   imports: [
     CommonModule
       , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule
   ],
-  declarations: [ScheduleComponent, jqxBarGaugeComponent,
+  declarations: [ScheduleComponent, jqxBarGaugeComponent,jqxListBoxComponent, 
      jqxSchedulerComponent, AddAssignmentComponent, ActivitySelectComponent,
      CrewSelectComponent, DestinationSelectComponent, DateSelectComponent,
      AircraftSelectComponent, RemarksComponent, FlightAsgComponent, PositioningAsgComponent,
-     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent, OtherAsgComponent]
+     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent, OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent]
 })
 export class ScheduleModule { }

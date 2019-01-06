@@ -11,7 +11,7 @@ export class AddAssignmentComponent  {
   constructor(private modalService: NgbModal) { }
 
   open(content) {
-      this.modalService.open(content, { size: 'lg', backdrop: 'static', windowClass: 'in', }).result.then((result) => {
+      this.modalService.open(content, { backdrop: 'static', windowClass: 'hugeModal' }).result.then((result) => {
           this.closeResult = `Closed with: ${result}`;
       }, (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

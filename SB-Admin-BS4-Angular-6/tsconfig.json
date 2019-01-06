@@ -27,6 +27,7 @@
         "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow.ts",
         "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxinput.ts",
         "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid.ts",
-        "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts"
+        "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons.ts",
+        "node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox.ts"
     ]
 }
