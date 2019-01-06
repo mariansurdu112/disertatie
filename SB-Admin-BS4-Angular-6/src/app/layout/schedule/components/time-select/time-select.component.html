@@ -17,7 +17,7 @@
                   <ngb-timepicker [(ngModel)]="end" name="end"></ngb-timepicker>
               </div>
             </div>
-            <div class="row">
+            <div class="row" *ngIf="activity=='FLT'">
                 <div class="col">
                     <div class="alert alert-info">
                         <b>Take off time: </b>{{takeoff | json}}

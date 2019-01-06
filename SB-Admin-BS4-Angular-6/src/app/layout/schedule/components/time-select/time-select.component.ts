@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-time-select',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./time-select.component.scss']
 })
 export class TimeSelectComponent implements OnInit {
-
+  @Input() activity: string;
   constructor() { }
 
   ngOnInit() {
