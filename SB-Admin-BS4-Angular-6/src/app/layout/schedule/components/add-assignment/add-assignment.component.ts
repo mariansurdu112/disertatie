@@ -11,7 +11,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class AddAssignmentComponent  {
   closeResult: string;
   activity: string;
-  
   constructor(private modalService: NgbModal) { }
 
   open(content) {

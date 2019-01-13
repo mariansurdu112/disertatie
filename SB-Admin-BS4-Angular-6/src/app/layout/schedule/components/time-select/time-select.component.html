@@ -5,28 +5,28 @@
             <div class="card-body">
               <div class="row">
               <div class="col">
-                  <div class="alert alert-info">
+                  <!-- <div class="alert alert-info">
                       <b>Start time: </b>{{start | json}}
-                  </div>
+                  </div> -->
                   <ngb-timepicker [(ngModel)]="start" name="start"></ngb-timepicker>
               </div>
               <div class="col">
-                  <div class="alert alert-info">
+                  <!-- <div class="alert alert-info">
                       <b>End time: </b>{{end | json}}
-                  </div>
+                  </div> -->
                   <ngb-timepicker [(ngModel)]="end" name="end"></ngb-timepicker>
               </div>
             </div>
             <div class="row" *ngIf="activity=='FLT'">
                 <div class="col">
                     <div class="alert alert-info">
-                        <b>Take off time: </b>{{takeoff | json}}
+                    <b>Take off time: </b>
                     </div>
                     <ngb-timepicker [(ngModel)]="takeoff" name="takeoff"></ngb-timepicker>
                 </div>
                 <div class="col">
                     <div class="alert alert-info">
-                        <b>Landing time: </b>{{landing | json}}
+<b>Landing time: </b>
                     </div>
                     <ngb-timepicker [(ngModel)]="landing" name="landing"></ngb-timepicker>
                 </div>

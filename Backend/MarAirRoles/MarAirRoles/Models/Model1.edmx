@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assignments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="AsgType" Type="int" Nullable="false" />
+          <Property Name="FlightId" Type="int" Nullable="false" />
+          <Property Name="OtherId" Type="int" Nullable="false" />
+          <Property Name="LeaveId" Type="int" Nullable="false" />
+          <Property Name="GroundCourseId" Type="int" Nullable="false" />
+          <Property Name="RestId" Type="int" Nullable="false" />
+          <Property Name="PositioningId" Type="int" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="LastUpdate" Type="datetime" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="AsgActiv" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="Implied" Type="int" Nullable="false" />
+          <Property Name="Signed" Type="nvarchar(max)" />
+          <Property Name="EmployeeType" Type="nvarchar(max)" />
+          <Property Name="AcfDomainLicense" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CrewPositions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionId" Type="int" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Crews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Firstname" Type="nvarchar(max)" />
+          <Property Name="Lastname" Type="nvarchar(max)" />
+          <Property Name="AlphaCode" Type="nvarchar(max)" />
+          <Property Name="Sex" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DelayCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DelayCode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FlightExperiences">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="AirlineCompany" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Flights">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReportingTime" Type="datetime" Nullable="false" />
+          <Property Name="TakeOffTime" Type="datetime" Nullable="false" />
+          <Property Name="ArrivalTime" Type="datetime" Nullable="false" />
+          <Property Name="FlightNumber" Type="nvarchar(max)" />
+          <Property Name="AircraftId" Type="int" Nullable="false" />
+          <Property Name="EstimatedTakeOff" Type="datetime" Nullable="false" />
+          <Property Name="EstimatedArrival" Type="datetime" Nullable="false" />
+          <Property Name="FlightTime" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroundCourses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Passed" Type="bit" Nullable="false" />
+          <Property Name="Location" Type="nvarchar(max)" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Leaves">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Licences">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NomActivities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivityName" Type="nvarchar(max)" />
+          <Property Name="Code" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomAircrafts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AircraftName" Type="nvarchar(max)" />
+          <Property Name="RegistrationNumber" Type="nvarchar(max)" />
+          <Property Name="IataGroup" Type="nvarchar(max)" />
+          <Property Name="Seats" Type="int" Nullable="false" />
+          <Property Name="PoolId" Type="int" Nullable="false" />
+          <Property Name="Owner" Type="nvarchar(max)" />
+          <Property Name="RegNo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomAirports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Location" Type="nvarchar(max)" />
+          <Property Name="IataCode" Type="nvarchar(max)" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="IcaoCode" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomPositions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Label" Type="nvarchar(max)" />
+          <Property Name="Code" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NomRules">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Others">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Activity" Type="nvarchar(max)" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Passengers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PCode" Type="nvarchar(max)" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="FlightId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Passports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="PassNo" Type="int" Nullable="false" />
+          <Property Name="PassLciId" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="ExpDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalDatas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="CarrierCode" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="CIExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="EmPhone" Type="nvarchar(max)" />
+          <Property Name="EmCarrierCode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Positionings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="DepartureTime" Type="nvarchar(max)" />
+          <Property Name="ArrivalTime" Type="nvarchar(max)" />
+          <Property Name="From" Type="nvarchar(max)" />
+          <Property Name="To" Type="nvarchar(max)" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="FlightNumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Rests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="datetime" Nullable="false" />
+          <Property Name="End" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Rules">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RuleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleChanges">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="SceduleDate" Type="datetime" Nullable="false" />
+          <Property Name="Sent" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SSRs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SSRCode" Type="nvarchar(max)" />
+          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="FlightId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TextMessages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CrewId" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Flights_FlightId">
+          <End Role="Flights" Type="Self.Flights" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flights">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="FlightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId">
+          <End Role="GroundCourses" Type="Self.GroundCourses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroundCourses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="GroundCourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Leaves_LeaveId">
+          <End Role="Leaves" Type="Self.Leaves" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leaves">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="LeaveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_NomActivities_AsgType">
+          <End Role="NomActivities" Type="Self.NomActivities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomActivities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="AsgType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Others_OtherId">
+          <End Role="Others" Type="Self.Others" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Others">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="OtherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Positionings_PositioningId">
+          <End Role="Positionings" Type="Self.Positionings" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positionings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="PositioningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Rests_RestId">
+          <End Role="Rests" Type="Self.Rests" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="RestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Contracts_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CrewPositions_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrewPositions" Type="Self.CrewPositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CrewPositions">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CrewPositions_dbo_NomPositions_PositionId">
+          <End Role="NomPositions" Type="Self.NomPositions" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrewPositions" Type="Self.CrewPositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomPositions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CrewPositions">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FlightExperiences_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FlightExperiences" Type="Self.FlightExperiences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FlightExperiences">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Flights_dbo_NomAircrafts_AircraftId">
+          <End Role="NomAircrafts" Type="Self.NomAircrafts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Flights" Type="Self.Flights" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomAircrafts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Flights">
+              <PropertyRef Name="AircraftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Licences_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Licences" Type="Self.Licences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Licences">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Passports_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Passports" Type="Self.Passports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Passports">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Rules_dbo_NomRules_RuleId">
+          <End Role="NomRules" Type="Self.NomRules" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rules" Type="Self.Rules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomRules">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rules">
+              <PropertyRef Name="RuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ScheduleChanges_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ScheduleChanges" Type="Self.ScheduleChanges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleChanges">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TextMessages_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crews" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TextMessages" Type="Self.TextMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TextMessages">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CrewPositions" EntityType="Self.CrewPositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Crews" EntityType="Self.Crews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DelayCodes" EntityType="Self.DelayCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlightExperiences" EntityType="Self.FlightExperiences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Flights" EntityType="Self.Flights" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroundCourses" EntityType="Self.GroundCourses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leaves" EntityType="Self.Leaves" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Licences" EntityType="Self.Licences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NomActivities" EntityType="Self.NomActivities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NomAircrafts" EntityType="Self.NomAircrafts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NomAirports" EntityType="Self.NomAirports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NomPositions" EntityType="Self.NomPositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NomRules" EntityType="Self.NomRules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Others" EntityType="Self.Others" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passengers" EntityType="Self.Passengers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passports" EntityType="Self.Passports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalDatas" EntityType="Self.PersonalDatas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Positionings" EntityType="Self.Positionings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rests" EntityType="Self.Rests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rules" EntityType="Self.Rules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScheduleChanges" EntityType="Self.ScheduleChanges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SSRs" EntityType="Self.SSRs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TextMessages" EntityType="Self.TextMessages" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy" Association="Self.FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Crews_CrewId" Association="Self.FK_dbo_Assignments_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Flights_FlightId" Association="Self.FK_dbo_Assignments_dbo_Flights_FlightId">
+            <End Role="Flights" EntitySet="Flights" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId" Association="Self.FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId">
+            <End Role="GroundCourses" EntitySet="GroundCourses" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Leaves_LeaveId" Association="Self.FK_dbo_Assignments_dbo_Leaves_LeaveId">
+            <End Role="Leaves" EntitySet="Leaves" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_NomActivities_AsgType" Association="Self.FK_dbo_Assignments_dbo_NomActivities_AsgType">
+            <End Role="NomActivities" EntitySet="NomActivities" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Others_OtherId" Association="Self.FK_dbo_Assignments_dbo_Others_OtherId">
+            <End Role="Others" EntitySet="Others" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Positionings_PositioningId" Association="Self.FK_dbo_Assignments_dbo_Positionings_PositioningId">
+            <End Role="Positionings" EntitySet="Positionings" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Rests_RestId" Association="Self.FK_dbo_Assignments_dbo_Rests_RestId">
+            <End Role="Rests" EntitySet="Rests" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Contracts_dbo_Crews_CrewId" Association="Self.FK_dbo_Contracts_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CrewPositions_dbo_Crews_CrewId" Association="Self.FK_dbo_CrewPositions_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="CrewPositions" EntitySet="CrewPositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CrewPositions_dbo_NomPositions_PositionId" Association="Self.FK_dbo_CrewPositions_dbo_NomPositions_PositionId">
+            <End Role="NomPositions" EntitySet="NomPositions" />
+            <End Role="CrewPositions" EntitySet="CrewPositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FlightExperiences_dbo_Crews_CrewId" Association="Self.FK_dbo_FlightExperiences_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="FlightExperiences" EntitySet="FlightExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Flights_dbo_NomAircrafts_AircraftId" Association="Self.FK_dbo_Flights_dbo_NomAircrafts_AircraftId">
+            <End Role="NomAircrafts" EntitySet="NomAircrafts" />
+            <End Role="Flights" EntitySet="Flights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Licences_dbo_Crews_CrewId" Association="Self.FK_dbo_Licences_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Licences" EntitySet="Licences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Passports_dbo_Crews_CrewId" Association="Self.FK_dbo_Passports_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Passports" EntitySet="Passports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Rules_dbo_NomRules_RuleId" Association="Self.FK_dbo_Rules_dbo_NomRules_RuleId">
+            <End Role="NomRules" EntitySet="NomRules" />
+            <End Role="Rules" EntitySet="Rules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ScheduleChanges_dbo_Crews_CrewId" Association="Self.FK_dbo_ScheduleChanges_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="ScheduleChanges" EntitySet="ScheduleChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TextMessages_dbo_Crews_CrewId" Association="Self.FK_dbo_TextMessages_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="TextMessages" EntitySet="TextMessages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy" FromRole="AspNetUsers" ToRole="Assignments" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Assignment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AsgType" Type="Int32" Nullable="false" />
+          <Property Name="FlightId" Type="Int32" Nullable="false" />
+          <Property Name="OtherId" Type="Int32" Nullable="false" />
+          <Property Name="LeaveId" Type="Int32" Nullable="false" />
+          <Property Name="GroundCourseId" Type="Int32" Nullable="false" />
+          <Property Name="RestId" Type="Int32" Nullable="false" />
+          <Property Name="PositioningId" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AsgActiv" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy" FromRole="Assignments" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_Assignments_dbo_Crews_CrewId" FromRole="Assignments" ToRole="Crews" />
+          <NavigationProperty Name="Flight" Relationship="Self.FK_dbo_Assignments_dbo_Flights_FlightId" FromRole="Assignments" ToRole="Flights" />
+          <NavigationProperty Name="GroundCours" Relationship="Self.FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId" FromRole="Assignments" ToRole="GroundCourses" />
+          <NavigationProperty Name="Leaf" Relationship="Self.FK_dbo_Assignments_dbo_Leaves_LeaveId" FromRole="Assignments" ToRole="Leaves" />
+          <NavigationProperty Name="NomActivity" Relationship="Self.FK_dbo_Assignments_dbo_NomActivities_AsgType" FromRole="Assignments" ToRole="NomActivities" />
+          <NavigationProperty Name="Others" Relationship="Self.FK_dbo_Assignments_dbo_Others_OtherId" FromRole="Assignments" ToRole="Others" />
+          <NavigationProperty Name="Positioning" Relationship="Self.FK_dbo_Assignments_dbo_Positionings_PositioningId" FromRole="Assignments" ToRole="Positionings" />
+          <NavigationProperty Name="Rest" Relationship="Self.FK_dbo_Assignments_dbo_Rests_RestId" FromRole="Assignments" ToRole="Rests" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Implied" Type="Int32" Nullable="false" />
+          <Property Name="Signed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AcfDomainLicense" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_Contracts_dbo_Crews_CrewId" FromRole="Contracts" ToRole="Crews" />
+        </EntityType>
+        <EntityType Name="CrewPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionId" Type="Int32" Nullable="false" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_CrewPositions_dbo_Crews_CrewId" FromRole="CrewPositions" ToRole="Crews" />
+          <NavigationProperty Name="NomPosition" Relationship="Self.FK_dbo_CrewPositions_dbo_NomPositions_PositionId" FromRole="CrewPositions" ToRole="NomPositions" />
+        </EntityType>
+        <EntityType Name="Crew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AlphaCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Crews_CrewId" FromRole="Crews" ToRole="Assignments" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK_dbo_Contracts_dbo_Crews_CrewId" FromRole="Crews" ToRole="Contracts" />
+          <NavigationProperty Name="CrewPositions" Relationship="Self.FK_dbo_CrewPositions_dbo_Crews_CrewId" FromRole="Crews" ToRole="CrewPositions" />
+          <NavigationProperty Name="FlightExperiences" Relationship="Self.FK_dbo_FlightExperiences_dbo_Crews_CrewId" FromRole="Crews" ToRole="FlightExperiences" />
+          <NavigationProperty Name="Licences" Relationship="Self.FK_dbo_Licences_dbo_Crews_CrewId" FromRole="Crews" ToRole="Licences" />
+          <NavigationProperty Name="Passports" Relationship="Self.FK_dbo_Passports_dbo_Crews_CrewId" FromRole="Crews" ToRole="Passports" />
+          <NavigationProperty Name="ScheduleChanges" Relationship="Self.FK_dbo_ScheduleChanges_dbo_Crews_CrewId" FromRole="Crews" ToRole="ScheduleChanges" />
+          <NavigationProperty Name="TextMessages" Relationship="Self.FK_dbo_TextMessages_dbo_Crews_CrewId" FromRole="Crews" ToRole="TextMessages" />
+        </EntityType>
+        <EntityType Name="DelayCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DelayCode1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FlightExperience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="AirlineCompany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_FlightExperiences_dbo_Crews_CrewId" FromRole="FlightExperiences" ToRole="Crews" />
+        </EntityType>
+        <EntityType Name="Flight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReportingTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TakeOffTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ArrivalTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FlightNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AircraftId" Type="Int32" Nullable="false" />
+          <Property Name="EstimatedTakeOff" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstimatedArrival" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FlightTime" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Flights_FlightId" FromRole="Flights" ToRole="Assignments" />
+          <NavigationProperty Name="NomAircraft" Relationship="Self.FK_dbo_Flights_dbo_NomAircrafts_AircraftId" FromRole="Flights" ToRole="NomAircrafts" />
+        </EntityType>
+        <EntityType Name="GroundCours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Passed" Type="Boolean" Nullable="false" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId" FromRole="GroundCourses" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="Leaf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Leaves_LeaveId" FromRole="Leaves" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="Licence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_Licences_dbo_Crews_CrewId" FromRole="Licences" ToRole="Crews" />
+        </EntityType>
+        <EntityType Name="NomActivity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_NomActivities_AsgType" FromRole="NomActivities" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="NomAircraft">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AircraftName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IataGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Seats" Type="Int32" Nullable="false" />
+          <Property Name="PoolId" Type="Int32" Nullable="false" />
+          <Property Name="Owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Flights" Relationship="Self.FK_dbo_Flights_dbo_NomAircrafts_AircraftId" FromRole="NomAircrafts" ToRole="Flights" />
+        </EntityType>
+        <EntityType Name="NomAirport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IataCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <Property Name="Longitude" Type="Double" Nullable="false" />
+          <Property Name="IcaoCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NomPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CrewPositions" Relationship="Self.FK_dbo_CrewPositions_dbo_NomPositions_PositionId" FromRole="NomPositions" ToRole="CrewPositions" />
+        </EntityType>
+        <EntityType Name="NomRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Rules" Relationship="Self.FK_dbo_Rules_dbo_NomRules_RuleId" FromRole="NomRules" ToRole="Rules" />
+        </EntityType>
+        <EntityType Name="Others">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Activity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Others_OtherId" FromRole="Others" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="Passenger">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="FlightId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Passport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="PassNo" Type="Int32" Nullable="false" />
+          <Property Name="PassLciId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_Passports_dbo_Crews_CrewId" FromRole="Passports" ToRole="Crews" />
+        </EntityType>
+        <EntityType Name="PersonalData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CarrierCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CIExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EmPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmCarrierCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Positioning">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DepartureTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivalTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="From" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="To" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FlightNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Positionings_PositioningId" FromRole="Positionings" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="Rest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="End" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Rests_RestId" FromRole="Rests" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="Rule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuleId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NomRule" Relationship="Self.FK_dbo_Rules_dbo_NomRules_RuleId" FromRole="Rules" ToRole="NomRules" />
+        </EntityType>
+        <EntityType Name="ScheduleChanx">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SceduleDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sent" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_ScheduleChanges_dbo_Crews_CrewId" FromRole="ScheduleChanges" ToRole="Crews" />
+        </EntityType>
+        <EntityType Name="SSR">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SSRCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="FlightId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TextMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CrewId" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Crew" Relationship="Self.FK_dbo_TextMessages_dbo_Crews_CrewId" FromRole="TextMessages" ToRole="Crews" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="ModifiedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Flights_FlightId">
+          <End Role="Flights" Type="Self.Flight" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Flights">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="FlightId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId">
+          <End Role="GroundCourses" Type="Self.GroundCours" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroundCourses">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="GroundCourseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Leaves_LeaveId">
+          <End Role="Leaves" Type="Self.Leaf" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leaves">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="LeaveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_NomActivities_AsgType">
+          <End Role="NomActivities" Type="Self.NomActivity" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomActivities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="AsgType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Others_OtherId">
+          <End Role="Others" Type="Self.Others" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Others">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="OtherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Positionings_PositioningId">
+          <End Role="Positionings" Type="Self.Positioning" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positionings">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="PositioningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Rests_RestId">
+          <End Role="Rests" Type="Self.Rest" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rests">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="RestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Contracts_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Contracts" Type="Self.Contract" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CrewPositions_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrewPositions" Type="Self.CrewPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CrewPositions">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_CrewPositions_dbo_NomPositions_PositionId">
+          <End Role="NomPositions" Type="Self.NomPosition" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CrewPositions" Type="Self.CrewPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomPositions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CrewPositions">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_FlightExperiences_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FlightExperiences" Type="Self.FlightExperience" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FlightExperiences">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Licences_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Licences" Type="Self.Licence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Licences">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Passports_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Passports" Type="Self.Passport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Passports">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ScheduleChanges_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ScheduleChanges" Type="Self.ScheduleChanx" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleChanges">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TextMessages_dbo_Crews_CrewId">
+          <End Role="Crews" Type="Self.Crew" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TextMessages" Type="Self.TextMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Crews">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TextMessages">
+              <PropertyRef Name="CrewId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Flights_dbo_NomAircrafts_AircraftId">
+          <End Role="NomAircrafts" Type="Self.NomAircraft" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Flights" Type="Self.Flight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomAircrafts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Flights">
+              <PropertyRef Name="AircraftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Rules_dbo_NomRules_RuleId">
+          <End Role="NomRules" Type="Self.NomRule" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rules" Type="Self.Rule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NomRules">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rules">
+              <PropertyRef Name="RuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignment" />
+          <EntitySet Name="Contracts" EntityType="Self.Contract" />
+          <EntitySet Name="CrewPositions" EntityType="Self.CrewPosition" />
+          <EntitySet Name="Crews" EntityType="Self.Crew" />
+          <EntitySet Name="DelayCodes" EntityType="Self.DelayCode" />
+          <EntitySet Name="FlightExperiences" EntityType="Self.FlightExperience" />
+          <EntitySet Name="Flights" EntityType="Self.Flight" />
+          <EntitySet Name="GroundCourses" EntityType="Self.GroundCours" />
+          <EntitySet Name="Leaves" EntityType="Self.Leaf" />
+          <EntitySet Name="Licences" EntityType="Self.Licence" />
+          <EntitySet Name="NomActivities" EntityType="Self.NomActivity" />
+          <EntitySet Name="NomAircrafts" EntityType="Self.NomAircraft" />
+          <EntitySet Name="NomAirports" EntityType="Self.NomAirport" />
+          <EntitySet Name="NomPositions" EntityType="Self.NomPosition" />
+          <EntitySet Name="NomRules" EntityType="Self.NomRule" />
+          <EntitySet Name="Others" EntityType="Self.Others" />
+          <EntitySet Name="Passengers" EntityType="Self.Passenger" />
+          <EntitySet Name="Passports" EntityType="Self.Passport" />
+          <EntitySet Name="PersonalDatas" EntityType="Self.PersonalData" />
+          <EntitySet Name="Positionings" EntityType="Self.Positioning" />
+          <EntitySet Name="Rests" EntityType="Self.Rest" />
+          <EntitySet Name="Rules" EntityType="Self.Rule" />
+          <EntitySet Name="ScheduleChanges" EntityType="Self.ScheduleChanx" />
+          <EntitySet Name="SSRs" EntityType="Self.SSR" />
+          <EntitySet Name="TextMessages" EntityType="Self.TextMessage" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy" Association="Self.FK_dbo_Assignments_dbo_AspNetUsers_ModifiedBy">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Crews_CrewId" Association="Self.FK_dbo_Assignments_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Flights_FlightId" Association="Self.FK_dbo_Assignments_dbo_Flights_FlightId">
+            <End Role="Flights" EntitySet="Flights" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId" Association="Self.FK_dbo_Assignments_dbo_GroundCourses_GroundCourseId">
+            <End Role="GroundCourses" EntitySet="GroundCourses" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Leaves_LeaveId" Association="Self.FK_dbo_Assignments_dbo_Leaves_LeaveId">
+            <End Role="Leaves" EntitySet="Leaves" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_NomActivities_AsgType" Association="Self.FK_dbo_Assignments_dbo_NomActivities_AsgType">
+            <End Role="NomActivities" EntitySet="NomActivities" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Others_OtherId" Association="Self.FK_dbo_Assignments_dbo_Others_OtherId">
+            <End Role="Others" EntitySet="Others" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Positionings_PositioningId" Association="Self.FK_dbo_Assignments_dbo_Positionings_PositioningId">
+            <End Role="Positionings" EntitySet="Positionings" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Rests_RestId" Association="Self.FK_dbo_Assignments_dbo_Rests_RestId">
+            <End Role="Rests" EntitySet="Rests" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Contracts_dbo_Crews_CrewId" Association="Self.FK_dbo_Contracts_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CrewPositions_dbo_Crews_CrewId" Association="Self.FK_dbo_CrewPositions_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="CrewPositions" EntitySet="CrewPositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_CrewPositions_dbo_NomPositions_PositionId" Association="Self.FK_dbo_CrewPositions_dbo_NomPositions_PositionId">
+            <End Role="NomPositions" EntitySet="NomPositions" />
+            <End Role="CrewPositions" EntitySet="CrewPositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_FlightExperiences_dbo_Crews_CrewId" Association="Self.FK_dbo_FlightExperiences_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="FlightExperiences" EntitySet="FlightExperiences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Licences_dbo_Crews_CrewId" Association="Self.FK_dbo_Licences_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Licences" EntitySet="Licences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Passports_dbo_Crews_CrewId" Association="Self.FK_dbo_Passports_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="Passports" EntitySet="Passports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ScheduleChanges_dbo_Crews_CrewId" Association="Self.FK_dbo_ScheduleChanges_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="ScheduleChanges" EntitySet="ScheduleChanges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TextMessages_dbo_Crews_CrewId" Association="Self.FK_dbo_TextMessages_dbo_Crews_CrewId">
+            <End Role="Crews" EntitySet="Crews" />
+            <End Role="TextMessages" EntitySet="TextMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Flights_dbo_NomAircrafts_AircraftId" Association="Self.FK_dbo_Flights_dbo_NomAircrafts_AircraftId">
+            <End Role="NomAircrafts" EntitySet="NomAircrafts" />
+            <End Role="Flights" EntitySet="Flights" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Rules_dbo_NomRules_RuleId" Association="Self.FK_dbo_Rules_dbo_NomRules_RuleId">
+            <End Role="NomRules" EntitySet="NomRules" />
+            <End Role="Rules" EntitySet="Rules" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="Model.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="Model.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="Model.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="Model.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Model.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assignments">
+            <EntityTypeMapping TypeName="Model.Assignment">
+              <MappingFragment StoreEntitySet="Assignments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="AsgType" ColumnName="AsgType" />
+                <ScalarProperty Name="FlightId" ColumnName="FlightId" />
+                <ScalarProperty Name="OtherId" ColumnName="OtherId" />
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+                <ScalarProperty Name="GroundCourseId" ColumnName="GroundCourseId" />
+                <ScalarProperty Name="RestId" ColumnName="RestId" />
+                <ScalarProperty Name="PositioningId" ColumnName="PositioningId" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AsgActiv" ColumnName="AsgActiv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="Model.Contract">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="Implied" ColumnName="Implied" />
+                <ScalarProperty Name="Signed" ColumnName="Signed" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="AcfDomainLicense" ColumnName="AcfDomainLicense" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrewPositions">
+            <EntityTypeMapping TypeName="Model.CrewPosition">
+              <MappingFragment StoreEntitySet="CrewPositions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Crews">
+            <EntityTypeMapping TypeName="Model.Crew">
+              <MappingFragment StoreEntitySet="Crews">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="AlphaCode" ColumnName="AlphaCode" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DelayCodes">
+            <EntityTypeMapping TypeName="Model.DelayCode">
+              <MappingFragment StoreEntitySet="DelayCodes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DelayCode1" ColumnName="DelayCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlightExperiences">
+            <EntityTypeMapping TypeName="Model.FlightExperience">
+              <MappingFragment StoreEntitySet="FlightExperiences">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="AirlineCompany" ColumnName="AirlineCompany" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Flights">
+            <EntityTypeMapping TypeName="Model.Flight">
+              <MappingFragment StoreEntitySet="Flights">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReportingTime" ColumnName="ReportingTime" />
+                <ScalarProperty Name="TakeOffTime" ColumnName="TakeOffTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+                <ScalarProperty Name="AircraftId" ColumnName="AircraftId" />
+                <ScalarProperty Name="EstimatedTakeOff" ColumnName="EstimatedTakeOff" />
+                <ScalarProperty Name="EstimatedArrival" ColumnName="EstimatedArrival" />
+                <ScalarProperty Name="FlightTime" ColumnName="FlightTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroundCourses">
+            <EntityTypeMapping TypeName="Model.GroundCours">
+              <MappingFragment StoreEntitySet="GroundCourses">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Passed" ColumnName="Passed" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leaves">
+            <EntityTypeMapping TypeName="Model.Leaf">
+              <MappingFragment StoreEntitySet="Leaves">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Licences">
+            <EntityTypeMapping TypeName="Model.Licence">
+              <MappingFragment StoreEntitySet="Licences">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomActivities">
+            <EntityTypeMapping TypeName="Model.NomActivity">
+              <MappingFragment StoreEntitySet="NomActivities">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomAircrafts">
+            <EntityTypeMapping TypeName="Model.NomAircraft">
+              <MappingFragment StoreEntitySet="NomAircrafts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AircraftName" ColumnName="AircraftName" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="IataGroup" ColumnName="IataGroup" />
+                <ScalarProperty Name="Seats" ColumnName="Seats" />
+                <ScalarProperty Name="PoolId" ColumnName="PoolId" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomAirports">
+            <EntityTypeMapping TypeName="Model.NomAirport">
+              <MappingFragment StoreEntitySet="NomAirports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="IataCode" ColumnName="IataCode" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="IcaoCode" ColumnName="IcaoCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomPositions">
+            <EntityTypeMapping TypeName="Model.NomPosition">
+              <MappingFragment StoreEntitySet="NomPositions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NomRules">
+            <EntityTypeMapping TypeName="Model.NomRule">
+              <MappingFragment StoreEntitySet="NomRules">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Others">
+            <EntityTypeMapping TypeName="Model.Others">
+              <MappingFragment StoreEntitySet="Others">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passengers">
+            <EntityTypeMapping TypeName="Model.Passenger">
+              <MappingFragment StoreEntitySet="Passengers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PCode" ColumnName="PCode" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="FlightId" ColumnName="FlightId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passports">
+            <EntityTypeMapping TypeName="Model.Passport">
+              <MappingFragment StoreEntitySet="Passports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="PassNo" ColumnName="PassNo" />
+                <ScalarProperty Name="PassLciId" ColumnName="PassLciId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalDatas">
+            <EntityTypeMapping TypeName="Model.PersonalData">
+              <MappingFragment StoreEntitySet="PersonalDatas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CarrierCode" ColumnName="CarrierCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CIExpiryDate" ColumnName="CIExpiryDate" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="EmPhone" ColumnName="EmPhone" />
+                <ScalarProperty Name="EmCarrierCode" ColumnName="EmCarrierCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positionings">
+            <EntityTypeMapping TypeName="Model.Positioning">
+              <MappingFragment StoreEntitySet="Positionings">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rests">
+            <EntityTypeMapping TypeName="Model.Rest">
+              <MappingFragment StoreEntitySet="Rests">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="End" ColumnName="End" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rules">
+            <EntityTypeMapping TypeName="Model.Rule">
+              <MappingFragment StoreEntitySet="Rules">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleChanges">
+            <EntityTypeMapping TypeName="Model.ScheduleChanx">
+              <MappingFragment StoreEntitySet="ScheduleChanges">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="SceduleDate" ColumnName="SceduleDate" />
+                <ScalarProperty Name="Sent" ColumnName="Sent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SSRs">
+            <EntityTypeMapping TypeName="Model.SSR">
+              <MappingFragment StoreEntitySet="SSRs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SSRCode" ColumnName="SSRCode" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="FlightId" ColumnName="FlightId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TextMessages">
+            <EntityTypeMapping TypeName="Model.TextMessage">
+              <MappingFragment StoreEntitySet="TextMessages">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CrewId" ColumnName="CrewId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

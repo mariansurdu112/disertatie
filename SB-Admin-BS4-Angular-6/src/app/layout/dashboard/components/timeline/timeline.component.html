@@ -1,12 +1,16 @@
 <div class="card-body">
+
     <ul class="timeline">
-        <li *ngFor="let flt of flights" >
-            <div class="timeline-badge" *ngIf="!flt.charter"><span style="font-size: 16px;">{{flt.dep_date}}</span>
+        <li *ngFor="let flt of flights">
+            <div class="timeline-badge" *ngIf="!flt.charter"><span style="font-size: 16px;">{{flt.dep_date | date:
+                    'HH:mm' }}</span>
             </div>
             <div class="timeline-panel" *ngIf="!flt.charter">
                 <div class="timeline-heading">
+
                     <h4 class="timeline-title">{{flt.from}}&nbsp;<i class="fa fa-plane"></i> &nbsp;{{flt.to}}</h4>
-                    <p><small class="text-muted"><i class="fa fa-clock-o"></i>-</small>
+                    <p><small class="text-muted"><i class="fa fa-clock-o"></i>Estimated Flight Time :{{flt.flt_time}}</small>
+                        <app-flight-view [selectedFlight]='flt' class="moveRight"></app-flight-view>
                     </p>
                 </div>
                 <div class="timeline-body">
@@ -14,20 +18,27 @@
                 </div>
             </div>
         </li>
-        <li class="timeline-inverted" *ngFor="let flt of flights" >
-            <div class="timeline-badge warning" *ngIf="flt.charter"><span style="font-size: 16px;">12:00</span>
+        <li class="timeline-inverted" *ngFor="let flt of flights">
+            <div class="timeline-badge warning" *ngIf="flt.charter"><span style="font-size: 16px;">{{flt.dep_date |
+                    date: 'HH:mm'
+                    }}</span>
             </div>
             <div class="timeline-panel" *ngIf="flt.charter">
                 <div class="timeline-heading">
-                    <h4 class="timeline-title">CTA&nbsp;<i class="fa fa-plane"></i> &nbsp;OTP</h4>
-                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> Catania via Otopeni(charter)</small>
+                    <h4 class="timeline-title">{{flt.from}}&nbsp;<i class="fa fa-plane"></i> &nbsp;{{flt.to}}</h4>
+                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> Estimated Flight Time :{{flt.flt_time}}</small>
+                        <app-flight-view [selectedFlight]='flt'  class="moveRight"></app-flight-view>
+                    </p>
                 </div>
-                <div class="timeline-body">
+                <div class="timeline-body" *ngIf="flt.passengers==0">
+
                     <p>No passengers checked in</p>
                 </div>
+
+                <p *ngIf="flt.passengers!=0">{{flt.passengers}} passengers checked in</p>
             </div>
         </li>
-    <!--    <li>
+        <!--    <li>
             <div class="timeline-badge"><span style="font-size: 16px;">11:20</span>
             </div>
             <div class="timeline-panel">
@@ -55,7 +66,7 @@
             </div>
         </li>-->
 
-           <!-- <app-flt *ngFor="let flt of flights" [flight]="flt"></app-flt>-->
+        <!-- <app-flt *ngFor="let flt of flights" [flight]="flt"></app-flt>-->
 
 
     </ul>
