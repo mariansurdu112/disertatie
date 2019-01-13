@@ -65,8 +65,23 @@ export class ScheduleComponent implements AfterViewInit  {
             'agendaView'
         ];
 
+        generateRandomStartEndDates(start: Date, end: Date): any {
+            const startAux = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            const endAux = startAux.setHours(startAux.getHours() + Math.floor(Math.random()));
+            return {Start: startAux, End: endAux};
+         }
+
     generateAppointments() {
-        console.log('Executed');
+        const start = new Date();
+        start.setHours(0, 0, 0, 0);
+        const end = new Date();
+        end.setHours(23, 59, 59, 999);
+        const start2 = new Date();
+        start2.setDate(start.getDate() + 1);
+        start.setHours(0, 0, 0, 0);
+        const end2 = new Date();
+        end2.setDate(end.getDate() + 1);
+        end2.setHours(23, 59, 59, 999);
         const appointments = new Array();
         const appointment1 = {
             id: 'id1',
@@ -74,20 +89,91 @@ export class ScheduleComponent implements AfterViewInit  {
             location: '',
             subject: 'Otopeni via Fimicino',
             calendar: 'FLT',
-            start: new Date(),
-            end: new Date(2019, 1, 5, 9, 0, 0)
+            start: this.generateRandomStartEndDates(start, end).Start,
+            end: this.generateRandomStartEndDates(start, end).End
         };
+        const appointment2 = {
+            id: 'id1',
+            description: 'OTP->HEL',
+            location: '',
+            subject: 'Otopeni via Helsinki',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start, end).Start,
+            end: this.generateRandomStartEndDates(start, end).End
+        };
+        const appointment3 = {
+            id: 'id1',
+            description: 'FCO->OTP',
+            location: '',
+            subject: 'Fimicino via Otopeni',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start, end).Start,
+            end: this.generateRandomStartEndDates(start, end).End
+        };
+        const appointment4 = {
+            id: 'id1',
+            description: 'OTP->BRU',
+            location: '',
+            subject: 'Otopeni via Brussels',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start, end).Start,
+            end: this.generateRandomStartEndDates(start, end).End
+        };
+
         const appointment7 = {
             id: 'id7',
-            description: 'Positioning Blue Air Company Flight OTP->FCO',
+            description: 'Positioning',
             location: '',
-            subject: 'Positioning',
+            subject: 'Positioning Blue Air Company Flight OTP->FCO',
             calendar: 'POG',
-            start: new Date(),
-            end: new Date(2019, 1, 5, 9, 0, 0)
+            start: this.generateRandomStartEndDates(start, end).Start,
+            end: this.generateRandomStartEndDates(start, end).End
+        };
+        const appointment11 = {
+            id: 'id1',
+            description: 'OTP->FCO',
+            location: '',
+            subject: 'Otopeni via Fimicino',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start2, end2).Start,
+            end: this.generateRandomStartEndDates(start2, end2).End
+        };
+        const appointment10 = {
+            id: 'id1',
+            description: 'OTP->HEL',
+            location: '',
+            subject: 'Otopeni via Helsinki',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start2, end2).Start,
+            end: this.generateRandomStartEndDates(start2, end2).End
+        };
+        const appointment9 = {
+            id: 'id1',
+            description: 'FCO->OTP',
+            location: '',
+            subject: 'Fimicino via Otopeni',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start2, end2).Start,
+            end: this.generateRandomStartEndDates(start2, end2).End
+        };
+        const appointment8 = {
+            id: 'id1',
+            description: 'OTP->BRU',
+            location: '',
+            subject: 'Otopeni via Brussels',
+            calendar: 'FLT',
+            start: this.generateRandomStartEndDates(start2, end2).Start,
+            end: this.generateRandomStartEndDates(start2, end2).End
         };
         appointments.push(appointment1);
+        appointments.push(appointment2);
+        appointments.push(appointment3);
+        appointments.push(appointment4);
         appointments.push(appointment7);
+        appointments.push(appointment11);
+        appointments.push(appointment8);
+        appointments.push(appointment9);
+        appointments.push(appointment10);
 
         return appointments;
     }
