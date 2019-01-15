@@ -11,13 +11,14 @@ namespace MarAirRoles.Models
 {
     using System;
     using System.Collections.Generic;
+    using MarAirAdmin.Models;
     
     public partial class Rest
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Rest()
         {
-            this.Assignments = new HashSet<Assignment>();
+            this.Assignments = new HashSet<Assignments>();
         }
     
         public int Id { get; set; }
@@ -26,6 +27,6 @@ namespace MarAirRoles.Models
         public string Remarks { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Assignment> Assignments { get; set; }
+        public virtual ICollection<Assignments> Assignments { get; set; }
     }
 }

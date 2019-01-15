@@ -191,3 +191,8 @@ E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.M
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csproj.CoreCompileInputs.cache
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirAdmin.csproj.CopyComplete
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.crewpos.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables2.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.other_tables3.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.crewpos.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.last.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.last1.resources

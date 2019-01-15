@@ -19,12 +19,12 @@ namespace MarAirRoles.Migrations
         protected override void Seed(MarAirRoles.Models.ApplicationDbContext context)
         {
             var manager = new UserManager<ApplicationUser,int>(new CustomUserStore(new ApplicationDbContext()));
-           /* var user = new ApplicationUser()
+            var user = new ApplicationUser()
             {
                 UserName = "admin",
                 Email = "admin@gmail.com",
                 EmailConfirmed = true,
-            };*/
+            };
            // manager.Create(user, "MySuperP@ss!");
             var roleManager = new RoleManager<CustomRole, int>(new RoleStore<CustomRole, int, CustomUserRole>(context));
             if (!roleManager.RoleExists("Admin"))

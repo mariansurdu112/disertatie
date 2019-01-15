@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using MarAirAdmin.Models;
+
 namespace MarAirRoles.Models
 {
     using System;
@@ -18,7 +20,7 @@ namespace MarAirRoles.Models
         public int PositionId { get; set; }
         public int CrewId { get; set; }
     
-        public virtual Crew Crew { get; set; }
-        public virtual NomPosition NomPosition { get; set; }
+        public virtual Crews Crew { get; set; }
+        public virtual NomPositions NomPosition { get; set; }
     }
 }

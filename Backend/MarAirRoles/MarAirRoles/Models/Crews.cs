@@ -17,7 +17,7 @@ namespace MarAirAdmin.Models
         public string Lastname { get; set; }
         public string AlphaCode { get; set; }
         public bool Active { get; set; }
-        public string Sex { get; set; }
+        public string Gender { get; set; }
 
     }
 }

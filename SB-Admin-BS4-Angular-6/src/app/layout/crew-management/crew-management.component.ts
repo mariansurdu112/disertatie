@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 @Component({
-  selector: 'app-crew-management',
-  templateUrl: './crew-management.component.html',
-  styleUrls: ['./crew-management.component.scss']
+    selector: 'app-crew-management',
+    templateUrl: './crew-management.component.html',
+    styleUrls: ['./crew-management.component.scss']
 })
-export class CrewManagementComponent implements OnInit {
+export class CrewManagementComponent implements AfterViewInit {
+    ngAfterViewInit(): void {
+    }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

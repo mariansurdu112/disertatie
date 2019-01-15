@@ -30,10 +30,11 @@ import { CrewSelectorComponent } from './components/crew-selector/crew-selector.
     CommonModule
       , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule
   ],
-  declarations: [ScheduleComponent, jqxBarGaugeComponent,jqxListBoxComponent, 
+  declarations: [ScheduleComponent, jqxBarGaugeComponent, jqxListBoxComponent,
      jqxSchedulerComponent, AddAssignmentComponent, ActivitySelectComponent,
      CrewSelectComponent, DestinationSelectComponent, DateSelectComponent,
      AircraftSelectComponent, RemarksComponent, FlightAsgComponent, PositioningAsgComponent,
-     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent, OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent]
+     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent, OtherAsgComponent, TimeSelectComponent,
+      AircraftDetailsComponent, CrewSelectorComponent]
 })
 export class ScheduleModule { }

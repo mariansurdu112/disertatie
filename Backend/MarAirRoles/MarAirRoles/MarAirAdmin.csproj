@@ -81,6 +81,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -282,6 +283,14 @@
     <Compile Include="Migrations\201901061113196_crewpos.Designer.cs">
       <DependentUpon>201901061113196_crewpos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901141346532_last.cs" />
+    <Compile Include="Migrations\201901141346532_last.Designer.cs">
+      <DependentUpon>201901141346532_last.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901141401071_last1.cs" />
+    <Compile Include="Migrations\201901141401071_last1.Designer.cs">
+      <DependentUpon>201901141401071_last1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -297,6 +306,12 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Leaves.cs" />
     <Compile Include="Models\Licences.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model1.Designer.cs">
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Models\NomActivities.cs" />
     <Compile Include="Models\NomAircrafts.cs" />
     <Compile Include="Models\NomAirports.cs" />
@@ -354,6 +369,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -410,6 +432,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901061113196_crewpos.resx">
       <DependentUpon>201901061113196_crewpos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901141346532_last.resx">
+      <DependentUpon>201901141346532_last.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901141401071_last1.resx">
+      <DependentUpon>201901141401071_last1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
