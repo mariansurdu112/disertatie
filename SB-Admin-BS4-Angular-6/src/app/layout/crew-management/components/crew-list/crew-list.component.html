@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="jumbotron">
+        <button class="btn btn-primary btn-sm" (click)="addCrew()" >Add</button>
+<jqxGrid
+    #myGrid
+    [width]="1000"
+    [source]="dataAdapter"
+    [columns]="columns"
+    [rowsheight]="60"
+    [sortable]="true" [altrows]="true" [filterable]="true"
+    [pageable]="true"
+    [width]="'100%'"
+    [columnsresize]="true"
+    [pagermode]="'simple'"
+    [theme]="'summer'"
+    [keyboardnavigation]="true"
+    [showfilterrow]="true"
+>
+</jqxGrid>
+
+<button class="btn btn-primary btn-sm" (click)="closeCalendar()" *ngIf="displayCalendar">Close</button>
+<app-crew-calendar *ngIf="displayCalendar"></app-crew-calendar>
+    </div>
