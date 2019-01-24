@@ -7,17 +7,15 @@ import { PositionsComponent } from './positions/positions.component';
 import { ActivityComponent } from './activity/activity.component';
 import { AirportsComponent } from './airports/airports.component';
 import {NomsRoutingModule} from './noms-routing.module';
-import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
-import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput';
-import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
-import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons';
+
 import {FormsModule} from '@angular/forms';
+import { JqxdataModule } from '../../jqxdata/jqxdata.module';
 
 @NgModule({
   imports: [
-    CommonModule , NomsRoutingModule  , FormsModule
+    CommonModule, NomsRoutingModule, FormsModule, JqxdataModule
   ],
-  declarations: [jqxGridComponent, jqxInputComponent, jqxWindowComponent, jqxButtonComponent, AircraftsComponent,
+  declarations: [AircraftsComponent,
       CrewsComponent, RulesComponent,
       PositionsComponent, ActivityComponent, AirportsComponent]
 })

@@ -1,12 +1,10 @@
-import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox';
+
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScheduleComponent } from './schedule.component';
 import {ScheduleRoutingModule} from './schedule-routing.module';
 import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
-import { jqxBarGaugeComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbargauge';
-import { jqxSchedulerComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxscheduler';
 import { AddAssignmentComponent } from './components/add-assignment/add-assignment.component';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ActivitySelectComponent } from './components/activity-select/activity-select.component';
@@ -24,16 +22,17 @@ import { OtherAsgComponent } from './components/other-asg/other-asg.component';
 import { TimeSelectComponent } from './components/time-select/time-select.component';
 import { AircraftDetailsComponent } from './components/aircraft-details/aircraft-details.component';
 import { CrewSelectorComponent } from './components/crew-selector/crew-selector.component';
+import { JqxdataModule } from '../../jqxdata/jqxdata.module';
 
 @NgModule({
   imports: [
     CommonModule
-      , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule
+    , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule, JqxdataModule
   ],
-  declarations: [ScheduleComponent, jqxBarGaugeComponent,jqxListBoxComponent, 
-     jqxSchedulerComponent, AddAssignmentComponent, ActivitySelectComponent,
+  declarations: [ScheduleComponent, AddAssignmentComponent, ActivitySelectComponent,
      CrewSelectComponent, DestinationSelectComponent, DateSelectComponent,
      AircraftSelectComponent, RemarksComponent, FlightAsgComponent, PositioningAsgComponent,
-     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent, OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent]
+     GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent,
+     OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent]
 })
 export class ScheduleModule { }
