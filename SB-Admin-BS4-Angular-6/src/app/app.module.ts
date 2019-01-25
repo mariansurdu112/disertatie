@@ -37,4 +37,5 @@ export function createTranslateLoader(http: HttpClient) {
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {}

@@ -2,21 +2,33 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-            <h1>SB Admin BS4 Angular5</h1>
-            <form role="form">
+            <h1>Mar Air Admin Login</h1>
+            <form name="form" (ngSubmit)="f.form.valid && onLoggedin()" #f="ngForm">
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Email">
+                        <input type="text" name="email" [(ngModel)]="userToLogin.Email" #email="ngModel" class="form-control input-underline input-lg"
+                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required placeholder="Username">
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div *ngIf="email.errors.required">Username is required</div>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
+                        <input type="password" name="password" [(ngModel)]="userToLogin.Password" #password="ngModel" class="form-control input-underline input-lg"
+                            placeholder="Password" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6">
+                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div *ngIf="password.errors.required">Password is required</div>
+                            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Log in </a>
+                <button class="btn rounded-btn"  type="submit"> Log in </button>
                 &nbsp;
-                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a> -->
             </form>
+            <div class="alert-danger">
+                <p class="alert-danger">{{errorMessage}}</p>
+            </div>
         </div>
     </div>
 </div>
