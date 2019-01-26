@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
         console.log(this.userToLogin);
         this.loginService.loginUser(this.userToLogin).subscribe((res) => {
             console.log(res);
-            localStorage.setItem('id_token', res.id_token);
+            localStorage.setItem('id_token', res.access_token);
             localStorage.setItem('isLoggedin', 'true');
         });
         localStorage.setItem('isLoggedin', 'true');

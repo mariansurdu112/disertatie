@@ -14,11 +14,6 @@ namespace MarAirAdmin.Models
         public int Id { get; set; }
         public string AircraftName { get; set; }
         public string RegistrationNumber { get; set; }
-        public string IataGroup { get; set; }
-        public int Seats { get; set; }
-        public int PoolId { get; set; }
-        public string Owner { get; set; }
-        public string RegNo { get; set; }
 
     }
 }

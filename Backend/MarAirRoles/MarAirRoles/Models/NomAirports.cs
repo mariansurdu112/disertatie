@@ -16,8 +16,5 @@ namespace MarAirAdmin.Models
         public string IataCode { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public string IcaoCode { get; set; }
-        public string Name { get; set; }
-        
-    }
+     }
 }

@@ -14,8 +14,9 @@ namespace MarAirAdmin.Models
         public int Id { get; set; }
         public string PCode { get; set; }
         public int No { get; set; }
+        [ForeignKey("Flight")]
         public int FlightId { get; set; }
-       
+        public virtual Flights Flight { get; set; }
 
     }
 }

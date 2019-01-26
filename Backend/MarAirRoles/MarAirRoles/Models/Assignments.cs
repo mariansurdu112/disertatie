@@ -50,8 +50,6 @@ namespace MarAirAdmin.Models
 
         public DateTime LastUpdate { get; set; }
        
-        public string CreatedBy { get; set; }
-        public bool AsgActiv { get; set; }
 
         [ForeignKey("Crew")]
         public int CrewId { get; set; }
