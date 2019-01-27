@@ -22,7 +22,7 @@ export class FlightSelectComponent implements OnInit {
   shirts: string[];
   renderer = (index: number, label: string, value: string): any => {
     // tslint:disable-next-line:max-line-length
-    const imgUrl = 'https://www.accenture.com/t20170525T050050Z__w__/us-en/_acnmedia/Accenture/DigitasLBi/Case-Studies/success-airbus-wearable-technology/images/Accenture-Airbus-a330-exterior-v1.pngla=en';
+    const imgUrl = 'https://static.dezeen.com/uploads/2017/10/zunum-electric-aircraft-to-launch_dezeen_hero.jpg';
     const img = '<img height="70" width="70" src="' + imgUrl + '"/>';
     const table = '<table style="min-width: 130px;"><tr><td style="width: 80px;">' + img + '</td><td>' + label + '</td></tr></table>';
     return table;

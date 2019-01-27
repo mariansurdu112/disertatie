@@ -14,6 +14,7 @@ export class CrewListComponent  {
     imagerenderer = (row: number, datafield: string, value: string): string => {
         return '<img style="margin-left: 5px;" height="60" width="50" src="' + value + '"/>';
     }
+    // tslint:disable-next-line:member-ordering
     columns: any[] =
         [
             { text: 'Profile', datafield: 'Image', width: 60, cellsrenderer: this.imagerenderer },
@@ -44,15 +45,18 @@ export class CrewListComponent  {
                 },
                 buttonclick: (row: number): void => {
                     this.displayData = true;
+                    alert('Data saved!!');
                     this.displayCalendar = false;
                 }}
         ];
 
+    // tslint:disable-next-line:member-ordering
     source: any =
         {
             localdata: this.generateData(), datatype: 'array',
             pagesize: 5,
         };
+    // tslint:disable-next-line:member-ordering
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
 

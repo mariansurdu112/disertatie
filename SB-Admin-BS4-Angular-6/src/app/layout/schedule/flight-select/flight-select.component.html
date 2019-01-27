@@ -1,8 +1,26 @@
-<jqxListBox #listbox [filterable]="true" [selectedIndex]="0" [source]="shirts" [itemHeight]="90" [renderer]="renderer"
-    [width]="250" [height]="300">
-</jqxListBox>
-<div style="margin-top: 10px;">
-    <jqxButton #clearFilter (onClick)="click($event)">
-        Clear Filter
-    </jqxButton>
+<div class="row" style="padding-top:5px">
+    <div class="col-lg-12">
+        <div class="card mb-3">
+            <div class="card-header">Flight select</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mb-3">
+                            <div class="card-header">Select flight</div>
+                            <div class="card-body">
+                                <jqxListBox #listbox [filterable]="true" [selectedIndex]="0" [source]="shirts"
+                                    [itemHeight]="90" [renderer]="renderer" [width]="250" [height]="300">
+                                </jqxListBox>
+                                <div style="margin-top: 10px;">
+                                    <jqxButton #clearFilter (onClick)="click($event)">
+                                        Clear Filter
+                                    </jqxButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
