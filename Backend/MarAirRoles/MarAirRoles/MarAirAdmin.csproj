@@ -244,6 +244,9 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssignmentsController.cs" />
+    <Compile Include="Controllers\CompanyFlightsController.cs" />
+    <Compile Include="Controllers\FlightsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -263,12 +266,22 @@
     <Compile Include="Migrations\201901261047150_test.Designer.cs">
       <DependentUpon>201901261047150_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901261251058_details_flt_flg.cs" />
+    <Compile Include="Migrations\201901261251058_details_flt_flg.Designer.cs">
+      <DependentUpon>201901261251058_details_flt_flg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901261258318_company_flt.cs" />
+    <Compile Include="Migrations\201901261258318_company_flt.Designer.cs">
+      <DependentUpon>201901261258318_company_flt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assignments.cs" />
+    <Compile Include="Models\CompanyFlights.cs" />
     <Compile Include="Models\Contracts.cs" />
     <Compile Include="Models\Crews.cs" />
+    <Compile Include="Models\DelayCode.cs" />
     <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\Flights.cs" />
     <Compile Include="Models\GroundCourses.cs" />
@@ -378,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901261047150_test.resx">
       <DependentUpon>201901261047150_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901261251058_details_flt_flg.resx">
+      <DependentUpon>201901261251058_details_flt_flg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901261258318_company_flt.resx">
+      <DependentUpon>201901261258318_company_flt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

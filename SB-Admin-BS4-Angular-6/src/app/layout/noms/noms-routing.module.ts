@@ -1,3 +1,5 @@
+import { FlightsComponent } from './flights/flights.component';
+import { Flights } from './flights/flights';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {ActivityComponent} from './activity/activity.component';
@@ -14,7 +16,8 @@ const routes: Routes = [
         path: 'airports', component: AirportsComponent}, {
         path: 'crews', component: CrewsComponent}, {
         path: 'positions', component: PositionsComponent}, {
-        path: 'rules', component: RulesComponent}
+        path: 'rules', component: RulesComponent},
+        {path: 'company-flights', component: FlightsComponent}
 
 ];
 

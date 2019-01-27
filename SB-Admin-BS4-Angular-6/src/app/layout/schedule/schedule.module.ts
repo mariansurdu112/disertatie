@@ -23,16 +23,18 @@ import { TimeSelectComponent } from './components/time-select/time-select.compon
 import { AircraftDetailsComponent } from './components/aircraft-details/aircraft-details.component';
 import { CrewSelectorComponent } from './components/crew-selector/crew-selector.component';
 import { JqxdataModule } from '../../jqxdata/jqxdata.module';
+import { FlightSelectComponent } from './flight-select/flight-select.component';
+import { SharedPipesModule } from '../../shared';
 
 @NgModule({
   imports: [
     CommonModule
-    , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule, JqxdataModule
+    , ScheduleRoutingModule, PageHeaderModule, NgbModule.forRoot(), FormsModule, JqxdataModule, SharedPipesModule
   ],
   declarations: [ScheduleComponent, AddAssignmentComponent, ActivitySelectComponent,
      CrewSelectComponent, DestinationSelectComponent, DateSelectComponent,
      AircraftSelectComponent, RemarksComponent, FlightAsgComponent, PositioningAsgComponent,
      GroundCourseAsgComponent, RestAsgComponent, LeaveAsgComponent,
-     OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent]
+     OtherAsgComponent, TimeSelectComponent, AircraftDetailsComponent, CrewSelectorComponent, FlightSelectComponent]
 })
 export class ScheduleModule { }

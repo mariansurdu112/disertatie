@@ -14,6 +14,11 @@ namespace MarAirAdmin.Models
         public int Id { get; set; }
         public string AircraftName { get; set; }
         public string RegistrationNumber { get; set; }
+        public int MaxCapacity { get; set; }
+        public double MaxFuel { get; set; }
+        public int BagCapacity { get; set; }
+        public bool Cargo { get; set; }
+        public string AircraftPicture { get; set; }
 
     }
 }

@@ -81,5 +81,7 @@ namespace MarAirRoles.Models
         public DbSet<ScheduleChanges> ScheduleChanges { get; set; }
         public DbSet<SSRs> SSRs { get; set; }
         public DbSet<TextMessages> TextMessages { get; set; }
+        public DbSet<DelayCode> DelayCodes { get; set; }
+        public DbSet<CompanyFlights> CompanyFlights { get; set; }
     }
 }

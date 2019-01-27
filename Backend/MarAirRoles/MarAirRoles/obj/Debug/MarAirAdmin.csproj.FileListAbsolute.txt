@@ -99,3 +99,5 @@ E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\System.Web.Cors.dll
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\System.Web.Http.Cors.dll
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\Microsoft.Owin.Cors.xml
 E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\System.Web.Http.Cors.xml
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.details_flt_flg.resources
+E:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.company_flt.resources

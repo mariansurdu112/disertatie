@@ -15,7 +15,7 @@ export class CrewsComponent implements OnInit {
     @ViewChild('name') name: jqxInputComponent;
     @ViewChild('code') code: jqxInputComponent;
 
-    editrow: number = -1;
+    editrow = -1;
     source =
         {
             localdata: [],
@@ -28,13 +28,14 @@ export class CrewsComponent implements OnInit {
                 ]
         };
     dataAdapter = new jqx.dataAdapter(this.source);
-    getWidth() : any {
+    getWidth(): any {
         if (document.body.offsetWidth < 850) {
             return '90%';
         }
 
         return 850;
     }
+    // tslint:disable-next-line:member-ordering
     columns = [
         { text: 'ID', datafield: 'id', width: 200 },
         { text: 'Name', datafield: 'name', width: 200 },
@@ -45,9 +46,9 @@ export class CrewsComponent implements OnInit {
                 return 'Edit';
             },
             buttonclick: (row: number): void => {
-                //get the data and append in to the inputs
+                // get the data and append in to the inputs
                 this.editrow = row;
-                let dataRecord = this.myGrid.getrowdata(this.editrow);
+                const dataRecord = this.myGrid.getrowdata(this.editrow);
                 this.id.val(dataRecord.id);
                 this.name.val(dataRecord.name);
                 this.code.val(dataRecord.code);
@@ -58,13 +59,12 @@ export class CrewsComponent implements OnInit {
     ];
     saveBtn(): void {
         if (this.editrow >= 0) {
-            let row =
-                {
+            const row = {
                     id: this.id.val(),
                     name: this.name.val(),
                     code: this.code.val()
                 };
-            let rowID = this.myGrid.getrowid(this.editrow);
+            const rowID = this.myGrid.getrowid(this.editrow);
             this.myGrid.updaterow(rowID, row);
             this.myWindow.hide();
         }

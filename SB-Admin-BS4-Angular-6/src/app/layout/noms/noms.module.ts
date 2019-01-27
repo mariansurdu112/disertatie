@@ -10,6 +10,7 @@ import {NomsRoutingModule} from './noms-routing.module';
 
 import {FormsModule} from '@angular/forms';
 import { JqxdataModule } from '../../jqxdata/jqxdata.module';
+import { FlightsComponent } from './flights/flights.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { JqxdataModule } from '../../jqxdata/jqxdata.module';
   ],
   declarations: [AircraftsComponent,
       CrewsComponent, RulesComponent,
-      PositionsComponent, ActivityComponent, AirportsComponent]
+      PositionsComponent, ActivityComponent, AirportsComponent, FlightsComponent]
 })
 export class NomsModule { }
