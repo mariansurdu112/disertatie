@@ -10,7 +10,7 @@ import { AgmCoreModule } from '@agm/core';
     CommonModule
       , AircraftTrackingRoutingModule, PageHeaderModule,
       AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es'
+        apiKey: 'AIzaSyAZTauhdYAPg-I4dGA451ss7WM8oGsACqY'
       })
   ],
   declarations: [AircraftTrackingComponent]

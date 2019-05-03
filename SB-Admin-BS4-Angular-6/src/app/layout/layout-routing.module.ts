@@ -24,7 +24,8 @@ const routes: Routes = [
             {path: 'training', loadChildren: './training-management/training-management.module#TrainingManagementModule'},
             {path: 'aircrafts', loadChildren: './aircraft-tracking/aircraft-tracking.module#AircraftTrackingModule'},
             {path: 'airportsm', loadChildren: './airport-management/airport-management.module#AirportManagementModule'},
-            { path: 'noms', loadChildren: './noms/noms.module#NomsModule' }
+            { path: 'noms', loadChildren: './noms/noms.module#NomsModule' },
+            { path: 'shipments', loadChildren: './shipments/shipments.module#ShipmentsModule' }
         ]
     }
 ];

@@ -1,0 +1,9 @@
+<app-add-order [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers" (addRowEvent)="addRowToGrid($event)"></app-add-order>
+<jqxGrid #myGrid [width]="'100%'" 
+[sortable]="true" [altrows]="true" [filterable]="true"
+[source]="dataAdapter" [columns]="columns" [showtoolbar]="true"
+[showfilterrow]="true"
+[columnsresize]="true"
+[pageable]="true"
+    [rendertoolbar]="rendertoolbar">
+</jqxGrid>

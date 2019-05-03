@@ -1,0 +1,63 @@
+<form #orderForm="ngForm" (ngSubmit)="checkData()">
+  <div class="row">
+      <div class="col">
+          <div class="form-group">
+              <label for="name">Requirement Number</label>
+              <input type="text" class="form-control" id="reqNo" required [(ngModel)]="reqNo" name="reqNo">
+          </div>
+          <div class="form-group">
+              <label for="name">Target Date</label>
+              <input type="date" class="form-control" id="targetDate" required [(ngModel)]="targetDate"
+                  name="targetDate">
+          </div>
+          <div class="form-group">
+              <label for="name">Part number</label>
+              <select class="form-control" id="partNo" required [(ngModel)]="partNo" name="partNo">
+                  <option *ngFor="let partNo of partNumbers" [value]="partNo">{{partNo.pNo}}->{{partNo.description}}
+                  </option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="name">Aircraft</label>
+              <select class="form-control" id="aircraft" required [(ngModel)]="aircraft" name="aircraft">
+                  <option *ngFor="let aircraft of aircrafts" [value]="aircraft">{{aircraft}}</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="name">Edd</label>
+              <input type="date" class="form-control" id="edd" required [(ngModel)]="edd" name="edd">
+          </div>
+          </div>
+          <div class="col">
+              <div class="form-group">
+                  <label for="name">Shipper</label>
+                  <select class="form-control" id="shipper" required [(ngModel)]="shipper" name="shipper"
+                      placeholder="Shipper">
+                      <option *ngFor="let shipper of shippers" [value]="shipper">{{shipper}}</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="name">AWB</label>
+                  <input type="text" class="form-control" id="awb" required [(ngModel)]="awb" name="awb">
+              </div>
+              <div class="form-group">
+                  <label for="name">Ordered</label>
+                  <input type="number" class="form-control" id="ordered" required [(ngModel)]="ordered" name="ordered">
+              </div>
+              <div class="form-group">
+                  <label for="name">Delivered</label>
+                  <input type="number" class="form-control" id="delivered" required [(ngModel)]="delivered"
+                      name="delivered">
+              </div>
+              <div class="form-group">
+                  <label for="name">Comments</label>
+                  <input type="text" class="form-control" id="comments" required [(ngModel)]="comments" name="comments">
+              </div>
+          </div>
+          </div>
+  <button type="submit" class="btn btn-info">Check Data</button>
+  </form>
+ 
+ 
+
