@@ -2,61 +2,71 @@
   <div class="row">
       <div class="col">
           <div class="form-group">
-              <label for="name">Requirement Number</label>
-              <input type="text" class="form-control" id="reqNo" required [(ngModel)]="reqNo" name="reqNo">
+              <label for="reqNo">Requirement Number</label>
+              <input type="text" class="form-control" id="reqNo" required [(ngModel)]="orderData.RequirementNumber" name="reqNo" required>
           </div>
           <div class="form-group">
-              <label for="name">Target Date</label>
-              <input type="date" class="form-control" id="targetDate" required [(ngModel)]="targetDate"
-                  name="targetDate">
+              <label for="partNo">Priority</label>
+              <select class="form-control" id="priority" required [(ngModel)]="orderData.ReqPriority" name="priority" required>
+                  <option *ngFor="let p of reqPriority" [value]="p">{{p}}
+                  </option>
+              </select>
           </div>
           <div class="form-group">
-              <label for="name">Part number</label>
-              <select class="form-control" id="partNo" required [(ngModel)]="partNo" name="partNo">
-                  <option *ngFor="let partNo of partNumbers" [value]="partNo">{{partNo.pNo}}->{{partNo.description}}
+              <label for="targetDate">Target Date</label>
+              <input type="date" class="form-control" id="targetDate" required [(ngModel)]="orderData.ReqTargetDate"
+                  name="targetDate" required>
+          </div>
+          <div class="form-group">
+              <label for="partNo">Part number</label>
+              <select class="form-control" id="partNo" required [(ngModel)]="orderData.PartNumber" name="partNo" required>
+                  <option *ngFor="let partNo of partNumbers" [value]="partNo.pNo">{{partNo.pNo}}->{{partNo.description}}
                   </option>
               </select>
           </div>
 
           <div class="form-group">
-              <label for="name">Aircraft</label>
-              <select class="form-control" id="aircraft" required [(ngModel)]="aircraft" name="aircraft">
+              <label for="aircraft">Aircraft</label>
+              <select class="form-control" id="aircraft" required [(ngModel)]="orderData.Aircraft" name="aircraft" required>
                   <option *ngFor="let aircraft of aircrafts" [value]="aircraft">{{aircraft}}</option>
               </select>
           </div>
           <div class="form-group">
-              <label for="name">Edd</label>
-              <input type="date" class="form-control" id="edd" required [(ngModel)]="edd" name="edd">
+              <label for="edd">Edd</label>
+              <input type="date" class="form-control" id="edd" required [(ngModel)]="orderData.Edd" name="edd" required>
           </div>
           </div>
           <div class="col">
               <div class="form-group">
-                  <label for="name">Shipper</label>
-                  <select class="form-control" id="shipper" required [(ngModel)]="shipper" name="shipper"
-                      placeholder="Shipper">
+                  <label for="shipper">Shipper</label>
+                  <select class="form-control" id="shipper" required [(ngModel)]="orderData.Shipper" name="shipper"
+                      placeholder="Shipper" required>
                       <option *ngFor="let shipper of shippers" [value]="shipper">{{shipper}}</option>
                   </select>
               </div>
               <div class="form-group">
-                  <label for="name">AWB</label>
-                  <input type="text" class="form-control" id="awb" required [(ngModel)]="awb" name="awb">
+                  <label for="awb">AWB</label>
+                  <input type="text" class="form-control" id="awb" required [(ngModel)]="orderData.Awb" name="awb" required>
               </div>
               <div class="form-group">
-                  <label for="name">Ordered</label>
-                  <input type="number" class="form-control" id="ordered" required [(ngModel)]="ordered" name="ordered">
+                  <label for="ordered">Ordered</label>
+                  <input type="number" class="form-control" id="ordered" required [(ngModel)]="orderData.Ordered" name="ordered" required>
               </div>
               <div class="form-group">
-                  <label for="name">Delivered</label>
-                  <input type="number" class="form-control" id="delivered" required [(ngModel)]="delivered"
-                      name="delivered">
+                  <label for="delivered">Delivered</label>
+                  <input type="number" class="form-control" id="delivered" required [(ngModel)]="orderData.Delivered"
+                      name="delivered" required>
               </div>
               <div class="form-group">
-                  <label for="name">Comments</label>
-                  <input type="text" class="form-control" id="comments" required [(ngModel)]="comments" name="comments">
+                  <label for="comments">Comments</label>
+                  <input type="text" class="form-control" id="comments" required [(ngModel)]="orderData.Comments" name="comments" required>
               </div>
           </div>
           </div>
-  <button type="submit" class="btn btn-info">Check Data</button>
+    <div class="alert alert-success" *ngIf="checked">
+        <strong>Well done!</strong> Your order number is <strong>{{orderNumber}}</strong>.
+    </div>
+  <button type="submit" class="btn btn-info" [disabled]="!orderForm.form.valid">Check Data</button>
   </form>
  
  

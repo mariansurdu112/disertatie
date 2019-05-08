@@ -1,6 +1,5 @@
-
 <div class="row">
-    <button class="btn btn-primary" (click)="open(content)">Add new order</button>
+    <button class="btn btn-primary" style="margin-left:15px" (click)="open(content)">Add new order</button>
     <ng-template #content let-c="close" let-d="dismiss">
         <div class="modal-header">
             <h4 class="modal-title">Add order</h4>
@@ -9,12 +8,13 @@
             </button>
         </div>
         <div class="modal-body">
-         
-         <app-order-form [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers"></app-order-form>
-        
+
+            <app-order-form (checkOrder)="receiveOrder($event)" [aircrafts]="aircrafts"
+                            [shippers]="shippers" [partNumbers]="partNumbers" [reqPriority]="reqPriority"></app-order-form>
+
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="addRowToGrid()">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addRowToGrid(); c('Close click')">Save</button>
             <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
         </div>
     </ng-template>

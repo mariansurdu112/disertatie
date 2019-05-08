@@ -1,4 +1,5 @@
-<app-add-order [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers" (addRowEvent)="addRowToGrid($event)"></app-add-order>
+<div class="container">
+<app-add-order [reqPriority]="reqPriority" [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers" (addRowEvent)="addRowToGrid($event)"></app-add-order>
 <jqxGrid #myGrid [width]="'100%'" 
 [sortable]="true" [altrows]="true" [filterable]="true"
 [source]="dataAdapter" [columns]="columns" [showtoolbar]="true"
@@ -7,3 +8,4 @@
 [pageable]="true"
     [rendertoolbar]="rendertoolbar">
 </jqxGrid>
+</div>

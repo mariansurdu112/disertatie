@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input, ViewChild} from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {OrderFormComponent} from '../order-form/order-form.component';
+import {Order} from '../../../models/order.model';
 
 @Component({
   selector: 'app-add-order',
@@ -12,7 +14,9 @@ export class AddOrderComponent implements OnInit {
   @Input('aircrafts') aircrafts: any;
   @Input('shippers') shippers: any;
   @Input('partNumbers') partNumbers: any;
-
+  @Input('reqPriority') reqPriority: any;
+  @ViewChild(OrderFormComponent) form;
+  orderToAdd: Order;
   closeResult: string;
   activity: string;
   constructor(private modalService: NgbModal) { }
@@ -34,16 +38,19 @@ export class AddOrderComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-  
+
 
   ngOnInit() {
   }
-
+    receiveOrder($event) {
+      console.log('Receive order');
+      this.orderToAdd = JSON.parse($event);
+        console.log(JSON.parse($event));
+    }
 
   addRowToGrid() {
-    console.log("emit");
-    const row=[];
-    this.addRowEvent.emit(JSON.stringify(row));
+    console.log('emit');
+    this.addRowEvent.emit(JSON.stringify(this.orderToAdd));
   }
 
 }

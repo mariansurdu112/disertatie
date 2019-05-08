@@ -1,6 +1,6 @@
 export class NomAirport {
 
-        Id: number;
+    Id: number;
     Location: string;
     IataCode: string;
     Latitude: string;

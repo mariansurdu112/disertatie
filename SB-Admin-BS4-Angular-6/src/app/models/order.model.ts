@@ -14,7 +14,7 @@ export class Order {
     Shipper: string;
     Awb: string;
     Ordered: number;
-    Delivered: string;
+    Delivered: number;
     Comments: string;
     Critical: boolean;
     LogDepAck: boolean;
@@ -34,7 +34,7 @@ export class Order {
         Shipper: string,
         Awb: string,
         Ordered: number,
-        Delivered: string,
+        Delivered: number,
         Comments: string,
         Critical: boolean,
         LogDepAck: boolean,

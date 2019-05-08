@@ -1,3 +1,15 @@
-<p>
-  airport-management works!
-</p>
+
+    <jqxGrid #myGrid [width]="'100%'"
+             [sortable]="true" [altrows]="true" [filterable]="true"
+             [source]="dataAdapter" [columns]="columns" [showtoolbar]="true"
+             [showfilterrow]="true"
+             [columnsresize]="true"
+             [pageable]="true" [editable]="true">
+    </jqxGrid>
+
+<div class="row">
+    <div class="col">
+
+        <app-airport-base></app-airport-base>
+    </div>
+</div>

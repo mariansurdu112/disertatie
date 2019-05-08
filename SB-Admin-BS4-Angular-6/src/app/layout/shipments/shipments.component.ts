@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
+import {Order} from '../../models/order.model';
 
 @Component({
   selector: 'app-shipments',
@@ -45,7 +46,7 @@ export class ShipmentsComponent implements OnInit {
   criticals: boolean[] = [true, false];
   logDep: boolean[] = [true, false];
   techDep: boolean[] = [true, false];
-
+  orderToAdd: Order;
   constructor() { }
 
   ngOnInit() {
@@ -158,9 +159,9 @@ export class ShipmentsComponent implements OnInit {
       { text: 'Ordered', datafield: 'ordered', width: 200 },
       { text: 'Delivered', datafield: 'delivered', width: 200 },
       { text: 'Comments', datafield: 'comments', width: 200, editable: true },
-      { text: 'Critical', datafield: 'critical', width: 200, columntype: 'checkbox', editable: true },
-      { text: 'Acknowledge logisitc', datafield: 'log_dep_ack', width: 200, columntype: 'checkbox', editable: true },
-      { text: 'Acknowledge technical', datafield: 'tech_dep_ack', width: 200, columntype: 'checkbox', editable: true },
+      { text: 'Critical', datafield: 'critical', width: 200, columntype: 'checkbox', editable: true, filtertype: 'bool' },
+      { text: 'Acknowledge logisitc', datafield: 'log_dep_ack', width: 200, columntype: 'checkbox', editable: true, filtertype: 'bool' },
+      { text: 'Acknowledge technical', datafield: 'tech_dep_ack', width: 200, columntype: 'checkbox', editable: true, filtertype: 'bool' }
   ];
   rendertoolbar = (toolbar: any): void => {
     const container = document.createElement('div');
@@ -182,12 +183,12 @@ export class ShipmentsComponent implements OnInit {
     container.appendChild(buttonContainer3);
     container.appendChild(buttonContainer4);
     toolbar[0].appendChild(container);
-    const addRowButton = jqwidgets.createInstance('#buttonContainer1', 'jqxButton', { width: 105, value: 'Add New Row' });
-    const deleteRowButton = jqwidgets.createInstance('#buttonContainer3', 'jqxButton', { width: 150, value: 'Delete Selected Row' });
-    addRowButton.addEventHandler('click', () => {
+    //const addRowButton = jqwidgets.createInstance('#buttonContainer1', 'jqxButton', { width: 105, value: 'Add New Row' });
+    const deleteRowButton = jqwidgets.createInstance('#buttonContainer3', 'jqxButton', { width: 150, value: 'Delete Order' });
+   /* addRowButton.addEventHandler('click', () => {
       const datarow = this.generaterow();
       this.myGrid.addrow(null, datarow);
-    });
+    });*/
 
     deleteRowButton.addEventHandler('click', () => {
       const selectedrowindex = this.myGrid.getselectedrowindex();
@@ -200,7 +201,30 @@ export class ShipmentsComponent implements OnInit {
   }
 
   addRowToGrid($event) {
-    console.log($event);
+      const row = {};
+      this.orderToAdd = JSON.parse($event);
+      row['orderdate'] = this.orderToAdd.OrderDate;
+      row['ordernumber'] = this.orderToAdd.OrderNumber;
+      row['user'] = this.orderToAdd.User;
+      row['requirementnumber'] = this.orderToAdd.RequirementNumber;
+      row['reqpriority'] = this.orderToAdd.ReqPriority;
+      row['reqtargetdate'] = this.orderToAdd.ReqTargetDate;
+      row['partnumber'] = this.orderToAdd.PartNumber;
+      row['description'] = this.orderToAdd.Description;
+      row['aircraft'] = this.orderToAdd.Aircraft;
+      row['from'] = this.orderToAdd.From;
+      row['to'] = this.orderToAdd.To;
+      row['edd'] = this.orderToAdd.Edd;
+      row['shipper'] = this.orderToAdd.Shipper;
+      row['awb'] = this.orderToAdd.Awb;
+      row['ordered'] = this.orderToAdd.Ordered;
+      row['delivered'] = this.orderToAdd.Delivered;
+      row['critical'] = this.orderToAdd.Critical;
+      row['log_dep_ack'] = this.orderToAdd.LogDepAck;
+      row['tech_dep_ack'] = this.orderToAdd.TechDepAck;
+      this.myGrid.addrow(null, row);
+      const dataRow = JSON.parse($event);
+      console.log($event);
   }
 
 }
