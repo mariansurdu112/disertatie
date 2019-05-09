@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron">
-        <app-crew-add></app-crew-add>
+        <app-crew-add (crewAddEvent)="addCrewToGrid($event)"></app-crew-add>
 <jqxGrid
     #myGrid
     [width]="1000"

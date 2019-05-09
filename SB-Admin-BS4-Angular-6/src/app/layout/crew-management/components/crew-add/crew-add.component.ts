@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormGroup} from '@angular/forms';
 import {Crew} from '../../../../models/crew.model';
@@ -12,6 +12,7 @@ import {PersonalData} from '../../../../models/personaldata.model';
 export class CrewAddComponent implements OnInit {
     closeResult: string;
     crewForm: FormGroup;
+    @Output() crewAddEvent = new EventEmitter<Crew>();
     constructor(private modalService: NgbModal) { }
     personalData: PersonalData = new PersonalData(null, null, null, null, null, null, null, null, null);
     crewData: Crew = new Crew(null, null, null, null, null, this.personalData);
@@ -37,6 +38,7 @@ export class CrewAddComponent implements OnInit {
     ngOnInit() {
     }
     addCrew() {
-        console.log('Add Crew');
+        console.log('Add Crew',this.crewData);
+        this.crewAddEvent.emit(this.crewData);
     }
 }

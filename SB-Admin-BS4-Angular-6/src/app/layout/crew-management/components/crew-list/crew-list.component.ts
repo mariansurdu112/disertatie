@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {jqxGridComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
+import {Crew} from '../../../../models/crew.model';
 
 @Component({
   selector: 'app-crew-list',
@@ -84,48 +85,47 @@ export class CrewListComponent  {
 
 
     generateData(): any[] {
-        const movies = new Array();
+        const data = new Array();
         // Avatar
         const image = 'https://images.pexels.com/photos/731217/pexels-photo-731217.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
-        movies.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
+        data.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
             alphacode: 'O0132', position: 'SCC', email: 'crew1@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Surdu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Surdu', gender: 'M',
             alphacode: 'O0133', position: 'PIC', email: 'crew1@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
+        data.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
             alphacode: 'O0132', position: 'SCC', email: 'crew154@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
+        data.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
             alphacode: 'O0112', position: 'CC2', email: 'crew91@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Maria', lastname: 'Ionescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Maria', lastname: 'Ionescu', gender: 'M',
             alphacode: 'O0136', position: 'F/O', email: 'crew01@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
             alphacode: 'O0152', position: 'PIC', email: 'crew15@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
+        data.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
             alphacode: 'O01092', position: 'SCC', email: 'crew12@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Surdu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Surdu', gender: 'M',
             alphacode: 'O0133', position: 'PIC', email: 'crew11@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
+        data.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
             alphacode: 'O0132', position: 'SCC', email: 'crew10@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
+        data.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
             alphacode: 'O0112', position: 'CC2', email: 'crew9@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Maria', lastname: 'Ionescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Maria', lastname: 'Ionescu', gender: 'M',
             alphacode: 'O0136', position: 'F/O', email: 'crew8@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
             alphacode: 'O0152', position: 'PIC', email: 'crew7@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
+        data.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
             alphacode: 'O01132', position: 'SCC', email: 'crew6@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Dutescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Dutescu', gender: 'M',
             alphacode: 'O0633', position: 'PIC', email: 'crew5@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
+        data.push({ Image: image, firstname: 'Andrei', lastname: 'Ion', gender: 'M',
             alphacode: 'O0132', position: 'SCC', email: 'crew4@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
+        data.push({ Image: image, firstname: 'Vasile', lastname: 'George', gender: 'M',
             alphacode: 'O06712', position: 'CC2', email: 'crew3@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Maria', lastname: 'Georgel', gender: 'M',
+        data.push({ Image: image, firstname: 'Maria', lastname: 'Georgel', gender: 'M',
             alphacode: 'O0186', position: 'F/O', email: 'crew2@marone.ro' , homebase: 'OTP', empldate: new Date()});
-        movies.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
+        data.push({ Image: image, firstname: 'Marian', lastname: 'Ionescu', gender: 'M',
             alphacode: 'O02152', position: 'PIC', email: 'crew1@marone.ro' , homebase: 'OTP', empldate: new Date()});
 
-
-        return movies;
+        return data;
     }
 
 
@@ -187,5 +187,17 @@ export class CrewListComponent  {
     ready = (): void => {
         this.myGrid.showrowdetails(0);
         this.myGrid.showrowdetails(1);
+    }
+
+    addCrewToGrid($event: Crew) {
+        const row = {};
+        row['Image'] = 'https://images.pexels.com/photos/731217/pexels-photo-731217.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+        row['firstname'] = $event.Firstname;
+        row['lastname'] = $event.Lastname;
+        row['gender'] = $event.Sex;
+        row['email'] = $event.PersonalData.Email;
+        row['homebase'] = $event.PersonalData.CarrierCode;
+        this.myGrid.addrow(null, row);
+        console.log($event);
     }
 }
