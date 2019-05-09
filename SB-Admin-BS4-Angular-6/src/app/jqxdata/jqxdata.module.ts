@@ -8,15 +8,15 @@ import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxl
 import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput';
 import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
 import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons';
-
+import {jqxTabsComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
   declarations: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
-    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent],
+    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent],
   exports: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
-    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent]
+    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent]
 })
 export class JqxdataModule { }

@@ -78,10 +78,10 @@ export class AirportBaseComponent implements OnInit {
         return 850;
     }
     columns = [
-        { text: 'Name', datafield: 'name', width: 100, editable: true },
+        { text: 'Name', datafield: 'name', width: 130, editable: true },
         { text: 'IataCode', datafield: 'iatacode', width: 190, editable: true },
         { text: 'Country', datafield: 'country', width: 190, editable: true },
-        { text: 'Operational base', datafield: 'opBase', width: 190, editable: true },
+        { text: 'Operational base', datafield: 'opBase', width: 190, editable: true, columntype: 'checkbox' },
     ];
 
     generaterow(data: any): any {

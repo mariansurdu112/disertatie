@@ -6,14 +6,14 @@ export class Crew {
     Alphacode: string;
     Sex: string;
     PersonalData: PersonalData;
-    constructor(parameters: { options: { ID: number,
-    Firstname: string; Lastname: string , Alphacode: string, Sex: string, PersonalData: PersonalData } }) {
-        const options = parameters.options;
-        this.Firstname = options.Firstname;
-        this.ID = options.ID;
-        this.Lastname = options.Lastname;
-        this.Alphacode = options.Alphacode;
-        this.Sex = options.Sex;
-        this.PersonalData = options.PersonalData;
+    constructor(ID: number,
+    Firstname: string, Lastname: string , Alphacode: string, Sex: string, PersonalDatas: PersonalData) {
+
+        this.Firstname = Firstname;
+        this.ID = ID;
+        this.Lastname = Lastname;
+        this.Alphacode = Alphacode;
+        this.Sex = Sex;
+        this.PersonalData = PersonalDatas;
     }
 }

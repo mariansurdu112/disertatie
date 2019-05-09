@@ -1,6 +1,6 @@
 <div class="container">
     <div class="jumbotron">
-        <button class="btn btn-primary btn-sm" (click)="addCrew()" >Add</button>
+        <app-crew-add></app-crew-add>
 <jqxGrid
     #myGrid
     [width]="1000"
@@ -13,9 +13,11 @@
     [columnsresize]="true"
     [editable]="true"
     [pagermode]="'simple'"
-    [theme]="'summer'"
+    [theme]="'office'"
     [keyboardnavigation]="true"
     [showfilterrow]="true"
+    [rowdetails]="true" [initrowdetails]="initrowdetails"
+    [rowdetailstemplate]="rowdetailstemplate" [ready]="ready"
 >
 </jqxGrid>
 

@@ -10,6 +10,12 @@ export class CrewListComponent  {
     @ViewChild('myGrid') myGrid: jqxGridComponent;
     displayCalendar = false;
     displayData = false;
+    rowdetailstemplate: any =
+        {
+            rowdetails: '<div style="margin: 10px;"><ul style="margin-left: 30px;"><li class="title"></li><li>Notes</li></ul>' +
+                '<div class="information"></div><div class="notes"></div></div>',
+            rowdetailsheight: 200
+        };
     // @ts-ignore
     imagerenderer = (row: number, datafield: string, value: string): string => {
         return '<img style="margin-left: 5px;" height="60" width="50" src="' + value + '"/>';
@@ -80,7 +86,7 @@ export class CrewListComponent  {
     generateData(): any[] {
         const movies = new Array();
         // Avatar
-        const image = 'https://www.bavariamobility.ro/wp-content/uploads/2017/02/Facebook-no-profile-picture-icon-620x389.jpg';
+        const image = 'https://images.pexels.com/photos/731217/pexels-photo-731217.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
         movies.push({ Image: image, firstname: 'Florin', lastname: 'Surdu', gender: 'M',
             alphacode: 'O0132', position: 'SCC', email: 'crew1@marone.ro' , homebase: 'OTP', empldate: new Date()});
         movies.push({ Image: image, firstname: 'Marian', lastname: 'Surdu', gender: 'M',
@@ -122,4 +128,64 @@ export class CrewListComponent  {
         return movies;
     }
 
+
+
+    initrowdetails = (index: any, parentElement: any, gridElement: any, datarecord: any): void => {
+        const tabsdiv = parentElement.children[0];
+        const information = tabsdiv.children[1];
+        const notes = tabsdiv.children[2];
+        const title = tabsdiv.children[0].children[0];
+        if (tabsdiv != null) {
+            title.innerHTML = datarecord.firstname;
+            const container = document.createElement('div');
+            container.style.margin = '5px';
+            information.appendChild(container);
+            const photocolumn = document.createElement('div');
+            const leftcolumn = document.createElement('div');
+            const rightcolumn = document.createElement('div');
+            photocolumn.style.cssText = 'float: left; width: 15%';
+            leftcolumn.style.cssText = 'float: left; width: 45%';
+            rightcolumn.style.cssText = 'float: left; width: 40%';
+            container.appendChild(photocolumn);
+            container.appendChild(leftcolumn);
+            container.appendChild(rightcolumn);
+            const image = document.createElement('div');
+            image.style.marginTop = '10px';
+            const photo = document.createElement('div');
+            photo.style.margin = '10px';
+            photo.className = 'jqx-rc-all';
+            photo.innerHTML = '<b>Photo:</b>';
+            const img = document.createElement('img');
+            img.height = 60;
+            img.style.marginLeft = '10px';
+            img.src = 'https://images.pexels.com/photos/731217/pexels-photo-731217.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+            image.appendChild(photo);
+            image.appendChild(img);
+            photocolumn.appendChild(image);
+            const firstname = '<div style="margin: 10px;"><b>First Name:</b> ' + datarecord.firstname + '</div>';
+            const lastname = '<div style="margin: 10px;"><b>Last Name:</b> ' + datarecord.lastname + '</div>';
+            const address = '<div style="margin: 10px;"><b>Address:</b> ' + '-' + '</div>';
+            leftcolumn.insertAdjacentHTML('beforeend', firstname);
+            leftcolumn.insertAdjacentHTML('beforeend', lastname);
+            leftcolumn.insertAdjacentHTML('beforeend', address);
+            const postalcode = '<div style="margin: 10px;"><b>Postal Code:</b> ' + '-' + '</div>';
+            const city = '<div style="margin: 10px;"><b>City:</b> ' + '-' + '</div>';
+            const phone = '<div style="margin: 10px;"><b>Phone:</b> ' + '-' + '</div>';
+            const hiredate = '<div style="margin: 10px;"><b>Hire Date:</b> ' + datarecord.empldate.toDateString() + '</div>';
+            rightcolumn.insertAdjacentHTML('beforeend', postalcode);
+            rightcolumn.insertAdjacentHTML('beforeend', city);
+            rightcolumn.insertAdjacentHTML('beforeend', phone);
+            rightcolumn.insertAdjacentHTML('beforeend', hiredate);
+            const notesContainer = document.createElement('div');
+            notesContainer.style.cssText = 'white-space: normal; margin: 5px;';
+            notesContainer.innerHTML = '<span>' + datarecord.position + '</span>';
+            notes.appendChild(notesContainer);
+            tabsdiv.className = 'angularTabs';
+            jqwidgets.createInstance('.angularTabs', 'jqxTabs', { width: 780, height: 170 });
+        }
+    }
+    ready = (): void => {
+        this.myGrid.showrowdetails(0);
+        this.myGrid.showrowdetails(1);
+    }
 }

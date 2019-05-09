@@ -1,0 +1,68 @@
+<div class="row">
+    <button class="btn btn-primary" style="margin-left:15px" (click)="open(content)">Add new order</button>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Add crew</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form #crewForm="ngForm" (ngSubmit)="addCrew()">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" required [(ngModel)]="crewData.Firstname" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" required [(ngModel)]="crewData.Lastname" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <input type="text" class="form-control" id="gender" required [(ngModel)]="crewData.Sex" name="gender" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" required [(ngModel)]="crewData.PersonalData.Email" name="email" required>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="ciexpdate">CI expiry date</label>
+                            <input type="date" class="form-control" id="ciexpdate" required [(ngModel)]="crewData.PersonalData.CIExpDate"
+                                   name="targetDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone" required [(ngModel)]="crewData.PersonalData.Phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="homebase">Homebase</label>
+                            <input type="text" class="form-control" id="homebase" required [(ngModel)]="crewData.PersonalData.CarrierCode" name="homebase" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthday">Birthday</label>
+                            <input type="date" class="form-control" id="birthday" required [(ngModel)]="crewData.PersonalData.BirthDate"
+                                   name="targetDate" required>
+                        </div>
+                    </div>
+
+
+                </div>
+                <button type="submit" class="btn btn-info" [disabled]="!crewForm.form.valid">Save Data</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+</div>
+
+
+
+
