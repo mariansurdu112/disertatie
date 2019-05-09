@@ -9,14 +9,22 @@ import { jqxInputComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinp
 import { jqxWindowComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
 import { jqxButtonComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxbuttons';
 import {jqxTabsComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtabs';
+import {jqxLayoutComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlayout';
+import {jqxTreeComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree';
+import {jqxDataTableComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable';
+import {jqxChartComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart';
+import {jqxMenuComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
   declarations: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
-    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent],
+    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent,
+      jqxTabsComponent, jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent, jqxMenuComponent],
   exports: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
-    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent]
+    jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent,
+      jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent, jqxMenuComponent]
 })
 export class JqxdataModule { }
