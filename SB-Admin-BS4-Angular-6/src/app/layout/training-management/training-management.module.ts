@@ -26,6 +26,7 @@ import { FormsMockupComponent } from './components/forms-mockup/forms-mockup.com
 import { FormsSimulatorComponent } from './components/forms-simulator/forms-simulator.component';
 import { FormsFlightComponent } from './components/forms-flight/forms-flight.component';
 import { FormsLineCheckComponent } from './components/forms-line-check/forms-line-check.component';
+import { FlightsComponent } from './components/flights/flights.component';
 
 
 @NgModule({
@@ -37,6 +38,6 @@ import { FormsLineCheckComponent } from './components/forms-line-check/forms-lin
       AddFormComponent, EditFormComponent, DeleteFormComponent, ViewFormComponent,
       CandidateDetailsSectionComponent, InstructorResultSectionComponent, SimulatorDetailsSectionComponent,
       ExercisesSectionComponent, RemedialTrainingSectionComponent, UpgradeRecomandationSectionComponent,
-      LineCheckDetailsSectionComponent, SimulatorSetupSectionComponent, AddCourseComponent, CoursePhaseComponent, FormsComponent, FormsMockupComponent, FormsSimulatorComponent, FormsFlightComponent, FormsLineCheckComponent]
+      LineCheckDetailsSectionComponent, SimulatorSetupSectionComponent, AddCourseComponent, CoursePhaseComponent, FormsComponent, FormsMockupComponent, FormsSimulatorComponent, FormsFlightComponent, FormsLineCheckComponent, FlightsComponent]
 })
 export class TrainingManagementModule { }

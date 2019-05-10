@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {jqxGridComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import {Order} from '../../../../models/order.model';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-courses-list',
@@ -53,10 +54,21 @@ export class CoursesListComponent implements OnInit {
             {text: 'Lastname', datafield: 'Lastname', width: 180},
             {text: 'Course', datafield: 'Course', width: 150, cellsalign: 'right'},
             {text: 'Date', datafield: 'Date', cellsalign: 'right'},
-            {text: 'Generatedby', datafield: 'GeneratedBy', width: 120, cellsalign: 'right', cellsformat: 'c2'}
+            {text: 'Generatedby', datafield: 'GeneratedBy', width: 120, cellsalign: 'right', cellsformat: 'c2'},
+            {
+                text: 'Actions',
+                datafield: 'Courier',
+                columntype: 'button',
+                width: 80,
+                cellsrenderer: (): string => {
+                    return 'Details';
+                },
+                buttonclick: (row: number): void => {
+                    this.router.navigate(['training/details']);
+                }}
         ];
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
@@ -108,26 +120,7 @@ export class CoursesListComponent implements OnInit {
 
     addRowToGrid($event) {
         const row = {};
-        this.orderToAdd = JSON.parse($event);
-        row['orderdate'] = this.orderToAdd.OrderDate;
-        row['ordernumber'] = this.orderToAdd.OrderNumber;
-        row['user'] = this.orderToAdd.User;
-        row['requirementnumber'] = this.orderToAdd.RequirementNumber;
-        row['reqpriority'] = this.orderToAdd.ReqPriority;
-        row['reqtargetdate'] = this.orderToAdd.ReqTargetDate;
-        row['partnumber'] = this.orderToAdd.PartNumber;
-        row['description'] = this.orderToAdd.Description;
-        row['aircraft'] = this.orderToAdd.Aircraft;
-        row['from'] = this.orderToAdd.From;
-        row['to'] = this.orderToAdd.To;
-        row['edd'] = this.orderToAdd.Edd;
-        row['shipper'] = this.orderToAdd.Shipper;
-        row['awb'] = this.orderToAdd.Awb;
-        row['ordered'] = this.orderToAdd.Ordered;
-        row['delivered'] = this.orderToAdd.Delivered;
-        row['critical'] = this.orderToAdd.Critical;
-        row['log_dep_ack'] = this.orderToAdd.LogDepAck;
-        row['tech_dep_ack'] = this.orderToAdd.TechDepAck;
+
         this.myGrid.addrow(null, row);
         const dataRow = JSON.parse($event);
         console.log($event);

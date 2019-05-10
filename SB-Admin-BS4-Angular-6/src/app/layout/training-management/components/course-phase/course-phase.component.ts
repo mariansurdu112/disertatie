@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CoursePhaseComponent implements OnInit {
     @Input('name') name: string;
     @Input('phaseId') phaseId: number;
-    public isCollapsed = false;
+    public isCollapsed = true;
     constructor() {
     }
 
