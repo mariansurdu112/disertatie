@@ -1,0 +1,24 @@
+<div class="row">
+    <button class="btn btn-primary" style="margin-left:15px" (click)="open(content)">Add course</button>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Add order</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="addCourseToGrid(); c('Close click')">Save</button>
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+</div>
+
+
+
+
