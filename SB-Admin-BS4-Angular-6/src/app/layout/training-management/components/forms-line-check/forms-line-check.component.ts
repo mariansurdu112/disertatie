@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LineCheckForm } from '../../../../models/training/lckform.model';
 
 @Component({
   selector: 'app-forms-line-check',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsLineCheckComponent implements OnInit {
 
+  @Input('forms') forms: Array<LineCheckForm> = [];
   constructor() { }
 
   ngOnInit() {

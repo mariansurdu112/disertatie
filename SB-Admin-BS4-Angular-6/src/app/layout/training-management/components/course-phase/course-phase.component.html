@@ -6,11 +6,14 @@
             <div class="card-body" id="collapseExample" [ngbCollapse]="isCollapsed">
                 <div class="card">
                         <div class="card-body">
-                            <app-add-form></app-add-form>
-                            <app-forms-mockup *ngIf="name=='Mockup'"></app-forms-mockup>
-                            <app-forms-simulator *ngIf="name=='Simulator'"></app-forms-simulator>
-                            <app-forms-flight *ngIf="name=='Flight'"></app-forms-flight>
-                            <app-forms-line-check *ngIf="name=='Line Check'"></app-forms-line-check>
+                            <app-add-form (addFormEvent)="receiveForm($event,'M')"></app-add-form>
+                            <app-forms-mockup *ngIf="name=='Mockup'" [forms]='formsMockup'></app-forms-mockup>
+                            <app-forms-simulator *ngIf="name=='Simulator'" [forms]='formsSimulator'>
+                            </app-forms-simulator>
+                            <app-forms-flight *ngIf="name=='Flight'" [forms]='formsFlight'>
+                            </app-forms-flight>
+                            <app-forms-line-check *ngIf="name=='Line Check'" [forms]='formsLineCheck'>
+                            </app-forms-line-check>
                         </div>
                     </div>
 

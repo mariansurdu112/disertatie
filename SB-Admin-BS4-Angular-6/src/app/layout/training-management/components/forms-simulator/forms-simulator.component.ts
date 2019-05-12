@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SimulatorForm } from './../../../../models/training/simform.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-forms-simulator',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsSimulatorComponent implements OnInit {
 
+  @Input('forms') forms: Array<SimulatorForm> = [];
   constructor() { }
 
   ngOnInit() {
+    console.log(this.forms);
   }
 
 }

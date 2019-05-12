@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { MockupForm } from './../../../../models/training/mockform.model';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-forms-mockup',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsMockupComponent implements OnInit {
 
+  @Input('forms') forms: Array<MockupForm> = [];
   constructor() { }
 
   ngOnInit() {

@@ -27,12 +27,13 @@ import { FormsSimulatorComponent } from './components/forms-simulator/forms-simu
 import { FormsFlightComponent } from './components/forms-flight/forms-flight.component';
 import { FormsLineCheckComponent } from './components/forms-line-check/forms-line-check.component';
 import { FlightsComponent } from './components/flights/flights.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule
-      , TrainingManagementRoutingModule, PageHeaderModule, JqxdataModule, NgbModule.forRoot()
+      , TrainingManagementRoutingModule, PageHeaderModule, JqxdataModule, NgbModule.forRoot(), FormsModule
   ],
   declarations: [TrainingManagementComponent, CoursesListComponent, CourseDetailsComponent,
       AddFormComponent, EditFormComponent, DeleteFormComponent, ViewFormComponent,

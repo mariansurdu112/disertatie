@@ -1,5 +1,3 @@
-import * as $ from 'jquery';
-
 export let teamSalesContacts = '<tr><td style="width: 100px;"><img style="width:100%;height:10%" src="https://www.thenational.ae/image/policy:1.771409:1537256914/777.jpg?f=16x9&w=1200&$p$f$w=be10b5b" /></td><td style=""><strong>Engine type:</strong> CFM56-3C1<br /><strong>Owner: </strong>MarAir<br /><strong>Tank Capacity: </strong>20103' +
     '<br /><strong>Volume Unit: </strong>Liters<br /><strong>Crew seats: </strong>3<br /><strong>Seats: </strong>141</td></tr>',
     teamSalesStaff = '',

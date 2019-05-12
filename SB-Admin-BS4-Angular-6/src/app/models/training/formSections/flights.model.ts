@@ -19,3 +19,4 @@ export class Flight {
         this.Passed = Passed;
 
 }
+}
