@@ -46,7 +46,22 @@ export class CoursePhaseComponent implements OnInit {
     ngOnInit() {
     }
     receiveForm($event: FormDataSheet, formtype: string) {
-        alert('Received');
-        console.log($event)
+            switch (formtype) {
+            case 'Mockup': this.formsMockup.push(new MockupForm(1, $event.FormType, $event.Date,
+                $event.Instructor, $event.InstructorType, 'MOCK 1', 'OTP', false, null, null, null, null, null));
+                break;
+                case 'Simulator':
+                this.formsSimulator.push(new SimulatorForm(1, $event.FormType, $event.Date, $event.Instructor, $event.InstructorType, 'SIM SOFIA', 'ISTANBUL', false, null, null, null, null, null, null, null));
+                break;
+                case 'Flight': this.formsFlight.push(new FlightForm(1, $event.FormType, $event.Date, $event.Instructor, $event.InstructorType, $event.Sectors,
+                        false, null, null, null, null, null,null));
+                break;
+                case 'Line Check':
+                    this.formsLineCheck.push(new LineCheckForm(1, $event.FormType, $event.Date, $event.Instructor,
+                        $event.InstructorType, $event.Sectors,
+                        true, null, null, null, null, null, null, null));
+                    break;
+        }
+        console.log($event);
     }
 }

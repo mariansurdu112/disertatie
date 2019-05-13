@@ -116,13 +116,21 @@ export class CoursesListComponent implements OnInit {
                 this.myGrid.deleterow(id);
             }
         });
-    };
+    }
 
-    addRowToGrid($event) {
+
+    receiveDataCourseAdded($event) {
+        const data = JSON.parse($event);
         const row = {};
-
+        const nameData = data.Student.split(' ');
+        console.log(nameData);
+        row['NrCrt'] = this.courses.length + 1;
+        row['Firstname'] = nameData[0];
+        row['Lastname'] = nameData[1];
+        row['Course'] = data.Course;
+        row['Date'] = data.Date;
+        row['GeneratedBy'] = 'Marian Surdu';
         this.myGrid.addrow(null, row);
-        const dataRow = JSON.parse($event);
         console.log($event);
     }
 

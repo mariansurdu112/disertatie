@@ -9,11 +9,55 @@
         </div>
         <div class="modal-body">
 
+            <form #trainingAddCourse="ngForm" (ngSubmit)="addCourse()">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="form">Student</label>
+                            <select class="form-control" id="student" required [(ngModel)]="courseToAdd.Student"
+                                    name="student" required>
+                                <option *ngFor="let p of students" [value]="p">{{p}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form">Course</label>
+                            <select class="form-control" id="form" required [(ngModel)]="courseToAdd.Course"
+                                    name="form" required>
+                                <option *ngFor="let p of courses" [value]="p">{{p}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" required
+                                   [(ngModel)]="courseToAdd.Date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <select class="form-control" id="position" required [(ngModel)]="courseToAdd.Position"
+                                    name="instructor" required>
+                                <option *ngFor="let instructor of positions" [value]="position">
+                                    {{instructor}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Comments</label>
+                            <input type="text" class="form-control" id="comments" required
+                                   [(ngModel)]="courseToAdd.Comments" name="comments" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info" [disabled]="!trainingAddCourse.form.valid"
+                >Save Data</button>
+            </form>
 
 
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" (click)="addCourseToGrid(); c('Close click')">Save</button>
             <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
         </div>
     </ng-template>

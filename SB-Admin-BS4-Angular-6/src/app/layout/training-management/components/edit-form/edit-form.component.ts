@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,6 +10,7 @@ export class EditFormComponent implements OnInit {
 
     constructor(private modalService: NgbModal) { }
     closeResult: string;
+    @Input('formId') formId: number;
     @Output() editFormEvent = new EventEmitter<string>();
     form: any;
     ngOnInit() {

@@ -10,7 +10,6 @@ export class FormsSimulatorComponent implements OnInit {
 
   @Input('forms') forms: Array<SimulatorForm> = [];
   constructor() { }
-
   ngOnInit() {
     console.log(this.forms);
   }

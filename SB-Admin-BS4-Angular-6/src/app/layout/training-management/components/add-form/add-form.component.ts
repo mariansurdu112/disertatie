@@ -18,7 +18,7 @@ export class AddFormComponent implements OnInit {
     instructortypes: Array<string> = ['TRI', 'TRE', 'LNC', 'LTC'];
     instructors: Array<string> = ['ANDREI ION', 'MARIAN SURDU', 'VASILE DANIEL', 'ANA SIMION', 'FLORIN SURDU'];
     @Output() addFormEvent = new EventEmitter<FormDataSheet>();
-    formData: FormDataSheet = new FormDataSheet('', new Date(), '', '', 0);
+    formData: FormDataSheet = new FormDataSheet('', new Date(), '', '', 0, '');
     ngOnInit() {
     }
     open(content) {

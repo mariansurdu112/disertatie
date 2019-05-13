@@ -6,40 +6,24 @@
         <th>Date</th>
         <th>Instructor</th>
         <th>Instructor Type</th>
-        <th>Sectors</th>
+        <th>Device</th>
         <th>Passed</th>
         <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <tr style="background-color:#26ff41" *ngFor="let form of forms">
-        <td>1</td>
-        <td>Line Check Form</td>
-        <td>04/05/2019 14:22</td>
-        <td>Marian Surdu</td>
-        <td>TRI</td>
-        <td>2</td>
-        <td>Yes</td>
+    <tr *ngFor="let form of forms;let i=index;" [ngClass]="{passed:form.Passed,failed:!form.Passed}">
+        <td>{{i+1}}</td>
+        <td>{{form.FormType}}</td>
+        <td>{{form.Date | date:'dd/MM/yyyy HH:mm'}}</td>
+        <td>{{form.Instructor}}</td>
+        <td>{{form.InstructorType}}</td>
+        <td>{{form.Device}}</td>
+        <td>{{form.Passed?'Yes':'No'}}</td>
         <td style="display: flex">
-            <app-edit-form></app-edit-form>
-            <app-delete-form></app-delete-form>
-            <app-view-form></app-view-form>
-        </td>
-    </tr>
-    <tr style="background-color:#ff2b0a">
-        <td>2</td>
-        <td>Line Check Form</td>
-        <td>07/05/2019 14:22</td>
-        <td>Marian Surdu</td>
-        <td>TRI</td>
-        <td>4/10</td>
-        <td>No</td>
-        <td style="display: flex">
-
-            <app-edit-form></app-edit-form>
-            <app-delete-form></app-delete-form>
-            <app-view-form></app-view-form>
-
+            <app-edit-form [formId]="form.ID"></app-edit-form>
+            <app-delete-form [formId]="form.ID"></app-delete-form>
+            <app-view-form [formId]="form.ID"></app-view-form>
         </td>
     </tr>
     </tbody>

@@ -1,4 +1,5 @@
 <div class="container">
+    <app-add-course (addCourseEvent)="receiveDataCourseAdded($event)"></app-add-course>
     <jqxGrid #myGrid [width]="'100%'"
              [sortable]="true" [altrows]="true" [filterable]="true"
              [source]="dataAdapter" [columns]="columns" [showtoolbar]="true"

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -11,7 +11,8 @@ export class DeleteFormComponent implements OnInit {
     constructor(private modalService: NgbModal) { }
     closeResult: string;
     @Output() deleteFormEvent = new EventEmitter<string>();
-    formId: any;
+    formIdd: any;
+    @Input('formId') formId: number;
     ngOnInit() {
     }
     open(content) {
@@ -32,7 +33,7 @@ export class DeleteFormComponent implements OnInit {
     }
     deleteForm() {
         console.log('emit');
-        this.deleteFormEvent.emit(JSON.stringify(this.formId));
+        this.deleteFormEvent.emit(JSON.stringify(this.formIdd));
     }
 
 

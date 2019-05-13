@@ -6,7 +6,7 @@
             <div class="card-body" id="collapseExample" [ngbCollapse]="isCollapsed">
                 <div class="card">
                         <div class="card-body">
-                            <app-add-form (addFormEvent)="receiveForm($event,'M')"></app-add-form>
+                            <app-add-form (addFormEvent)="receiveForm($event,name)"></app-add-form>
                             <app-forms-mockup *ngIf="name=='Mockup'" [forms]='formsMockup'></app-forms-mockup>
                             <app-forms-simulator *ngIf="name=='Simulator'" [forms]='formsSimulator'>
                             </app-forms-simulator>
