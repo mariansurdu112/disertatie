@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { } from '@types/googlemaps';
+import {AircraftTrackingService} from './aircraft-tracking.service';
 
 @Component({
   selector: 'app-aircraft-tracking',
@@ -7,7 +8,27 @@ import { } from '@types/googlemaps';
   styleUrls: ['./aircraft-tracking.component.scss']
 })
 export class AircraftTrackingComponent implements OnInit {
-  title = 'My first AGM project';
+  title = 'MarAir Aircraft Tracking';
+  bounds = 44.26 + ',' + 22.16 + ',' + 22.16 + ',' + 44.2;
+  params: any;
+ constructor(private aircraftTrackingService: AircraftTrackingService) {
+     this.params = {
+         bounds: this.bounds,
+         faa: 1,
+         mlat: 1,
+         flarm: 1,
+         adsb: 1,
+         gnd: 1,
+         air: 1,
+         vehicles: 1,
+         estimated: 1,
+         maxage: 7200,
+         gliders: 1,
+         stats: 1,
+         callsign: 'KLM'
+     };
+     this.getData();
+ }
   aircraftsLocations = [{
     lat: 44.4508499,
     lng: 26.1080211
@@ -35,6 +56,11 @@ export class AircraftTrackingComponent implements OnInit {
     }
   };
 
+  getData() {
+    this.aircraftTrackingService.getData(this.bounds, this.params).subscribe((res) => {
+        console.log(res);
+    });
+  }
 
   ngOnInit() {
 

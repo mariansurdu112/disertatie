@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TimeSelectComponent implements OnInit {
   @Input() activity: string;
+    start: any;
+    end: any;
+    errorMessage: string;
   constructor() { }
 
   ngOnInit() {

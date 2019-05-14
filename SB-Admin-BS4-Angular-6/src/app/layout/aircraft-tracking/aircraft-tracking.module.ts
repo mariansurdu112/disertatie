@@ -4,6 +4,8 @@ import { AircraftTrackingComponent } from './aircraft-tracking.component';
 import {AircraftTrackingRoutingModule} from './aircraft-tracking-routing.module';
 import {PageHeaderModule} from '../../shared/modules/page-header/page-header.module';
 import { AgmCoreModule } from '@agm/core';
+import {AircraftTrackingService} from './aircraft-tracking.service';
+
 
 @NgModule({
   imports: [
@@ -13,6 +15,7 @@ import { AgmCoreModule } from '@agm/core';
         apiKey: 'AIzaSyAZTauhdYAPg-I4dGA451ss7WM8oGsACqY'
       })
   ],
-  declarations: [AircraftTrackingComponent]
+  declarations: [AircraftTrackingComponent],
+    providers: [AircraftTrackingService]
 })
 export class AircraftTrackingModule { }

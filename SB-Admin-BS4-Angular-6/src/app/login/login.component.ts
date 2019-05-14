@@ -14,6 +14,7 @@ import { ɵangular_packages_platform_browser_platform_browser_d } from '@angular
 })
 export class LoginComponent implements OnInit {
       userToLogin: UserGrants = new UserGrants('', '' , 'password');
+    errorMessage: string;
     constructor(public router: Router, private loginService: LoginService) {}
      ngOnInit() {}
 
