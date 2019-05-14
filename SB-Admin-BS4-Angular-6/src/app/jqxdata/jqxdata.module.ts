@@ -14,6 +14,7 @@ import {jqxTreeComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxtree';
 import {jqxDataTableComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxdatatable';
 import {jqxChartComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart';
 import {jqxMenuComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu';
+import {jqxCheckBoxComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxcheckbox';
 
 @NgModule({
   imports: [
@@ -22,9 +23,11 @@ import {jqxMenuComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxmenu';
   ],
   declarations: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
     jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent,
-      jqxTabsComponent, jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent, jqxMenuComponent],
+      jqxTabsComponent, jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent,
+      jqxMenuComponent, jqxCheckBoxComponent],
   exports: [jqxSchedulerComponent, jqxGridComponent, jqxInputComponent,
     jqxWindowComponent, jqxButtonComponent, jqxBarGaugeComponent, jqxListBoxComponent, jqxTabsComponent,
-      jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent, jqxMenuComponent]
+      jqxLayoutComponent, jqxTreeComponent, jqxDataTableComponent, jqxChartComponent, jqxMenuComponent,
+      jqxCheckBoxComponent]
 })
 export class JqxdataModule { }

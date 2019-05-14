@@ -1,0 +1,107 @@
+<div class="main-container">
+    <button class="btn btn-primary">Add new course</button>
+    <div class="jumbotron-fluid">
+        <jqxGrid #myGrid class="grid"
+                 [width]="getWidth()" [source]="dataAdapter" [showfilterrow]="true"
+                 [columnsresize]="true"
+                 [pageable]="true"
+                 [autoheight]="true" [columns]="columns" [sortable]="true" [altrows]="true" [filterable]="true">
+        </jqxGrid>
+        <jqxWindow #myWindow [width]="250" [height]="230" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
+            <div>Edit</div>
+            <div style="overflow: hidden;">
+                <table>
+                    <tr>
+                        <td align="right">Name:</td>
+                        <td align="left">
+                            <jqxInput #name [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Mockup:</td>
+                        <td align="left">
+                            <jqxCheckBox #mockup [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Simulator:</td>
+                        <td align="left">
+                            <jqxCheckBox #simulator [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Flight:</td>
+                        <td align="left">
+                            <jqxCheckBox #flight [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">LineCheck:</td>
+                        <td align="left">
+                            <jqxCheckBox #linecheck [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Active:</td>
+                        <td align="left">
+                            <jqxCheckBox #active [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right">
+                            <jqxButton style="margin-right: 5px;" (onClick)="saveBtn()">
+                                Save
+                            </jqxButton>
+                            <jqxButton style="margin-right: 5px;" (onClick)="cancelBtn()">
+                                Cancel
+                            </jqxButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </jqxWindow>
+
+    </div>
+    <button class="btn btn-primary">Add new form</button>
+    <div class="jumbotron-fluid">
+        <jqxGrid #myGridForms class="grid"
+                 [width]="getWidth()" [source]="dataAdapterForms" [showfilterrow]="true"
+                 [columnsresize]="true"
+                 [pageable]="true"
+                 [autoheight]="true" [columns]="columnsForms" [sortable]="true" [altrows]="true" [filterable]="true">
+        </jqxGrid>
+        <jqxWindow #myWindowForms [width]="250" [height]="230" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
+            <div>Edit</div>
+            <div style="overflow: hidden;">
+                <table>
+                    <tr>
+                        <td align="right">Form Name:</td>
+                        <td align="left">
+                            <jqxInput #nameForm [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Default:</td>
+                        <td align="left">
+                            <jqxCheckBox #default [width]="150" [height]="23"></jqxCheckBox>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"></td>
+                        <td style="padding-top: 10px;" align="right">
+                            <jqxButton style="margin-right: 5px;" (onClick)="saveBtn()">
+                                Save
+                            </jqxButton>
+                            <jqxButton style="margin-right: 5px;" (onClick)="cancelBtn()">
+                                Cancel
+                            </jqxButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </jqxWindow>
+
+    </div>
+</div>

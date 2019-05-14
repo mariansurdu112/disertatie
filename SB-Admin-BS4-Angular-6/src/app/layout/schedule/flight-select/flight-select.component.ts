@@ -1,5 +1,5 @@
 import { FlightPointsPipe } from './../../../shared/pipes/flight-points.pipe';
-import { FlightsNomService } from './../../noms/flights/flights-nom.service';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CompanyFlights } from '../../../models/companyflights.model';
 import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxlistbox';
@@ -13,10 +13,10 @@ import { jqxListBoxComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxl
 export class FlightSelectComponent implements OnInit {
   flights: CompanyFlights[];
   @ViewChild('listbox') myListBox: jqxListBoxComponent;
-  constructor(private flightService: FlightsNomService, private flightPointsPipe: FlightPointsPipe) {
-    this.flightService.flights.subscribe(res => {
+  constructor(private flightPointsPipe: FlightPointsPipe) {
+    /*this.flightService.flights.subscribe(res => {
       this.flights = res;
-    });
+    });*/
   }
 
   shirts: string[];
@@ -32,11 +32,11 @@ export class FlightSelectComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.flightService.getFlights().subscribe(p => {
-      this.flightService.flights.next(p);
+    /*/!*this.flightService.getFlights().subscribe(p => {
+      this.flightService.flights.next(p);*!/
       this.shirts = this.flightPointsPipe.transform(this.flights);
       console.log(this.shirts);
-    });
+    });*/
   }
 
 }

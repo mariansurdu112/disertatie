@@ -1,8 +1,10 @@
 <div class="main-container">
     <div class="jumbotron-fluid">
         <jqxGrid #myGrid class="grid"
-                 [width]="getWidth()" [source]="dataAdapter" [pageable]="true"
-                 [autoheight]="true" [columns]="columns" >
+                 [width]="getWidth()" [source]="dataAdapter" [showfilterrow]="true"
+                 [columnsresize]="true"
+                 [pageable]="true"
+                 [autoheight]="true" [columns]="columns" [sortable]="true" [altrows]="true" [filterable]="true">
         </jqxGrid>
         <jqxWindow #myWindow [width]="250" [height]="230" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
             <div>Edit</div>
@@ -10,15 +12,33 @@
                 <table>
 
                     <tr>
-                        <td align="right">Code:</td>
+                        <td align="right">RegNo:</td>
                         <td align="left">
-                            <jqxInput #name [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #regno [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">Code:</td>
+                        <td align="right">Owner:</td>
                         <td align="left">
-                            <jqxInput #code [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #owner [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Seats:</td>
+                        <td align="left">
+                            <jqxInput #seats [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Tank capacity:</td>
+                        <td align="left">
+                            <jqxInput #tank [width]="150" [height]="23"></jqxInput>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Reserve:</td>
+                        <td align="left">
+                            <jqxInput #tankreserve [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
 

@@ -10,7 +10,8 @@ import {NomsRoutingModule} from './noms-routing.module';
 
 import {FormsModule} from '@angular/forms';
 import { JqxdataModule } from '../../jqxdata/jqxdata.module';
-import { FlightsComponent } from './flights/flights.component';
+import { CompanyFlightsComponent } from './company-flights/company-flights.component';
+import { TrainingCoursesComponent } from './training-courses/training-courses.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { FlightsComponent } from './flights/flights.component';
   ],
   declarations: [AircraftsComponent,
       CrewsComponent, RulesComponent,
-      PositionsComponent, ActivityComponent, AirportsComponent, FlightsComponent]
+      PositionsComponent, ActivityComponent, AirportsComponent, CompanyFlightsComponent, TrainingCoursesComponent]
 })
 export class NomsModule { }

@@ -1,32 +1,23 @@
 <div class="main-container">
     <div class="jumbotron-fluid">
         <jqxGrid #myGrid class="grid"
-                 [width]="getWidth()" [source]="dataAdapter" [showfilterrow]="true"
-                 [columnsresize]="true"
-                 [pageable]="true"
-                 [autoheight]="true" [columns]="columns" [sortable]="true" [altrows]="true" [filterable]="true">
+                 [width]="getWidth()" [source]="dataAdapter" [pageable]="true"
+                 [autoheight]="true" [columns]="columns" >
         </jqxGrid>
         <jqxWindow #myWindow [width]="250" [height]="230" [resizable]="false" [isModal]="false" [autoOpen]="false" [modalOpacity]="'0.01'">
             <div>Edit</div>
             <div style="overflow: hidden;">
                 <table>
-
-                    <tr>
+                <tr>
                         <td align="right">Name:</td>
                         <td align="left">
                             <jqxInput #name [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">Iata Code:</td>
+                        <td align="right">Role:</td>
                         <td align="left">
-                            <jqxInput #iatacode [width]="150" [height]="23"></jqxInput>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">ICAO Code:</td>
-                        <td align="left">
-                            <jqxInput #icaocode [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #role [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
 
