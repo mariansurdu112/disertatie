@@ -7,7 +7,300 @@
         </button>
     </div>
     <div class="modal-body">
-        
+        <div class="">
+            <div class="jumbotron" style="font-size: 12px;">
+                <div class="row">
+                    <table class="table borderedTable">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Carrier</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">Sequence</th>
+                            <th scope="col">Aircraft</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Etops</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>0M</td>
+                            <td>112</td>
+                            <td>1</td>
+                            <td>YR-BAP</td>
+                            <td>Scheduled passenger</td>
+                            <td>Operated</td>
+                            <td>Company flight</td>
+                            <td><input type="checkbox" disabled></td>
+                            <td>ARVD</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="panel panel-primary">
+                                <div class="panel-body">
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default">Departure IATA code:
+                                            <strong>OTP</strong></button>
+                                        <button type="button" class="btn btn-default">LYPG</button>
+                                        <button type="button" class="btn btn-default">GMT +2</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <div>Departure gate:<input type="text" disabled style="width:45px"></div>
+                                <div>Position:<input type="text" disabled style="width:45px"></div>
+                                <div>Acft on stand:<input type="text" disabled style="width:45px"></div>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <div style="text-align: center;font-weight: bold;">Scheduled</div>
+                                    <div>Off Block:<input type="text" disabled value="14/04/2019 12:00"
+                                                          style="width: 101px;"></div>
+                                    <div>Taxi out:<input type="text" disabled value="10" style="width:45px"></div>
+                                    <div>Estimated <input type="text" disabled value="14/04/2019 12:00"
+                                                          style="width: 101px;"></div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>TOBT <input type="text" disabled style="width:45px"></div>
+                                <div>TSAT<input type="text" disabled style="width:45px"></div>
+                                <div>CTOT<input type="text" disabled style="width:45px"></div>
+                                <div>Door closed <input type="text" disabled style="width:45px"></div>
+                            </div>
+                            <div class="col">
+                                <span style="font-size: 100px;" id="1">&#8595;</span>
+                            </div>
+                            <div class="col">
+                                <div style="text-align: center;font-weight: bold;">MVT</div>
+                                <div>Off Block:<input type="text" disabled value="14/04/2019 12:10"
+                                                      style="width: 101px;"></div>
+                                <div>Airborne <input type="text" disabled value="14/04/2019 12:10"
+                                                     style="width: 101px;"></div>
+                            </div>
+                            <div class="col">
+                                Delay Departure:<input type="text" disabled value="10" style="width:45px">
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div> ATC call sign <input type="text" disabled value="MGX"><input type="text" disabled
+                                                                                               value="234"></div>
+                            <br>
+                            <div> OFP text <input type="text" disabled value=""></div>
+                            <div> Dispatcher text(DWS) <input type="text" disabled value=""></div>
+                            <br>
+                            <div> EST ZFW <input type="text" disabled value=""></div>
+                            <div> EST Payload <input type="text" disabled value=""></div>
+                            <div> Log Ref <input type="text" disabled value=""></div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div>Special Flight <input type="text" disabled value=""></div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="row">
+                            <div class="panel panel-primary">
+                                <div class="panel-body">
+                                    <div class="btn-group" role="group" aria-label="...">
+                                        <button type="button" class="btn btn-default">Arrival IATA code: FCO</button>
+                                        <button type="button" class="btn btn-default">LYPG</button>
+                                        <button type="button" class="btn btn-default">GMT +2</button>
+                                        <button type="button" class="btn btn-default">Flight Segment:<strong>International</strong>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+
+                            <div class="col">
+                                <div style="text-align: center;font-weight: bold;">Scheduled</div>
+                                <div>On Block:<input type="text" disabled value="14/04/2019 14:00"
+                                                     style="width: 101px;"></div>
+                                <div>Taxi in:<input type="text" disabled value="5"></div>
+
+                                <div style="text-align: center;font-weight: bold;">Revised</div>
+                                <div>On block <input type="text" disabled value="14/04/2019 14:20"
+                                                     style="width: 101px;"></div>
+                            </div>
+                            <div class="col">
+
+                                <div>CTOT<input type="text" disabled style="width: 45px;"></div>
+
+                            </div>
+                            <div class="col">
+                                <span style="font-size: 100px;" id="2">&#8593;</span>
+                            </div>
+                            <div class="col">
+                                <div class="col">
+                                    <div style="text-align: center;font-weight: bold;">MVT</div>
+                                    <div>On Block:<input type="text" disabled value="14/04/2019 14:20"
+                                                         style="width: 101px;"></div>
+                                    <div>Landing <input type="text" disabled value="14/04/2019 14:20"
+                                                        style="width: 101px;"></div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                Delay Arrival:<input type="text" disabled value="20" style="width: 45px;">
+                            </div>
+                            <div class="col">
+                                <div>Arrival gate:<input type="text" disabled style="width:45px"></div>
+                                <div>Position:<input type="text" disabled style="width:45px"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Delay Code</th>
+                                        <th>Time</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="text" disabled value="91"></td>
+                                        <td><input type="text" disabled value="00:10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" disabled value="44"></td>
+                                        <td><input type="text" disabled value="00:10"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Booked</th>
+                                        <th>Expected</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>(F)</td>
+                                        <td><input type="text" disabled value="0"></td>
+                                        <td><input type="text" disabled value="0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(C)</td>
+                                        <td><input type="text" disabled value="0"></td>
+                                        <td><input type="text" disabled value="0"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>(Y)</td>
+                                        <td><input type="text" disabled value="44"></td>
+                                        <td><input type="text" disabled value="0"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Male</th>
+                                        <th>Female</th>
+                                        <th>Children</th>
+                                        <th>Infants</th>
+                                        <th>Bags</th>
+                                        <th>Mail</th>
+                                        <th>Cargo</th>
+                                        <th>Other</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="text" disabled value="20" style="width:60px"></td>
+                                        <td><input type="text" disabled value="24" style="width:60px"></td>
+                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+                                        <td><input type="text" disabled value="500" style="width:60px"></td>
+                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Cabin staff model</th>
+                                        <th>Cockpit staff model</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="text" disabled value="20_733_735_1_SCC_1_CC2_2_CC"
+                                                   style="width:120px"></td>
+                                        <td><input type="text" disabled value="10_1_PIC_1_FO" style="width:120px"></td>
+
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <div style="font-weight:bold">Fuel</div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Qty</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Fuel Prior to uplift</td>
+                            <td><input type="text" value="3600" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Block</td>
+                            <td><input type="text" value="9861" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Used</td>
+                            <td><input type="text" value="5811" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>Remain</td>
+                            <td><input type="text" value="4050" disabled></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
