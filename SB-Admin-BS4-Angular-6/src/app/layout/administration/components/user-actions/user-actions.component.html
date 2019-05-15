@@ -1,3 +1,8 @@
-<p>
-  user-actions works!
-</p>
+<div class="main-container">
+    <div class="jumbotron-fluid">
+        <jqxGrid #myGrid class="grid"
+                 [width]="getWidth()" [source]="dataAdapter" [pageable]="true"
+                 [autoheight]="true" [columns]="columns" >
+        </jqxGrid>
+    </div>
+</div>
