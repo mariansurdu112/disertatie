@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>
         <ion-text color="light">
-          <ion-text color="light" class="fw700">Ionic 4 Start</ion-text>
+          <ion-text color="light" class="fw700">MarAir Community</ion-text>
         </ion-text>
     </ion-title>
     <ion-buttons slot="end">
@@ -30,7 +30,7 @@
     <ion-item lines="none" color="medium">
       <ion-label>
         <h2 no-margin class="fw500 no-margin">
-          <ion-text color="dark">Alert / Toast test</ion-text>
+          <ion-text color="dark">Alert / Wind speed increase</ion-text>
         </h2>
 
         <p class="text-11x no-margin">
@@ -45,16 +45,24 @@
   </ion-card>
 
   <ion-card class="bg-white">
-    <ion-img [src]="themeCover"></ion-img>
-    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
-      Modal 1: Modal Image
+    <ion-img src="https://www.caa.co.uk/uploadedImages/CAA/Content/Images/Landing_Page/lp-boeing-dreamliner.jpg"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage('https://www.caa.co.uk/uploadedImages/CAA/Content/Images/Landing_Page/lp-boeing-dreamliner.jpg')" no-margin>
+      Boeing 737 MAX8 crash LIONAIR
     </ion-button>
   </ion-card>
 
-  <ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
+
+  <ion-card class="bg-white">
+    <ion-img src="https://bbj.hu/images2/201403/wizz-air-lut_20140326102747813.jpg"></ion-img>
+    <ion-button expand="full" color="dark" (click)="presentImage('https://bbj.hu/images2/201403/wizz-air-lut_20140326102747813.jpg')" no-margin>
+      DIRECTORATE CHANGE AT WIZZ AIR
+    </ion-button>
+  </ion-card>
+
+  <!--<ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
     Modal 2: Search Filter
-  </ion-button>
+  </ion-button>-->
   
-  <popmenu></popmenu>
+
 </ion-content>
   

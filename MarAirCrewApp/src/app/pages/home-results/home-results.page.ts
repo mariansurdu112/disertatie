@@ -20,7 +20,7 @@ import { NotificationsComponent } from './../../components/notifications/notific
 })
 export class HomeResultsPage {
   searchKey = '';
-  yourLocation = '123 Test Street';
+  yourLocation = 'OTP Airport,FCO Airport';
   themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
 
   constructor(
