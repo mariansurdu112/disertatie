@@ -30,39 +30,39 @@ export class AppComponent {
       },
       {
         title: 'Inbox',
-        url: '/about',
+        url: '/inbox',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'notifications-outline'
       },
       {
         title: 'Roster',
-        url: '/about',
+        url: '/roster',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'calendar'
       },
       {
         title: 'Personal Docs',
-        url: '/about',
+        url: '/personal-docs',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'document'
       },
       {
         title: 'My Logbook',
-        url: '/about',
+        url: '/logbook',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'time'
       },
       {
         title: 'Concierge',
-        url: '/about',
+        url: '/concierge',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'git-pull-request'
       },
       {
         title: 'Track my flight',
-        url: '/about',
+        url: '/track',
         direct: 'forward',
-        icon: 'information-circle-outline'
+        icon: 'airplane'
       },
       {
         title: 'App Settings',
