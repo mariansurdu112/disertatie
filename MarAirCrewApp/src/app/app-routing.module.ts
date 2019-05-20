@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: 'roster', loadChildren: './pages/roster/roster.module#RosterModule' },
   { path: 'track', loadChildren: './pages/track/track.module#TrackModule' },
   { path: 'concierge', loadChildren: './pages/concierge/concierge.module#ConciergeModule' },
-  { path: 'personal-docs', loadChildren: './pages/personal-docs/personal-docs.module#PersonalDocsModule' }
+  { path: 'personal-docs', loadChildren: './pages/personal-docs/personal-docs.module#PersonalDocsModule' },
+  { path: 'briefing', loadChildren: './pages/briefing/briefing.module#BriefingModule' }
+
 ];
 
 @NgModule({

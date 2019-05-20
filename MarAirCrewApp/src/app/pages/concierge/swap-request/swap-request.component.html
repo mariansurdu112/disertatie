@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="selectedDate"></ion-datetime>
+  </ion-item>
+
+</ion-list>
+<ion-list *ngIf="selectedDate">
+  <ion-item>
+    <ion-label>OTP->FCO 12:45</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>OTP->CTA 13:25</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>OTP->BCM 17:45</ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+</ion-list>
+<ion-button color="success" expand="block" (click)="sendRequest()">Send swap request</ion-button>

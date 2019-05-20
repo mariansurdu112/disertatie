@@ -1,0 +1,12 @@
+<ion-list>
+  <ion-item>
+    <ion-label>From</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="selectedDateFrom"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>To</ion-label>
+    <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="selectedDateTo"></ion-datetime>
+  </ion-item>
+
+</ion-list>
+<ion-button color="success" expand="block" (click)="sendRequest()">Send off request</ion-button>
