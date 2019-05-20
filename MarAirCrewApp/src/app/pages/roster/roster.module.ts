@@ -4,6 +4,7 @@ import { RosterComponent } from './roster.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeResultsPage} from '../home-results/home-results.page';
 import {IonicModule} from '@ionic/angular';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [RosterComponent],
+  declarations: [RosterComponent, EventDetailsComponent],
+  entryComponents: [EventDetailsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

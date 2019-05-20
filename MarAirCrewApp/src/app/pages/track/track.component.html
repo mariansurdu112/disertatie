@@ -6,9 +6,71 @@
     </ion-buttons>
     <ion-title>Track aircraft</ion-title>
   </ion-toolbar>
+   <ion-toolbar color="dark">
+     <ion-searchbar></ion-searchbar>
+     <ion-buttons slot="end">
+       <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+         <ion-icon name="options"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<agm-map [latitude]="lat" [longitude]="lng">
+  <!-- <agm-polyline>
+        <agm-polyline-point [latitude]="aircraftsLocations[0].lat" [longitude]="aircraftsLocations[0].lng">
+        </agm-polyline-point>
+        <agm-polyline-point [latitude]="aircraftsLocations[1].lat" [longitude]="aircraftsLocations">
+        </agm-polyline-point>
+    </agm-polyline> -->
+  <agm-marker [latitude]="marker.lat" [longitude]="marker.lng" [markerDraggable]="true"
+    *ngFor="let marker of aircraftsLocations" [iconUrl]="icon">
+    <agm-info-window>
+      <div class="row">
+        <div class="col">
+          <img style="width: 100%;height: 100%;"
+            src="https://img.gta5-mods.com/q95/images/boeing-737-max9/45ef46-GTA5%202016-09-10%2013-30-50-12.jpg">
+        </div>
+        <div class="col">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Aircraft</th>
+                <th>Estimated time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OTP(Otopeni)</td>
+                <td>CTA(Constanta)</td>
+                <td>Boeing 737-max9</td>
+                <td>4 h 40 min</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Scheduled Departure</td>
+                <td>16:04 PM</td>
+                <td>Scheduled Arrival</td>
+                <td>20:45PM</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Actual</td>
+                <td>16:24 PM</td>
+                <td>Scheduled Arrival</td>
+                <td>21:05PM</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </agm-info-window>
+  </agm-marker>
+  
+</agm-map>
 
 </ion-content>

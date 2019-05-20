@@ -4,6 +4,7 @@ import { TrackComponent } from './track.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeResultsPage} from '../home-results/home-results.page';
 import {IonicModule} from '@ionic/angular';
+import { AgmCoreModule } from '@agm/core';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   declarations: [TrackComponent],
   imports: [
     CommonModule,
+    IonicModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAZTauhdYAPg-I4dGA451ss7WM8oGsACqY'
+    }),
     RouterModule.forChild(routes),
       IonicModule
   ]

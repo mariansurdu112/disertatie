@@ -1,0 +1,108 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th style="text-align: center">
+                Exercises
+            </th>
+        </tr>
+    </thead>
+</table>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th style="text-align: center">
+                Exercise
+            </th>
+            <th style="text-align: center">
+                N/A
+            </th>
+            <th style="text-align: center">
+                U
+            </th>
+            <th style=" text-align: center">
+                M
+            </th>
+            <th style=" text-align: center">
+                S
+            </th>
+            <th style=" text-align: center">
+                A
+            </th>
+        </tr>
+    </thead>
+    <tr *ngFor="let ex of exercises">
+        <td style="text-align: center">
+            {{ex.Name}}
+
+        </td>
+        <td style="text-align: center">
+            <input type="checkbox" disabled [(ngModel)]="ex.NA">
+
+        </td>
+        <td style="text-align: center">
+
+            <input type="checkbox" disabled [(ngModel)]="ex.U">
+
+        </td>
+        <td style="text-align: center">
+
+            <input type="checkbox" disabled [(ngModel)]="ex.M">
+
+        </td>
+        <td style="text-align: center">
+            <input type="checkbox" disabled [(ngModel)]="ex.S">
+
+
+        </td>
+                <td style="text-align: center">
+                    <input type="checkbox" disabled [(ngModel)]="ex.A">
+
+
+                </td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th style="text-align: center">
+                Free Pairing
+            </th>
+        </tr>
+    </thead>
+</table>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th style="text-align: center">
+                Yes
+            </th>
+            <th style="text-align: center">
+                No
+            </th>
+            <th style="text-align: center">
+                N/A
+            </th>
+
+
+        </tr>
+    </thead>
+    <tr>
+        <td style="text-align: center">
+
+            <input type="checkbox" disabled>
+
+        </td>
+        <td style="text-align: center">
+            <input type="checkbox" disabled>
+
+
+        </td>
+        <td style="text-align: center">
+            <input type="checkbox" disabled>
+
+
+        </td>
+    </tr>
+</table>

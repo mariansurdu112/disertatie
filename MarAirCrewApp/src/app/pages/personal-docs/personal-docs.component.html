@@ -15,10 +15,10 @@
     </ion-card-header>
 <ion-card-content>
     <ion-list>
-      <ion-item *ngFor="let doc of docs">
-        <ion-icon name="cart" slot="start"></ion-icon>
+      <ion-item *ngFor="let doc of docs" (click)="showDetails(doc)">
+        <ion-icon name="{{doc.Icon}}" slot="start"></ion-icon>
         <ion-label>{{doc.Name}}</ion-label>
-        <ion-icon name="{{doc.Icon}}" slot="end" (click)="displayInfo(doc)"></ion-icon>
+        <ion-icon name="ios-arrow-forward" slot="end" (click)="showDetails(doc)"></ion-icon>
       </ion-item>
 </ion-list>
 </ion-card-content>
