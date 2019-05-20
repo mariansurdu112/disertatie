@@ -17,31 +17,6 @@ export class PersonalDocsComponent implements OnInit {
     docs: Array<any> = [{
         Id: 1, Name: 'ID', ExpiryDate: new Date(2019, 9, 5), Icon: 'card'
     },
-<<<<<<< HEAD
-    {
-        Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5), Icon: 'document'
-    },
-    {
-        Id: 3, Name: 'Flying License', ExpiryDate: new Date(2020, 2, 15), Icon: 'airplane', Type: 'ATPL', Number: 'RO34.1234.A314S'
-    },
-    {
-        Id: 4, Name: 'Medical License', ExpiryDate: new Date(2019, 9, 25), Icon: 'people'
-    },
-    {
-        Id: 5, Name: 'Radio License', ExpiryDate: new Date(2019, 11, 29), Icon: 'radio'
-    },
-    {
-        Id: 6, Name: 'Employee contract', ExpiryDate: new Date(2099, 12, 31), Icon: 'document'
-    }];
-
-    constructor(public navCtrl: NavController,
-        public menuCtrl: MenuController,
-        public popoverCtrl: PopoverController,
-        public alertCtrl: AlertController,
-        public modalCtrl: ModalController,
-        public toastCtrl: ToastController,
-        private datePipe: DatePipe) {
-=======
         {
             Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5), Icon: 'card'
         },
@@ -59,7 +34,6 @@ export class PersonalDocsComponent implements OnInit {
         }];
 
     constructor() {
->>>>>>> 9762bb62760765edc3df9ffeb84b1770cfba0825
     }
 
     ngOnInit() {
