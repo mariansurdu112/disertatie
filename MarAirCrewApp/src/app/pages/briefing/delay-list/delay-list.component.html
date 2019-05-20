@@ -1,0 +1,13 @@
+  <ion-item >
+    <ion-label>
+     Reported delays
+    </ion-label>
+    <ion-button slot="end" color="danger" (click)="addDelay()">Add delay</ion-button>
+  </ion-item>
+
+   <ion-item *ngFor="let delay of delays">
+     
+      <ion-input type="text" value="{{delay.Code}}"></ion-input>
+      
+    <ion-input type="number" value="{{delay.Minutes}}"></ion-input>
+   </ion-item>

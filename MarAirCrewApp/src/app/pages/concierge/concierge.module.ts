@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConciergeComponent } from './concierge.component';
 import {RouterModule, Routes} from '@angular/router';
-import {InboxComponent} from '../inbox/inbox.component';
 import {IonicModule} from '@ionic/angular';
 import { FlightRequestComponent } from './flight-request/flight-request.component';
 import { SwapRequestComponent } from './swap-request/swap-request.component';

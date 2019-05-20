@@ -1,0 +1,46 @@
+<ion-card>
+  <ion-item>
+    <ion-icon name="contacts" slot="start"></ion-icon>
+    <ion-label>Passengers</ion-label>
+    <ion-button fill="outline" slot="end" (click)="toogle=!toogle">View</ion-button>
+  </ion-item>
+
+  <ion-card-content *ngIf="toogle">
+    <ion-item (click)="testClick()">
+     
+      <ion-label>
+        Male
+      </ion-label>
+      <ion-button slot="end">
+       40
+      </ion-button>
+    </ion-item>
+    <ion-item (click)="testClick()">
+     
+      <ion-label>
+       Female
+      </ion-label>
+      <ion-button slot="end">
+        25
+      </ion-button>
+    </ion-item>
+    <ion-item (click)="testClick()">
+      
+      <ion-label>
+        Children
+      </ion-label>
+      <ion-button slot="end">
+        15
+      </ion-button>
+    </ion-item>
+      <ion-item (click)="testClick()">
+        
+        <ion-label>
+          Infants
+        </ion-label>
+        <ion-button slot="end">
+          2
+        </ion-button>
+      </ion-item>
+  </ion-card-content>
+</ion-card>

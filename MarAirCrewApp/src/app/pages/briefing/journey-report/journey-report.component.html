@@ -1,0 +1,29 @@
+<ion-card>
+  <ion-item>
+    <ion-icon name="contacts" slot="start"></ion-icon>
+    <ion-label>Journey Report</ion-label>
+    <ion-button fill="outline" slot="end" (click)="toogle=!toogle" color="success">Open</ion-button>
+  </ion-item>
+
+  <ion-card-content *ngIf="toogle">
+    <ion-item (click)="testClick()">
+      <ion-label>
+        Block off
+      </ion-label>
+        <ion-datetime display-format="DD/MM/YYYY HH:mm"></ion-datetime>
+    </ion-item>
+      <ion-item (click)="testClick()">
+        <ion-label>
+          Block on
+        </ion-label>
+        <ion-datetime display-format="DD/MM/YYYY HH:MM"></ion-datetime>
+      </ion-item>
+   <app-delay-list></app-delay-list>
+   <ion-item>
+     <ion-label position="floating">Remarks</ion-label>
+     <ion-textarea></ion-textarea>
+   </ion-item>
+   <ion-button color="success" expand="block">Save report</ion-button>
+  </ion-card-content>
+
+</ion-card>

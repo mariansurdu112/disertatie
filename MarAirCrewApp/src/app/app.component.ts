@@ -29,6 +29,12 @@ export class AppComponent {
         icon: 'home'
       },
       {
+        title: 'Briefing',
+        url: '/briefing',
+        direct: 'forward',
+        icon: 'albums'
+      },
+      {
         title: 'Inbox',
         url: '/inbox',
         direct: 'forward',

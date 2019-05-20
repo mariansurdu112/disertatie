@@ -18,22 +18,24 @@ export class PersonalDocsComponent implements OnInit {
         Id: 1, Name: 'ID', ExpiryDate: new Date(2019, 9, 5), Icon: 'card'
     },
         {
-            Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5), Icon: 'card'
+            Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5), Icon: 'document'
         },
         {
-            Id: 3, Name: 'Flying License', ExpiryDate: new Date(2020, 2, 15)
+            Id: 3, Name: 'Flying License', ExpiryDate: new Date(2020, 2, 15), Icon: 'airplane'
         },
         {
-            Id: 4, Name: 'Medical License', ExpiryDate: new Date(2019, 9, 25)
+            Id: 4, Name: 'Medical License', ExpiryDate: new Date(2019, 9, 25), Icon: 'albums'
         },
         {
-            Id: 5, Name: 'Radio License', ExpiryDate: new Date(2019, 11, 29)
+            Id: 5, Name: 'Radio License', ExpiryDate: new Date(2019, 11, 29), Icon: 'radio'
         },
         {
-            Id: 6, Name: 'Employee contract', ExpiryDate: new Date(2099, 12, 31)
+            Id: 6, Name: 'Employee contract', ExpiryDate: new Date(2099, 12, 31), Icon: 'document'
         }];
+    
+    
 
-    constructor() {
+    constructor(public alertCtrl: AlertController, public datePipe: DatePipe) {
     }
 
     ngOnInit() {

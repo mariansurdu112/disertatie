@@ -1,0 +1,43 @@
+<ion-card>
+  <ion-item>
+    <ion-icon name="people" slot="start"></ion-icon>
+    <ion-label>Crew members</ion-label>
+    <ion-button fill="outline" slot="end" (click)="toogle=!toogle">View</ion-button>
+  </ion-item>
+
+  <ion-card-content *ngIf="toogle">
+    <ion-item (click)="testClick()">
+      <ion-avatar slot="start">
+        <img src="https://www.startupdelta.org/wp-content/uploads/2018/04/No-profile-LinkedIn.jpg">
+      </ion-avatar>
+      <ion-label>
+        Marian Surdu
+      </ion-label>
+      <ion-button slot="end">
+        PIC
+      </ion-button>
+    </ion-item>
+    <ion-item (click)="testClick()">
+      <ion-avatar slot="start">
+        <img src="https://www.startupdelta.org/wp-content/uploads/2018/04/No-profile-LinkedIn.jpg">
+      </ion-avatar>
+      <ion-label>
+       Florin Surdu
+      </ion-label>
+      <ion-button slot="end">
+        F/O
+      </ion-button>
+    </ion-item>
+    <ion-item (click)="testClick()">
+      <ion-avatar slot="start">
+        <img src="https://www.startupdelta.org/wp-content/uploads/2018/04/No-profile-LinkedIn.jpg">
+      </ion-avatar>
+      <ion-label>
+       Ana Simion
+      </ion-label>
+      <ion-button slot="end">
+        CC2
+      </ion-button>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
