@@ -4,6 +4,11 @@ import { ConciergeComponent } from './concierge.component';
 import {RouterModule, Routes} from '@angular/router';
 import {InboxComponent} from '../inbox/inbox.component';
 import {IonicModule} from '@ionic/angular';
+import { FlightRequestComponent } from './flight-request/flight-request.component';
+import { SwapRequestComponent } from './swap-request/swap-request.component';
+import { StaffRequestComponent } from './staff-request/staff-request.component';
+import { OffRequestComponent } from './off-request/off-request.component';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -13,10 +18,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ConciergeComponent],
+  declarations: [ConciergeComponent, FlightRequestComponent, SwapRequestComponent, StaffRequestComponent, OffRequestComponent],
   imports: [
     CommonModule,
       IonicModule,
+      FormsModule,
     RouterModule.forChild(routes),
   ]
 })

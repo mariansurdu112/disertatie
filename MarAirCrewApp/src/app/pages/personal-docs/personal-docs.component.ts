@@ -11,7 +11,7 @@ export class PersonalDocsComponent implements OnInit {
         Id: 1, Name: 'ID', ExpiryDate: new Date(2019, 9, 5), Icon: 'card'
     },
         {
-            Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5),Icon: 'card'
+            Id: 2, Name: 'Passport', ExpiryDate: new Date(2019, 12, 5), Icon: 'card'
         },
         {
             Id: 3, Name: 'Flying License', ExpiryDate: new Date(2020, 2, 15)
