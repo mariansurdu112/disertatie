@@ -83,5 +83,25 @@ namespace MarAirRoles.Models
         public DbSet<TextMessages> TextMessages { get; set; }
         public DbSet<DelayCode> DelayCodes { get; set; }
         public DbSet<CompanyFlights> CompanyFlights { get; set; }
+        public DbSet<CabinRules> CabinRules { get; set; }
+        public DbSet<Courses> Courses { get; set; }
+        public DbSet<CourseSections> CourseSections { get; set; }
+        public DbSet<FlightForm> FlightForm { get; set; }
+        public DbSet<FormSections> FormSections { get; set; }
+        public DbSet<Journeys> Journeys { get; set; }
+        public DbSet<LineCheck> LineCheck { get; set; }
+        public DbSet<Mockup> Mockup { get; set; }
+        public DbSet<NomCourses> NomCourses { get; set; }
+        public DbSet<NomFlightForms> NomFlightForms { get; set; }
+        public DbSet<NomLineCheckForms> NomLineCheckForms { get; set; }
+        public DbSet<NomMockupForms> NomMockupForms { get; set; }
+        public DbSet<PartNumbers> PartNumbers { get; set; }
+        public DbSet<ReportedDelays> ReportedDelays { get; set; }
+        public DbSet<Shipments> Shipments { get; set; }
+        public DbSet<Simulator> Simulator { get; set; }
+        public DbSet<UserActions> UserActions { get; set; }
+
+
+
     }
 }

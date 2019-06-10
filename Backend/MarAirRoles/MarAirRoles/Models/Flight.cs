@@ -17,14 +17,10 @@ namespace MarAirAdmin.Models
         public DateTime TakeOffTime { get; set; }
         public DateTime ArrivalTime { get; set; }
         public string FlightNumber { get; set; }
-        
+        public string Gate { get; set; }
         [ForeignKey("Aircraft")]
         public int AircraftId { get; set; }
         public virtual NomAircrafts Aircraft { get; set; }
-
-        [ForeignKey("DelayCode")]
-        public int DelayCodeId { get; set; }
-        public virtual DelayCode DelayCode { get; set; }
 
         public DateTime EstimatedTakeOff { get; set; }
         public DateTime EstimatedArrival { get; set; }
@@ -37,6 +33,7 @@ namespace MarAirAdmin.Models
         public int Infants { get; set; }
         public int WheelChairs { get; set; }
         public int FlightTime { get; set; }
+        
 
 
 
