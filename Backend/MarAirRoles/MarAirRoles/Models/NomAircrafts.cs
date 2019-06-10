@@ -19,6 +19,7 @@ namespace MarAirAdmin.Models
         public int BagCapacity { get; set; }
         public bool Cargo { get; set; }
         public string AircraftPicture { get; set; }
+       
 
     }
 }

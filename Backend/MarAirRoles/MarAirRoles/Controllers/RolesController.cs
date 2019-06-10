@@ -111,7 +111,7 @@ namespace MarAirRoles.Controllers
                 {
                    var userid = user.Id;
                     userManager.AddToRole(userid, model.Role);
-                    EmailProvider eml = new EmailProvider();
+                   
                     EmailModel modelEmail = new EmailModel();
                     StringBuilder body = new StringBuilder();
                     body.AppendLine("Hello user.Your password for MarAirAdmin is:");
@@ -122,7 +122,7 @@ namespace MarAirRoles.Controllers
                     modelEmail.From = "marian.surdu@blue-air.ro";
                     modelEmail.To = model.Email;
                     modelEmail.Subject = "Your account for MarAir was created";
-                    eml.sendEmail(modelEmail);
+                    EmailProvider.sendEmail(modelEmail);
                 }
                
                 return Ok();

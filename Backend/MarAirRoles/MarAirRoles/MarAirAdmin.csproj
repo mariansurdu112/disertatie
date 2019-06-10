@@ -266,20 +266,22 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
-    <Compile Include="Controllers\AircraftManangementController.cs" />
-    <Compile Include="Controllers\AirportManagementController.cs" />
     <Compile Include="Controllers\AssignmentsController.cs" />
     <Compile Include="Controllers\BaseSqlController.cs" />
     <Compile Include="Controllers\CabinRulesController.cs" />
     <Compile Include="Controllers\CompanyFlightsController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\CourseSectionsController.cs" />
     <Compile Include="Controllers\CrewsController.cs" />
+    <Compile Include="Controllers\FlightFormsController.cs" />
     <Compile Include="Controllers\FormSectionsController.cs" />
     <Compile Include="Controllers\JourneysController.cs" />
+    <Compile Include="Controllers\LineChecksController.cs" />
     <Compile Include="Controllers\MobileAppRequestAddController.cs" />
     <Compile Include="Controllers\MobileAppRequestDataController.cs" />
     <Compile Include="Controllers\FlightsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MockupsController.cs" />
     <Compile Include="Controllers\NomActivitiesController.cs" />
     <Compile Include="Controllers\NomAircraftsController.cs" />
     <Compile Include="Controllers\NomAirportsController.cs" />
@@ -288,9 +290,14 @@
     <Compile Include="Controllers\NomFlightFormsController.cs" />
     <Compile Include="Controllers\NomLineCheckFormsController.cs" />
     <Compile Include="Controllers\NomMockupFormsController.cs" />
+    <Compile Include="Controllers\NomPositionsController.cs" />
     <Compile Include="Controllers\NomSimulatorsController.cs" />
+    <Compile Include="Controllers\RequestOffsController.cs" />
+    <Compile Include="Controllers\RequestStaffsController.cs" />
+    <Compile Include="Controllers\RequestSwapsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ShipmentsController.cs" />
+    <Compile Include="Controllers\SimulatorsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -320,6 +327,14 @@
     <Compile Include="Migrations\201906101326450_db_missing_tables.cs" />
     <Compile Include="Migrations\201906101326450_db_missing_tables.Designer.cs">
       <DependentUpon>201906101326450_db_missing_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101556337_db_missing_fields.cs" />
+    <Compile Include="Migrations\201906101556337_db_missing_fields.Designer.cs">
+      <DependentUpon>201906101556337_db_missing_fields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906101614158_db_tables_requests.cs" />
+    <Compile Include="Migrations\201906101614158_db_tables_requests.Designer.cs">
+      <DependentUpon>201906101614158_db_tables_requests.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -361,6 +376,9 @@
     <Compile Include="Models\PersonalData.cs" />
     <Compile Include="Models\Positionings.cs" />
     <Compile Include="Models\ReportedDelays.cs" />
+    <Compile Include="Models\RequestOff.cs" />
+    <Compile Include="Models\RequestStaff.cs" />
+    <Compile Include="Models\RequestSwap.cs" />
     <Compile Include="Models\Rest.cs" />
     <Compile Include="Models\Rules.cs" />
     <Compile Include="Models\ScheduleChanges.cs" />
@@ -469,6 +487,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906101326450_db_missing_tables.resx">
       <DependentUpon>201906101326450_db_missing_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101556337_db_missing_fields.resx">
+      <DependentUpon>201906101556337_db_missing_fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101614158_db_tables_requests.resx">
+      <DependentUpon>201906101614158_db_tables_requests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
