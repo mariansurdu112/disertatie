@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class NomDevicesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/NomDevices
+        public IQueryable<NomDevice> GetNomDevices()
         {
-            return db.Shipments;
+            return db.NomDevices;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/NomDevices/5
+        [ResponseType(typeof(NomDevice))]
+        public async Task<IHttpActionResult> GetNomDevice(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomDevice nomDevice = await db.NomDevices.FindAsync(id);
+            if (nomDevice == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(nomDevice);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/NomDevices/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutNomDevice(int id, NomDevice nomDevice)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != nomDevice.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(nomDevice).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!NomDeviceExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/NomDevices
+        [ResponseType(typeof(NomDevice))]
+        public async Task<IHttpActionResult> PostNomDevice(NomDevice nomDevice)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.NomDevices.Add(nomDevice);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = nomDevice.Id }, nomDevice);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/NomDevices/5
+        [ResponseType(typeof(NomDevice))]
+        public async Task<IHttpActionResult> DeleteNomDevice(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomDevice nomDevice = await db.NomDevices.FindAsync(id);
+            if (nomDevice == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.NomDevices.Remove(nomDevice);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(nomDevice);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool NomDeviceExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.NomDevices.Count(e => e.Id == id) > 0;
         }
     }
 }

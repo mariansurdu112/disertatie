@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class JourneysController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/Journeys
+        public IQueryable<Journeys> GetJourneys()
         {
-            return db.Shipments;
+            return db.Journeys;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/Journeys/5
+        [ResponseType(typeof(Journeys))]
+        public async Task<IHttpActionResult> GetJourneys(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            Journeys journeys = await db.Journeys.FindAsync(id);
+            if (journeys == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(journeys);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/Journeys/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutJourneys(int id, Journeys journeys)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != journeys.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(journeys).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!JourneysExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/Journeys
+        [ResponseType(typeof(Journeys))]
+        public async Task<IHttpActionResult> PostJourneys(Journeys journeys)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.Journeys.Add(journeys);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = journeys.Id }, journeys);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/Journeys/5
+        [ResponseType(typeof(Journeys))]
+        public async Task<IHttpActionResult> DeleteJourneys(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            Journeys journeys = await db.Journeys.FindAsync(id);
+            if (journeys == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.Journeys.Remove(journeys);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(journeys);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool JourneysExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.Journeys.Count(e => e.Id == id) > 0;
         }
     }
 }

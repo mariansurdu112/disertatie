@@ -9,48 +9,49 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using MarAirAdmin.Models;
 using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class CrewsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/Crews
+        public IQueryable<Crews> GetCrews()
         {
-            return db.Shipments;
+            return db.Crews;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/Crews/5
+        [ResponseType(typeof(Crews))]
+        public async Task<IHttpActionResult> GetCrews(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            Crews crews = await db.Crews.FindAsync(id);
+            if (crews == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(crews);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/Crews/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutCrews(int id, Crews crews)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != crews.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(crews).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +59,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!CrewsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +72,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/Crews
+        [ResponseType(typeof(Crews))]
+        public async Task<IHttpActionResult> PostCrews(Crews crews)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.Crews.Add(crews);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = crews.Id }, crews);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/Crews/5
+        [ResponseType(typeof(Crews))]
+        public async Task<IHttpActionResult> DeleteCrews(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            Crews crews = await db.Crews.FindAsync(id);
+            if (crews == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.Crews.Remove(crews);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(crews);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +112,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool CrewsExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.Crews.Count(e => e.Id == id) > 0;
         }
     }
 }

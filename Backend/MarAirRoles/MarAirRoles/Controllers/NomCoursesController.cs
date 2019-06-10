@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class NomCoursesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/NomCourses
+        public IQueryable<NomCourses> GetNomCourses()
         {
-            return db.Shipments;
+            return db.NomCourses;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/NomCourses/5
+        [ResponseType(typeof(NomCourses))]
+        public async Task<IHttpActionResult> GetNomCourses(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomCourses nomCourses = await db.NomCourses.FindAsync(id);
+            if (nomCourses == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(nomCourses);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/NomCourses/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutNomCourses(int id, NomCourses nomCourses)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != nomCourses.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(nomCourses).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!NomCoursesExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/NomCourses
+        [ResponseType(typeof(NomCourses))]
+        public async Task<IHttpActionResult> PostNomCourses(NomCourses nomCourses)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.NomCourses.Add(nomCourses);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = nomCourses.Id }, nomCourses);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/NomCourses/5
+        [ResponseType(typeof(NomCourses))]
+        public async Task<IHttpActionResult> DeleteNomCourses(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomCourses nomCourses = await db.NomCourses.FindAsync(id);
+            if (nomCourses == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.NomCourses.Remove(nomCourses);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(nomCourses);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool NomCoursesExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.NomCourses.Count(e => e.Id == id) > 0;
         }
     }
 }

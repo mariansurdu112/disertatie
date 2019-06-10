@@ -9,48 +9,49 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using MarAirAdmin.Models;
 using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class NomAirportsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/NomAirports
+        public IQueryable<NomAirports> GetNomAirports()
         {
-            return db.Shipments;
+            return db.NomAirports;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/NomAirports/5
+        [ResponseType(typeof(NomAirports))]
+        public async Task<IHttpActionResult> GetNomAirports(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomAirports nomAirports = await db.NomAirports.FindAsync(id);
+            if (nomAirports == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(nomAirports);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/NomAirports/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutNomAirports(int id, NomAirports nomAirports)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != nomAirports.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(nomAirports).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +59,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!NomAirportsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +72,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/NomAirports
+        [ResponseType(typeof(NomAirports))]
+        public async Task<IHttpActionResult> PostNomAirports(NomAirports nomAirports)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.NomAirports.Add(nomAirports);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = nomAirports.Id }, nomAirports);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/NomAirports/5
+        [ResponseType(typeof(NomAirports))]
+        public async Task<IHttpActionResult> DeleteNomAirports(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomAirports nomAirports = await db.NomAirports.FindAsync(id);
+            if (nomAirports == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.NomAirports.Remove(nomAirports);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(nomAirports);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +112,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool NomAirportsExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.NomAirports.Count(e => e.Id == id) > 0;
         }
     }
 }

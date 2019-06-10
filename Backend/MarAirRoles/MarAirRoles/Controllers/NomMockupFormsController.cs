@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class NomMockupFormsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/NomMockupForms
+        public IQueryable<NomMockupForms> GetNomMockupForms()
         {
-            return db.Shipments;
+            return db.NomMockupForms;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/NomMockupForms/5
+        [ResponseType(typeof(NomMockupForms))]
+        public async Task<IHttpActionResult> GetNomMockupForms(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomMockupForms nomMockupForms = await db.NomMockupForms.FindAsync(id);
+            if (nomMockupForms == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(nomMockupForms);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/NomMockupForms/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutNomMockupForms(int id, NomMockupForms nomMockupForms)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != nomMockupForms.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(nomMockupForms).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!NomMockupFormsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/NomMockupForms
+        [ResponseType(typeof(NomMockupForms))]
+        public async Task<IHttpActionResult> PostNomMockupForms(NomMockupForms nomMockupForms)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.NomMockupForms.Add(nomMockupForms);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = nomMockupForms.Id }, nomMockupForms);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/NomMockupForms/5
+        [ResponseType(typeof(NomMockupForms))]
+        public async Task<IHttpActionResult> DeleteNomMockupForms(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomMockupForms nomMockupForms = await db.NomMockupForms.FindAsync(id);
+            if (nomMockupForms == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.NomMockupForms.Remove(nomMockupForms);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(nomMockupForms);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool NomMockupFormsExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.NomMockupForms.Count(e => e.Id == id) > 0;
         }
     }
 }

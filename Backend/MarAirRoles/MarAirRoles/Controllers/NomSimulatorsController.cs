@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class NomSimulatorsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/NomSimulators
+        public IQueryable<NomSimulator> GetNomSimulators()
         {
-            return db.Shipments;
+            return db.NomSimulators;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/NomSimulators/5
+        [ResponseType(typeof(NomSimulator))]
+        public async Task<IHttpActionResult> GetNomSimulator(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomSimulator nomSimulator = await db.NomSimulators.FindAsync(id);
+            if (nomSimulator == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(nomSimulator);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/NomSimulators/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutNomSimulator(int id, NomSimulator nomSimulator)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != nomSimulator.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(nomSimulator).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!NomSimulatorExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/NomSimulators
+        [ResponseType(typeof(NomSimulator))]
+        public async Task<IHttpActionResult> PostNomSimulator(NomSimulator nomSimulator)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.NomSimulators.Add(nomSimulator);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = nomSimulator.Id }, nomSimulator);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/NomSimulators/5
+        [ResponseType(typeof(NomSimulator))]
+        public async Task<IHttpActionResult> DeleteNomSimulator(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            NomSimulator nomSimulator = await db.NomSimulators.FindAsync(id);
+            if (nomSimulator == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.NomSimulators.Remove(nomSimulator);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(nomSimulator);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool NomSimulatorExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.NomSimulators.Count(e => e.Id == id) > 0;
         }
     }
 }

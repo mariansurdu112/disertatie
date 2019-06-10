@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class CourseSectionsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/CourseSections
+        public IQueryable<CourseSections> GetCourseSections()
         {
-            return db.Shipments;
+            return db.CourseSections;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/CourseSections/5
+        [ResponseType(typeof(CourseSections))]
+        public async Task<IHttpActionResult> GetCourseSections(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            CourseSections courseSections = await db.CourseSections.FindAsync(id);
+            if (courseSections == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(courseSections);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/CourseSections/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutCourseSections(int id, CourseSections courseSections)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != courseSections.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(courseSections).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!CourseSectionsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/CourseSections
+        [ResponseType(typeof(CourseSections))]
+        public async Task<IHttpActionResult> PostCourseSections(CourseSections courseSections)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.CourseSections.Add(courseSections);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = courseSections.Id }, courseSections);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/CourseSections/5
+        [ResponseType(typeof(CourseSections))]
+        public async Task<IHttpActionResult> DeleteCourseSections(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            CourseSections courseSections = await db.CourseSections.FindAsync(id);
+            if (courseSections == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.CourseSections.Remove(courseSections);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(courseSections);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool CourseSectionsExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.CourseSections.Count(e => e.Id == id) > 0;
         }
     }
 }

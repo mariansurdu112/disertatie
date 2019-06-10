@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class CabinRulesController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/CabinRules
+        public IQueryable<CabinRules> GetCabinRules()
         {
-            return db.Shipments;
+            return db.CabinRules;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/CabinRules/5
+        [ResponseType(typeof(CabinRules))]
+        public async Task<IHttpActionResult> GetCabinRules(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            CabinRules cabinRules = await db.CabinRules.FindAsync(id);
+            if (cabinRules == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(cabinRules);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/CabinRules/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutCabinRules(int id, CabinRules cabinRules)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != cabinRules.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(cabinRules).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!CabinRulesExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/CabinRules
+        [ResponseType(typeof(CabinRules))]
+        public async Task<IHttpActionResult> PostCabinRules(CabinRules cabinRules)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.CabinRules.Add(cabinRules);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = cabinRules.Id }, cabinRules);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/CabinRules/5
+        [ResponseType(typeof(CabinRules))]
+        public async Task<IHttpActionResult> DeleteCabinRules(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            CabinRules cabinRules = await db.CabinRules.FindAsync(id);
+            if (cabinRules == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.CabinRules.Remove(cabinRules);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(cabinRules);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool CabinRulesExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.CabinRules.Count(e => e.Id == id) > 0;
         }
     }
 }

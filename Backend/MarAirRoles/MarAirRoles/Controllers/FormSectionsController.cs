@@ -13,44 +13,44 @@ using MarAirRoles.Models;
 
 namespace MarAirRoles.Controllers
 {
-    public class ShipmentsController : ApiController
+    public class FormSectionsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        // GET: api/FormSections
+        public IQueryable<FormSections> GetFormSections()
         {
-            return db.Shipments;
+            return db.FormSections;
         }
 
-        // GET: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> GetShipments(int id)
+        // GET: api/FormSections/5
+        [ResponseType(typeof(FormSections))]
+        public async Task<IHttpActionResult> GetFormSections(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            FormSections formSections = await db.FormSections.FindAsync(id);
+            if (formSections == null)
             {
                 return NotFound();
             }
 
-            return Ok(shipments);
+            return Ok(formSections);
         }
 
-        // PUT: api/Shipments/5
+        // PUT: api/FormSections/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutShipments(int id, Shipments shipments)
+        public async Task<IHttpActionResult> PutFormSections(int id, FormSections formSections)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != shipments.Id)
+            if (id != formSections.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(shipments).State = EntityState.Modified;
+            db.Entry(formSections).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace MarAirRoles.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ShipmentsExists(id))
+                if (!FormSectionsExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace MarAirRoles.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Shipments
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> PostShipments(Shipments shipments)
+        // POST: api/FormSections
+        [ResponseType(typeof(FormSections))]
+        public async Task<IHttpActionResult> PostFormSections(FormSections formSections)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Shipments.Add(shipments);
+            db.FormSections.Add(formSections);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+            return CreatedAtRoute("DefaultApi", new { id = formSections.Id }, formSections);
         }
 
-        // DELETE: api/Shipments/5
-        [ResponseType(typeof(Shipments))]
-        public async Task<IHttpActionResult> DeleteShipments(int id)
+        // DELETE: api/FormSections/5
+        [ResponseType(typeof(FormSections))]
+        public async Task<IHttpActionResult> DeleteFormSections(int id)
         {
-            Shipments shipments = await db.Shipments.FindAsync(id);
-            if (shipments == null)
+            FormSections formSections = await db.FormSections.FindAsync(id);
+            if (formSections == null)
             {
                 return NotFound();
             }
 
-            db.Shipments.Remove(shipments);
+            db.FormSections.Remove(formSections);
             await db.SaveChangesAsync();
 
-            return Ok(shipments);
+            return Ok(formSections);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace MarAirRoles.Controllers
             base.Dispose(disposing);
         }
 
-        private bool ShipmentsExists(int id)
+        private bool FormSectionsExists(int id)
         {
-            return db.Shipments.Count(e => e.Id == id) > 0;
+            return db.FormSections.Count(e => e.Id == id) > 0;
         }
     }
 }
