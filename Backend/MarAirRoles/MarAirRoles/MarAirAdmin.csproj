@@ -284,6 +284,10 @@
     <Compile Include="Migrations\201901261258318_company_flt.Designer.cs">
       <DependentUpon>201901261258318_company_flt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906101326450_db_missing_tables.cs" />
+    <Compile Include="Migrations\201906101326450_db_missing_tables.Designer.cs">
+      <DependentUpon>201906101326450_db_missing_tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -310,11 +314,14 @@
     <Compile Include="Models\NomAircrafts.cs" />
     <Compile Include="Models\NomAirports.cs" />
     <Compile Include="Models\NomCourses.cs" />
+    <Compile Include="Models\NomDevice.cs" />
     <Compile Include="Models\NomFlightForms.cs" />
+    <Compile Include="Models\NomInstructorType.cs" />
     <Compile Include="Models\NomLineCheckForms.cs" />
     <Compile Include="Models\NomMockupForms.cs" />
     <Compile Include="Models\NomPositions.cs" />
     <Compile Include="Models\NomRules.cs" />
+    <Compile Include="Models\NomSimulator.cs" />
     <Compile Include="Models\Others.cs" />
     <Compile Include="Models\PartNumbers.cs" />
     <Compile Include="Models\Passengers.cs" />
@@ -424,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901261258318_company_flt.resx">
       <DependentUpon>201901261258318_company_flt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906101326450_db_missing_tables.resx">
+      <DependentUpon>201906101326450_db_missing_tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

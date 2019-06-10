@@ -100,6 +100,8 @@ namespace MarAirRoles.Models
         public DbSet<Shipments> Shipments { get; set; }
         public DbSet<Simulator> Simulator { get; set; }
         public DbSet<UserActions> UserActions { get; set; }
+        public DbSet<NomDevice> NomDevices { get; set; }
+        public DbSet<NomInstructorType> NomInstructorTypes { get; set; }
 
 
 
