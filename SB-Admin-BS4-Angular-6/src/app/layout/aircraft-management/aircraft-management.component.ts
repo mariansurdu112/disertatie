@@ -14,7 +14,7 @@ import {
   styleUrls: ['./aircraft-management.component.scss']
 })
 export class AircraftManagementComponent implements OnInit {
-    getWidth() : any {
+    getWidth(): any {
         if (document.body.offsetWidth < 800) {
             return '90%';
         }
@@ -22,6 +22,7 @@ export class AircraftManagementComponent implements OnInit {
         return 800;
     }
 
+    // tslint:disable-next-line:member-ordering
     layout: any[] =
         [{
             type: 'layoutGroup',
@@ -54,7 +55,7 @@ export class AircraftManagementComponent implements OnInit {
                         title: 'Events',
                         contentContainer: 'ProjectsTimelinePanel',
                         initContent: () => {
-                            let projectsTimelineDiv = document.getElementById('projectsTimelineDiv');
+                            const projectsTimelineDiv = document.getElementById('projectsTimelineDiv');
                             if (team === 'Sales') {
                                 projectsTimelineDiv.innerHTML = teamSalesProjectsTimeline;
                             } else {
@@ -85,7 +86,7 @@ export class AircraftManagementComponent implements OnInit {
                         title: 'Other',
                         contentContainer: 'StaffPanel',
                         initContent: () => {
-                            let staffDiv = document.getElementById('staffDiv');
+                            const staffDiv = document.getElementById('staffDiv');
                             if (team === 'Sales') {
                                 staffDiv.innerHTML = teamSalesStaff;
                             } else {

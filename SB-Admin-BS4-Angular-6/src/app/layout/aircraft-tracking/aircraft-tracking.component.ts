@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { } from '@types/googlemaps';
+
 import {AircraftTrackingService} from './aircraft-tracking.service';
 
 @Component({
@@ -11,6 +11,10 @@ export class AircraftTrackingComponent implements OnInit {
   title = 'MarAir Aircraft Tracking';
   bounds = 44.26 + ',' + 22.16 + ',' + 22.16 + ',' + 44.2;
   params: any;
+  // tslint:disable-next-line:max-line-length
+  data: any = { From: 'OTP(Otopeni)', To: 'CTA(Constanta)', Aircraft: 'Boeing 737-max9',
+    FlightTime: '4 h 40 min', Departure: '16:04 PM', Arrival: '20:45PM',
+    ActualDeparture: '16:24 PM', ActualArrival: '21:05PM'};
  constructor(private aircraftTrackingService: AircraftTrackingService) {
      this.params = {
          bounds: this.bounds,
@@ -55,6 +59,8 @@ export class AircraftTrackingComponent implements OnInit {
       height: 60
     }
   };
+
+
 
   getData() {
     this.aircraftTrackingService.getData(this.bounds, this.params).subscribe((res) => {

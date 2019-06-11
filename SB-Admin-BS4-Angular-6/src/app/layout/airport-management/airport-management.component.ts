@@ -237,6 +237,7 @@ export class AirportManagementComponent implements OnInit {
 
         return 850;
     }
+    // tslint:disable-next-line:member-ordering
     columns = [
          { text: 'IataCode', datafield: 'iatacode', width: 190, editable: true },
         { text: 'IcaoCode', datafield: 'icaocode', width: 90, editable: true },

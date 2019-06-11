@@ -24,24 +24,24 @@
     </thead>
     <tbody>
         <tr>
-            <td>OTP(Otopeni)</td>
-            <td>CTA(Constanta)</td>
-            <td>Boeing 737-max9</td>
-            <td>4 h 40 min</td>
+            <td>{{data.From}}</td>
+            <td>{{data.To}}</td>
+            <td>{{data.Aircraft}}</td>
+            <td>{{data.FlightTime}}</td>
             <td></td>
         </tr>
         <tr>
             <td>Scheduled Departure</td>
-            <td>16:04 PM</td>
+            <td>{{data.Departure}}</td>
             <td>Scheduled Arrival</td>
-            <td>20:45PM</td>
+            <td>{{data.Arrival}}</td>
             <td></td>
         </tr>
         <tr>
             <td>Actual</td>
-            <td>16:24 PM</td>
-            <td>Scheduled Arrival</td>
-            <td>21:05PM</td>
+            <td>{{data.ActualDeparture}}</td>
+            <td>Revised Arrival</td>
+            <td>{{data.ActualArrival}}</td>
             <td></td>
         </tr>
     </tbody>

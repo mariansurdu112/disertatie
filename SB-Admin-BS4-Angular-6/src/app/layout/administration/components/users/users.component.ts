@@ -39,6 +39,7 @@ export class UsersComponent implements OnInit {
 
         return 850;
     }
+    // tslint:disable-next-line:member-ordering
     columns = [
         { text: 'ID', datafield: 'id', width: 200 },
         { text: 'Name', datafield: 'name', width: 355 },

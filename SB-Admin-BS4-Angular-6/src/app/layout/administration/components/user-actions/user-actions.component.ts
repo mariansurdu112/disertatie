@@ -23,10 +23,15 @@ export class UserActionsComponent implements OnInit {
                 {id: 6, action: 'Aircraft_Traking', admin: true, manager: true, planificator: true, logistic: true, technic: true},
                 {id: 7, action: 'Shipments', admin: false, manager: false, planificator: false, logistic: true, technic: true},
                 {id: 8, action: 'Shipments_Add_Order', admin: false, manager: false, planificator: false, logistic: true, technic: false},
+                // tslint:disable-next-line:max-line-length
                 {id: 9, action: 'Shipments_Delete_Order', admin: false, manager: false, planificator: false, logistic: true, technic: false},
+                // tslint:disable-next-line:max-line-length
                 {id: 10, action: 'Shipments_Mark_Critical', admin: false, manager: false, planificator: false, logistic: true, technic: false},
+                // tslint:disable-next-line:max-line-length
                 {id: 11, action: 'Shipments_Remove_Critical', admin: false, manager: false, planificator: false, logistic: true, technic: false},
+                // tslint:disable-next-line:max-line-length
                 {id: 12, action: 'Shipments_Acknowledge_Logistic', admin: false, manager: false, planificator: false, logistic: true, technic: false},
+                // tslint:disable-next-line:max-line-length
                 {id: 13, action: 'Shipments_Acknowledge_Technical', admin: false, manager: false, planificator: false, logistic: false, technic: true},
                 {id: 14, action: 'Noms', admin: true, manager: false, planificator: false, logistic: false, technic: false},
                 {id: 15, action: 'Administration', admin: true, manager: false, planificator: false, logistic: false, technic: false}
