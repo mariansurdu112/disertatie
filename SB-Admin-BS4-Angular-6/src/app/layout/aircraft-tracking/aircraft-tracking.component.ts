@@ -57,6 +57,7 @@ export class AircraftTrackingComponent implements OnInit {
            Callsign: datax[prp][18],
            Prop: prp
          };
+         //adwd
          if (this.planes.includes(plane)) {
             const index = this.planes.indexOf(plane);
             console.log(index);
