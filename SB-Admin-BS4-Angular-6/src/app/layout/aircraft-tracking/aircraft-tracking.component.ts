@@ -9,49 +9,17 @@ import {AircraftTrackingService} from './aircraft-tracking.service';
 })
 export class AircraftTrackingComponent implements OnInit {
   title = 'MarAir Aircraft Tracking';
-  bounds = 44.26 + ',' + 22.16 + ',' + 22.16 + ',' + 44.2;
-  params: any;
+  bounds = '49.96,39.07,8.26,38.38';
+  planes: Array<any> = [];
   // tslint:disable-next-line:max-line-length
-  data: any = { From: 'OTP(Otopeni)', To: 'CTA(Constanta)', Aircraft: 'Boeing 737-max9',
-    FlightTime: '4 h 40 min', Departure: '16:04 PM', Arrival: '20:45PM',
-    ActualDeparture: '16:24 PM', ActualArrival: '21:05PM'};
+  data: any = {
+    FlightTime: '4 h 40 min', Departure: new Date(), Arrival: new Date(new Date().getTime() + 3600 * 2000),
+    ActualDeparture: new Date(), ActualArrival: new Date(new Date().getTime() + 3600 * 2100)};
  constructor(private aircraftTrackingService: AircraftTrackingService) {
-     this.params = {
-         bounds: this.bounds,
-         faa: 1,
-         mlat: 1,
-         flarm: 1,
-         adsb: 1,
-         gnd: 1,
-         air: 1,
-         vehicles: 1,
-         estimated: 1,
-         maxage: 7200,
-         gliders: 1,
-         stats: 1,
-         callsign: 'KLM'
-     };
-     this.getData();
- }
-  aircraftsLocations = [{
-    lat: 44.4508499,
-    lng: 26.1080211
-  },
-  {
-    lat: 44.4479322,
-    lng: 26.1184037
-  },
-  {
-    lat: 44.4479322,
-    lng: 26.0977821
-  },
-  {
-    lat: 44.4263704,
-    lng: 26.0584459
+   setInterval(() => { this.getData(); }, 6000);
   }
-  ];
-  lat = 44.4438953;
-  lng = 26.0678094;
+  lat = 49.96;
+  lng = 39.07;
   icon = {
     url: 'https://d30y9cdsu7xlg0.cloudfront.net/png/9163-200.png',
     scaledSize: {
@@ -63,13 +31,45 @@ export class AircraftTrackingComponent implements OnInit {
 
 
   getData() {
-    this.aircraftTrackingService.getData(this.bounds, this.params).subscribe((res) => {
-        console.log(res);
+
+    const unusedProps = ['full_count', 'version', 'stats'];
+    const data = {
+      Bounds: this.bounds,
+      Callsign: 'BMS'
+    };
+    this.aircraftTrackingService.getData(data).subscribe((res) => {
+       const datax = JSON.parse(res);
+       console.log(datax);
+      const properties = Object.getOwnPropertyNames(datax).filter((prop) => {
+          return !unusedProps.includes(prop);
+      });
+      console.log(properties);
+      properties.forEach((prp) => {
+         console.log(datax[prp]);
+         const plane = {
+           Latitude: datax[prp][1],
+           Longitude: datax[prp][2],
+           AircraftModel: datax[prp][8],
+           RegNumber: datax[prp][9],
+           From: datax[prp][11],
+           To: datax[prp][12],
+           FlightNumber: datax[prp][16],
+           Callsign: datax[prp][18],
+           Prop: prp
+         };
+         if (this.planes.includes(plane)) {
+            const index = this.planes.indexOf(plane);
+            console.log(index);
+         } else {
+           this.planes.push(plane);
+         }
+        console.log(this.planes);
+      });
     });
   }
 
   ngOnInit() {
-
+    this.getData();
   }
 
 

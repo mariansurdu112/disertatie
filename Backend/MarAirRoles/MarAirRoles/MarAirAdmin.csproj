@@ -104,6 +104,10 @@
     <Reference Include="Microsoft.Owin.Cors, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Cors.4.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -274,6 +278,7 @@
     <Compile Include="Controllers\CourseSectionsController.cs" />
     <Compile Include="Controllers\CrewsController.cs" />
     <Compile Include="Controllers\FlightFormsController.cs" />
+    <Compile Include="Controllers\FlightTrackController.cs" />
     <Compile Include="Controllers\FormSectionsController.cs" />
     <Compile Include="Controllers\JourneysController.cs" />
     <Compile Include="Controllers\LineChecksController.cs" />

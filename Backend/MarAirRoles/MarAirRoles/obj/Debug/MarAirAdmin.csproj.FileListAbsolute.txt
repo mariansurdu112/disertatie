@@ -216,3 +216,5 @@ D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\FluentScheduler.pdb
 D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\FluentScheduler.xml
 D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.db_missing_fields.resources
 D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.db_tables_requests.resources
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\RestSharp.dll
+D:\disertatie\disertatie\Backend\MarAirRoles\MarAirRoles\bin\RestSharp.xml

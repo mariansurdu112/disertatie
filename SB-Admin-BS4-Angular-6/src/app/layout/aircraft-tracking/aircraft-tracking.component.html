@@ -5,7 +5,7 @@
         <agm-polyline-point [latitude]="aircraftsLocations[1].lat" [longitude]="aircraftsLocations">
         </agm-polyline-point>
     </agm-polyline> -->
-    <agm-marker [latitude]="marker.lat" [longitude]="marker.lng" [markerDraggable]="true" *ngFor="let marker of aircraftsLocations"
+    <agm-marker [latitude]="marker.Latitude" [longitude]="marker.Longitude" [markerDraggable]="true" *ngFor="let marker of planes"
         [iconUrl]="icon">
 <agm-info-window>
     <div class="row">
@@ -19,29 +19,29 @@
             <th>From</th>
             <th>To</th>
             <th>Aircraft</th>
-            <th>Estimated time</th>
+            <th>FlightNumber</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>{{data.From}}</td>
-            <td>{{data.To}}</td>
-            <td>{{data.Aircraft}}</td>
-            <td>{{data.FlightTime}}</td>
+            <td>{{marker.From}}</td>
+            <td>{{marker.To}}</td>
+            <td>{{marker.RegNumber}}</td>
+            <td>{{marker.FlightNumber}}</td>
             <td></td>
         </tr>
         <tr>
             <td>Scheduled Departure</td>
-            <td>{{data.Departure}}</td>
+            <td>{{data.Departure | date:'HH:mm'}}</td>
             <td>Scheduled Arrival</td>
-            <td>{{data.Arrival}}</td>
+            <td>{{data.Arrival | date:'HH:mm'}}</td>
             <td></td>
         </tr>
         <tr>
             <td>Actual</td>
-            <td>{{data.ActualDeparture}}</td>
+            <td>{{data.ActualDeparture | date:'HH:mm'}}</td>
             <td>Revised Arrival</td>
-            <td>{{data.ActualArrival}}</td>
+            <td>{{data.ActualArrival | date:'HH:mm'}}</td>
             <td></td>
         </tr>
     </tbody>
