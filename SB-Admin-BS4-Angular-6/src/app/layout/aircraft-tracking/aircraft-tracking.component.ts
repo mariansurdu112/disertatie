@@ -59,6 +59,8 @@ export class AircraftTrackingComponent implements OnInit {
          };
          if (this.planes.includes(plane)) {
            const index = this.planes.indexOf(pln => pln.Regnumber === plane.RegNumber && pln.FlightNumber === plane.FlightNumber);
+           this.planes[index].Latitude = plane.Latitude;
+           this.planes[index].Longitude = plane.Longitude;
             console.log(index);
          } else {
            this.planes.push(plane);
