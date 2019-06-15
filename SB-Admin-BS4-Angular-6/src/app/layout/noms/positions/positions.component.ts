@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {jqxGridComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import {jqxWindowComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
 import {jqxInputComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput';
+import {NomsService} from '../noms.service';
 
 @Component({
     selector: 'app-positions',
@@ -15,10 +16,12 @@ export class PositionsComponent implements OnInit {
     @ViewChild('position') position: jqxInputComponent;
     @ViewChild('code') code: jqxInputComponent;
 
+    dataLoaded = false;
     editrow = -1;
-    source =
-        {
-            localdata: [{id: 1, position: 'Commander', code: 'PIC'},
+    dataGrid = this.getPositions();
+    dataServer = [];
+    /*
+    *[{id: 1, position: 'Commander', code: 'PIC'},
                 {id: 2, position: 'First Officer', code: 'F/O'},
                 {id: 3, position: 'Commander', code: 'TRI'},
                 {id: 4, position: 'Commander', code: 'TRE'},
@@ -26,7 +29,10 @@ export class PositionsComponent implements OnInit {
                 {id: 6, position: 'Purser', code: 'SCC'},
                 {id: 7, position: 'Observer', code: 'OBSERVER'},
                 {id: 8, position: 'Commander', code: 'LTC'},
-                {id: 9, position: 'Ground instructor', code: 'GND'}],
+                {id: 9, position: 'Ground instructor', code: 'GND'}]*/
+    source =
+        {
+            localdata: this.dataGrid,
             datatype: 'array',
             datafields:
                 [
@@ -49,7 +55,7 @@ export class PositionsComponent implements OnInit {
                 // get the data and append in to the inputs
                 this.editrow = row;
                 const dataRecord = this.myGrid.getrowdata(this.editrow);
-                this.position.val(dataRecord.name);
+                this.position.val(dataRecord.position);
                 this.code.val(dataRecord.code);
                 this.myWindow.position({x: 68, y: 368});
                 this.myWindow.open();
@@ -57,7 +63,7 @@ export class PositionsComponent implements OnInit {
         }
     ];
 
-    constructor() {
+    constructor(private nomService: NomsService) {
     }
 
     getWidth(): any {
@@ -68,10 +74,42 @@ export class PositionsComponent implements OnInit {
         return 850;
     }
 
+    generateRow(data: any) {
+        const row = {};
+        row['id'] = data.Id;
+        row['position'] = data.Label;
+        row['code'] = data.Code;
+        return row;
+    }
+
+    getPositions() {
+        const data = [];
+        this.nomService.getPositions().subscribe(res => {
+            console.log(res);
+            this.dataServer = res;
+            res.forEach((activity) => {
+                data.push(this.generateRow(activity));
+            });
+            this.dataLoaded = true;
+
+        });
+        return data;
+    }
+
     saveBtn(): void {
         if (this.editrow >= 0) {
-            const row = {};
+
             const rowID = this.myGrid.getrowid(this.editrow);
+            const row = {
+                id: rowID,
+                position: this.position.val(),
+                code: this.code.val()
+            };
+            this.dataServer[rowID].Label = this.position.val();
+            this.dataServer[rowID].Code = this.code.val();
+            this.nomService.updatePosition(this.dataServer[rowID]).subscribe((res) => {
+                console.log('Updated!!');
+            });
             this.myGrid.updaterow(rowID, row);
             this.myWindow.hide();
         }

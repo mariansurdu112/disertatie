@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="jumbotron-fluid">
-        <jqxGrid #myGrid class="grid"
+        <jqxGrid #myGrid class="grid" *ngIf="dataLoaded"
                  [width]="getWidth()" [source]="dataAdapter" [showfilterrow]="true"
                  [columnsresize]="true"
                  [pageable]="true"

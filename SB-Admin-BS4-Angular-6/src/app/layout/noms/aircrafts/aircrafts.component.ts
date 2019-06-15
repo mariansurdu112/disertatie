@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {jqxGridComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import {jqxWindowComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
 import {jqxInputComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput';
+import {NomsService} from '../noms.service';
 
 @Component({
     selector: 'app-aircrafts',
@@ -16,15 +17,18 @@ export class AircraftsComponent implements OnInit {
     @ViewChild('seats') seats: jqxInputComponent;
     @ViewChild('tank') tank: jqxInputComponent;
     @ViewChild('tankreserve') tankreserve: jqxInputComponent;
-
+    dataLoaded = false;
+    dataGrid = this.getAircrafts();
+    dataServer = [];
     editrow = -1;
-    source =
-        {
-            localdata: [{id: 1, regno: 'YR-BMP', owner: 'MarAIR', seats: 80, tank: 10000, tankreserve: 3000},
+    /*[{id: 1, regno: 'YR-BMP', owner: 'MarAIR', seats: 80, tank: 10000, tankreserve: 3000},
                 {id: 2, regno: 'YR-BAR', owner: 'MarAIR', seats: 70, tank: 10000, tankreserve: 3000},
                 {id: 3, regno: 'YR-BAZ', owner: 'MarAIR', seats: 80, tank: 11000, tankreserve: 3500},
                 {id: 4, regno: 'YR-AMA', owner: 'MarAIR', seats: 85, tank: 10000, tankreserve: 3000},
-                {id: 5, regno: 'YR-CCB', owner: 'WizzAIR', seats: 141, tank: 20000, tankreserve: 9000}],
+                {id: 5, regno: 'YR-CCB', owner: 'WizzAIR', seats: 141, tank: 20000, tankreserve: 9000}]*/
+    source =
+        {
+            localdata: this.dataGrid ,
             datatype: 'array',
             datafields:
                 [
@@ -65,7 +69,32 @@ export class AircraftsComponent implements OnInit {
         }
     ];
 
-    constructor() {
+    constructor(private nomService: NomsService) {
+    }
+
+    generateRow(data: any) {
+        const row = {};
+        row['id'] = data.Id;
+        row['regno'] = data.AircraftName;
+        row['owner'] = '-';
+        row['seats'] = data.MaxCapacity;
+        row['tank'] = data.MaxFuel;
+        row['tankreserve'] = 4000;
+        return row;
+    }
+
+    getAircrafts() {
+        const data = [];
+        this.nomService.getAircrafts().subscribe(res => {
+            console.log(res);
+            this.dataServer = res;
+            res.forEach((aircraft) => {
+                data.push(this.generateRow(aircraft));
+            });
+            this.dataLoaded = true;
+
+        });
+        return data;
     }
 
     getWidth(): any {
@@ -80,7 +109,20 @@ export class AircraftsComponent implements OnInit {
         if (this.editrow >= 0) {
             const row = {};
             const rowID = this.myGrid.getrowid(this.editrow);
+            this.dataServer[rowID].AircraftName = this.regno.val();
+            this.dataServer[rowID].MaxCapacity = this.seats.val();
+            this.dataServer[rowID].MaxFuel = this.tank.val();
+            row['id'] = this.dataServer[rowID].Id;
+            row['regno'] = this.dataServer[rowID].AircraftName;
+            row['owner'] = '-';
+            row['seats'] = this.dataServer[rowID].MaxCapacity;
+            row['tank'] = this.dataServer[rowID].MaxFuel;
+            row['tankreserve'] = 4000;
             this.myGrid.updaterow(rowID, row);
+            this.nomService.updateAircraft(this.dataServer[rowID]).subscribe((res) => {
+                console.log('Updated!!');
+            });
+
             this.myWindow.hide();
         }
     }

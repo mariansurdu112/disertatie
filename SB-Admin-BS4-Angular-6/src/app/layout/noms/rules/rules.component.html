@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="jumbotron-fluid">
-        <jqxGrid #myGrid class="grid"
+        <jqxGrid #myGrid class="grid" *ngIf="dataLoaded"
                  [width]="getWidth()" [source]="dataAdapter" [pageable]="true"
                  [autoheight]="true" [columns]="columns" >
         </jqxGrid>
@@ -10,15 +10,15 @@
                 <table>
 
                     <tr>
-                        <td align="right">Code:</td>
+                        <td align="right">Rule:</td>
                         <td align="left">
-                            <jqxInput #name [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #rule [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">Code:</td>
+                        <td align="right">Area:</td>
                         <td align="left">
-                            <jqxInput #code [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #area [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
 

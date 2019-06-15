@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="jumbotron-fluid">
-        <jqxGrid #myGrid class="grid"
+        <jqxGrid #myGrid class="grid" *ngIf="dataLoaded"
                  [width]="getWidth()" [source]="dataAdapter" [showfilterrow]="true"
                  [columnsresize]="true"
                  [pageable]="true"
@@ -24,9 +24,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td align="right">ICAO Code:</td>
+                        <td align="right">Location:</td>
                         <td align="left">
-                            <jqxInput #icaocode [width]="150" [height]="23"></jqxInput>
+                            <jqxInput #location [width]="150" [height]="23"></jqxInput>
                         </td>
                     </tr>
 

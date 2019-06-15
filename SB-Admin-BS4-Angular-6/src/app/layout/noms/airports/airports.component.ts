@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {jqxGridComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import {jqxWindowComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxwindow';
 import {jqxInputComponent} from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxinput';
+import {NomsService} from '../noms.service';
 
 @Component({
   selector: 'app-airports',
@@ -14,19 +15,24 @@ export class AirportsComponent implements OnInit {
     @ViewChild('id') id: jqxInputComponent;
     @ViewChild('name') name: jqxInputComponent;
     @ViewChild('iatacode') iatacode: jqxInputComponent;
-    @ViewChild('icaocode') icaocode: jqxInputComponent;
+    @ViewChild('location') location: jqxInputComponent;
 
+    dataLoaded = false;
     editrow = -1;
+    dataGrid = this.getAirports();
+    dataServer = [];
+
+    /*[{id: 1, name: 'Otopeni', iatacode: 'OTP', location: 'LROP'}]*/
     source =
         {
-            localdata: [{id: 1, name: 'Otopeni', iatacode: 'OTP', icaocode: 'LROP'}],
+            localdata: this.dataGrid,
             datatype: 'array',
             datafields:
                 [
                     { name: 'id', type: 'number' },
                     { name: 'name', type: 'string' },
                     { name: 'iatacode', type: 'string' },
-                    { name: 'icaocode', type: 'string' }
+                    { name: 'location', type: 'string' }
                 ]
         };
     dataAdapter = new jqx.dataAdapter(this.source);
@@ -41,7 +47,7 @@ export class AirportsComponent implements OnInit {
         { text: 'ID', datafield: 'id', width: 200 },
         { text: 'Name', datafield: 'name', width: 200 },
         { text: 'IataCode', datafield: 'iatacode', width: 190 },
-        { text: 'IcaoCode', datafield: 'icaocode', width: 190 },
+        { text: 'Location', datafield: 'location', width: 190 },
         {
             text: 'Edit', datafield: 'Edit', columntype: 'button',
             cellsrenderer: (): string => {
@@ -53,7 +59,7 @@ export class AirportsComponent implements OnInit {
                 const dataRecord = this.myGrid.getrowdata(this.editrow);
                 this.name.val(dataRecord.name);
                 this.iatacode.val(dataRecord.iatacode);
-                this.icaocode.val(dataRecord.icaocode);
+                this.location.val(dataRecord.location);
                 this.myWindow.position({ x: 68, y: 368 });
                 this.myWindow.open();
             }
@@ -70,7 +76,30 @@ export class AirportsComponent implements OnInit {
     cancelBtn(): void {
         this.myWindow.hide();
     }
-  constructor() { }
+
+    generateRow(data: any) {
+        const row = {};
+        row['id'] = data.Id;
+        row['name'] = data.Name;
+        row['iatacode'] = data.IataCode;
+        row['location'] = data.Location;
+        return row;
+    }
+
+    getAirports() {
+        const data = [];
+        this.nomService.getAirports().subscribe(res => {
+            console.log(res);
+            this.dataServer = res;
+            res.forEach((airport) => {
+                data.push(this.generateRow(airport));
+            });
+            this.dataLoaded = true;
+
+        });
+        return data;
+    }
+  constructor(private nomService: NomsService) { }
 
   ngOnInit() {
   }
