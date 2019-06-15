@@ -296,7 +296,9 @@
     <Compile Include="Controllers\NomLineCheckFormsController.cs" />
     <Compile Include="Controllers\NomMockupFormsController.cs" />
     <Compile Include="Controllers\NomPositionsController.cs" />
+    <Compile Include="Controllers\NomRulesController.cs" />
     <Compile Include="Controllers\NomSimulatorsController.cs" />
+    <Compile Include="Controllers\PartNumbersController.cs" />
     <Compile Include="Controllers\RequestOffsController.cs" />
     <Compile Include="Controllers\RequestStaffsController.cs" />
     <Compile Include="Controllers\RequestSwapsController.cs" />
@@ -340,6 +342,26 @@
     <Compile Include="Migrations\201906101614158_db_tables_requests.cs" />
     <Compile Include="Migrations\201906101614158_db_tables_requests.Designer.cs">
       <DependentUpon>201906101614158_db_tables_requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151534297_rule_nom_changes.cs" />
+    <Compile Include="Migrations\201906151534297_rule_nom_changes.Designer.cs">
+      <DependentUpon>201906151534297_rule_nom_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151619283_airports_name_changes.cs" />
+    <Compile Include="Migrations\201906151619283_airports_name_changes.Designer.cs">
+      <DependentUpon>201906151619283_airports_name_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151653210_shipments_part_no_pno.cs" />
+    <Compile Include="Migrations\201906151653210_shipments_part_no_pno.Designer.cs">
+      <DependentUpon>201906151653210_shipments_part_no_pno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151739379_shipments_comments.cs" />
+    <Compile Include="Migrations\201906151739379_shipments_comments.Designer.cs">
+      <DependentUpon>201906151739379_shipments_comments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906151814451_user_name_order.cs" />
+    <Compile Include="Migrations\201906151814451_user_name_order.Designer.cs">
+      <DependentUpon>201906151814451_user_name_order.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -435,6 +457,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include=".gitignore" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -498,6 +521,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906101614158_db_tables_requests.resx">
       <DependentUpon>201906101614158_db_tables_requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151534297_rule_nom_changes.resx">
+      <DependentUpon>201906151534297_rule_nom_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151619283_airports_name_changes.resx">
+      <DependentUpon>201906151619283_airports_name_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151653210_shipments_part_no_pno.resx">
+      <DependentUpon>201906151653210_shipments_part_no_pno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151739379_shipments_comments.resx">
+      <DependentUpon>201906151739379_shipments_comments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906151814451_user_name_order.resx">
+      <DependentUpon>201906151814451_user_name_order.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

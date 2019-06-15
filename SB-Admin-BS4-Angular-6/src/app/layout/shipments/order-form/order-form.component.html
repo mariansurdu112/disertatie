@@ -19,16 +19,16 @@
           </div>
           <div class="form-group">
               <label for="partNo">Part number</label>
-              <select class="form-control" id="partNo" required [(ngModel)]="orderData.PartNumber" name="partNo" required>
-                  <option *ngFor="let partNo of partNumbers" [value]="partNo.pNo">{{partNo.pNo}}->{{partNo.description}}
+              <select class="form-control" id="partNo" required [(ngModel)]="orderData.PartNumber" (ngModelChange)="updateOrderPartnumber(orderData.PartNumber)" name="partNo" required>
+                  <option *ngFor="let partNo of partNumbers" [value]="partNo.Id">->{{partNo.description}}
                   </option>
               </select>
           </div>
 
           <div class="form-group">
               <label for="aircraft">Aircraft</label>
-              <select class="form-control" id="aircraft" required [(ngModel)]="orderData.Aircraft" name="aircraft" required>
-                  <option *ngFor="let aircraft of aircrafts" [value]="aircraft">{{aircraft}}</option>
+              <select class="form-control" id="aircraft" required [(ngModel)]="orderData.Aircraft" (ngModelChange)="updateOrderAircraft(orderData.Aircraft)" name="aircraft" required>
+                  <option *ngFor="let aircraft of aircrafts" [value]="aircraft.Id">{{aircraft.AircraftName}}</option>
               </select>
           </div>
           <div class="form-group">

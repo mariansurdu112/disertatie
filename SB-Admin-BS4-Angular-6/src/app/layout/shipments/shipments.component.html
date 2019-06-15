@@ -1,10 +1,13 @@
 <div class="container">
-<app-add-order [reqPriority]="reqPriority" [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers" (addRowEvent)="addRowToGrid($event)"></app-add-order>
-<jqxGrid #myGrid [width]="'100%'" 
+<app-add-order [reqPriority]="reqPriority"  [aircrafts]="aircrafts" [shippers]="shippers" [partNumbers]="partNumbers" (addRowEvent)="addRowToGrid($event)"></app-add-order>
+<jqxGrid #myGrid [width]="'100%'"  *ngIf="dataLoaded"
 [sortable]="true" [altrows]="true" [filterable]="true"
-[source]="dataAdapter" [columns]="columns" [showtoolbar]="true"
+[source]="dataAdapter" [columns]="columns" [showtoolbar]="true" (onCellbeginedit)="cellBeginEditEvent($event)" (onCellendedit)="cellEndEditEvent($event)"
 [showfilterrow]="true"
 [columnsresize]="true"
+         [editable]="true"
+         [selectionmode]="'singlecell'"
+         [editmode]="'dblclick'"
 [pageable]="true"
     [rendertoolbar]="rendertoolbar">
 </jqxGrid>

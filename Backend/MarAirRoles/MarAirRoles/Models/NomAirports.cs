@@ -12,6 +12,7 @@ namespace MarAirAdmin.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Location { get; set; }
         public string IataCode { get; set; }
         public double Latitude { get; set; }
