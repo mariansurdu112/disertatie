@@ -26,10 +26,10 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>0M</td>
-                            <td>112</td>
+                            <td>{{selectedFlight.CarrierCode}}</td>
+                            <td>{{selectedFlight.FlightNumber}}</td>
                             <td>1</td>
-                            <td>YR-BAP</td>
+                            <td>{{selectedFlight.Aircraft.RegNo}}</td>
                             <td>Scheduled passenger</td>
                             <td>Operated</td>
                             <td>Company flight</td>
@@ -46,7 +46,7 @@
                                 <div class="panel-body">
                                     <div class="btn-group" role="group" aria-label="...">
                                         <button type="button" class="btn btn-default">Departure IATA code:
-                                            <strong>OTP</strong></button>
+                                            <strong>{{selectedFlight.From}}</strong></button>
                                         <button type="button" class="btn btn-default">LYPG</button>
                                         <button type="button" class="btn btn-default">GMT +2</button>
                                     </div>
@@ -63,10 +63,10 @@
                             <div class="col">
                                 <div class="col">
                                     <div style="text-align: center;font-weight: bold;">Scheduled</div>
-                                    <div>Off Block:<input type="text" disabled value="14/04/2019 12:00"
+                                    <div>Off Block:<input type="text" disabled value="{{selectedFlight.TakeOffTime | date: 'dd/MM/yyyy HH:mm'}}"
                                                           style="width: 101px;"></div>
                                     <div>Taxi out:<input type="text" disabled value="10" style="width:45px"></div>
-                                    <div>Estimated <input type="text" disabled value="14/04/2019 12:00"
+                                    <div>Estimated <input type="text" disabled value="{{selectedFlight.TakeOffTime | date: 'dd/MM/yyyy HH:mm'}}"
                                                           style="width: 101px;"></div>
                                 </div>
                             </div>
@@ -81,20 +81,20 @@
                             </div>
                             <div class="col">
                                 <div style="text-align: center;font-weight: bold;">MVT</div>
-                                <div>Off Block:<input type="text" disabled value="14/04/2019 12:10"
+                                <div>Off Block:<input type="text" disabled value="{{selectedFlight.EstimatedArrival | date: 'dd/MM/yyyy HH:mm'}}"
                                                       style="width: 101px;"></div>
-                                <div>Airborne <input type="text" disabled value="14/04/2019 12:10"
+                                <div>Airborne <input type="text" disabled value="{{selectedFlight.EstimatedArrival | date: 'dd/MM/yyyy HH:mm'}}"
                                                      style="width: 101px;"></div>
                             </div>
                             <div class="col">
-                                Delay Departure:<input type="text" disabled value="10" style="width:45px">
+                                Delay Departure:<input type="text" disabled value="0" style="width:45px">
                             </div>
 
                         </div>
                         <hr>
                         <div class="row">
-                            <div> ATC call sign <input type="text" disabled value="MGX"><input type="text" disabled
-                                                                                               value="234"></div>
+                            <div> ATC call sign <input type="text" disabled value="{{selectedFlight.AtcCallSign}}"><input type="text" disabled
+                                                                                               value="{{selectedFlight.AtcNumber}}"></div>
                             <br>
                             <div> OFP text <input type="text" disabled value=""></div>
                             <div> Dispatcher text(DWS) <input type="text" disabled value=""></div>
@@ -114,7 +114,7 @@
                             <div class="panel panel-primary">
                                 <div class="panel-body">
                                     <div class="btn-group" role="group" aria-label="...">
-                                        <button type="button" class="btn btn-default">Arrival IATA code: FCO</button>
+                                        <button type="button" class="btn btn-default">Arrival IATA code: {{selectedFlight.To}}</button>
                                         <button type="button" class="btn btn-default">LYPG</button>
                                         <button type="button" class="btn btn-default">GMT +2</button>
                                         <button type="button" class="btn btn-default">Flight Segment:<strong>International</strong>
@@ -128,12 +128,12 @@
 
                             <div class="col">
                                 <div style="text-align: center;font-weight: bold;">Scheduled</div>
-                                <div>On Block:<input type="text" disabled value="14/04/2019 14:00"
+                                <div>On Block:<input type="text" disabled value="{{selectedFlight.EstimatedArrival | date: 'dd/MM/yyyy HH:mm'}}"
                                                      style="width: 101px;"></div>
                                 <div>Taxi in:<input type="text" disabled value="5"></div>
 
                                 <div style="text-align: center;font-weight: bold;">Revised</div>
-                                <div>On block <input type="text" disabled value="14/04/2019 14:20"
+                                <div>On block <input type="text" disabled value="{{selectedFlight.EstimatedTakeOff | date: 'dd/MM/yyyy HH:mm'}}"
                                                      style="width: 101px;"></div>
                             </div>
                             <div class="col">
@@ -147,14 +147,14 @@
                             <div class="col">
                                 <div class="col">
                                     <div style="text-align: center;font-weight: bold;">MVT</div>
-                                    <div>On Block:<input type="text" disabled value="14/04/2019 14:20"
+                                    <div>On Block:<input type="text" disabled value="{{selectedFlight.EstimatedArrival | date: 'dd/MM/yyyy HH:mm'}}"
                                                          style="width: 101px;"></div>
-                                    <div>Landing <input type="text" disabled value="14/04/2019 14:20"
+                                    <div>Landing <input type="text" disabled value="{{selectedFlight.EstimatedArrival | date: 'dd/MM/yyyy HH:mm'}}"
                                                         style="width: 101px;"></div>
                                 </div>
                             </div>
                             <div class="col">
-                                Delay Arrival:<input type="text" disabled value="20" style="width: 45px;">
+                                Delay Arrival:<input type="text" disabled value="" style="width: 45px;">
                             </div>
                             <div class="col">
                                 <div>Arrival gate:<input type="text" disabled style="width:45px"></div>
@@ -195,18 +195,18 @@
                                     <tbody>
                                     <tr>
                                         <td>(F)</td>
-                                        <td><input type="text" disabled value="0"></td>
-                                        <td><input type="text" disabled value="0"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.FBooked}}"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.EFBooked}}"></td>
                                     </tr>
                                     <tr>
                                         <td>(C)</td>
-                                        <td><input type="text" disabled value="0"></td>
-                                        <td><input type="text" disabled value="0"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.CBooked}}"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.ECBooked}}"></td>
                                     </tr>
                                     <tr>
                                         <td>(Y)</td>
-                                        <td><input type="text" disabled value="44"></td>
-                                        <td><input type="text" disabled value="0"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.YBooked}}"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.EYBooked}}"></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -229,14 +229,14 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><input type="text" disabled value="20" style="width:60px"></td>
-                                        <td><input type="text" disabled value="24" style="width:60px"></td>
-                                        <td><input type="text" disabled value="0" style="width:60px"></td>
-                                        <td><input type="text" disabled value="0" style="width:60px"></td>
-                                        <td><input type="text" disabled value="500" style="width:60px"></td>
-                                        <td><input type="text" disabled value="0" style="width:60px"></td>
-                                        <td><input type="text" disabled value="0" style="width:60px"></td>
-                                        <td><input type="text" disabled value="0" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Male}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Female}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Infants}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Infants}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Bags}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Cargo}}}" style="width:60px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.Other}}" style="width:60px"></td>
 
                                     </tr>
                                     </tbody>
@@ -256,9 +256,9 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><input type="text" disabled value="20_733_735_1_SCC_1_CC2_2_CC"
+                                        <td><input type="text" disabled value="{{selectedFlight.CabinStaffModel}}"
                                                    style="width:120px"></td>
-                                        <td><input type="text" disabled value="10_1_PIC_1_FO" style="width:120px"></td>
+                                        <td><input type="text" disabled value="{{selectedFlight.CockpitStaffModel}}" style="width:120px"></td>
 
 
                                     </tr>
@@ -281,19 +281,19 @@
                         <tbody>
                         <tr>
                             <td>Fuel Prior to uplift</td>
-                            <td><input type="text" value="3600" disabled></td>
+                            <td><input type="text" value="{{selectedFlight.FuelUplift}}" disabled></td>
                         </tr>
                         <tr>
                             <td>Block</td>
-                            <td><input type="text" value="9861" disabled></td>
+                            <td><input type="text" value="{{selectedFlight.Block}}" disabled></td>
                         </tr>
                         <tr>
                             <td>Used</td>
-                            <td><input type="text" value="5811" disabled></td>
+                            <td><input type="text" value="{{selectedFlight.UsedFuel}}" disabled></td>
                         </tr>
                         <tr>
                             <td>Remain</td>
-                            <td><input type="text" value="4050" disabled></td>
+                            <td><input type="text" value="{{selectedFlight.RemainFuel}}" disabled></td>
                         </tr>
                         </tbody>
                     </table>

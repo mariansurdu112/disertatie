@@ -9,7 +9,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class FlightViewComponent implements OnInit {
   closeResult: string;
-  @Input() selectedFlight: Flight;
+  @Input() selectedFlight: any;
   constructor(private modalService: NgbModal) { }
 
   open(content) {

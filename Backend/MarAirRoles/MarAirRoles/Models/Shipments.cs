@@ -24,6 +24,7 @@ namespace MarAirRoles.Models
         public int Ordered { get; set; }
         public int Delivered { get; set; }
         public string Awb { get; set; }
+        public string UserName { get; set; }
         public int UserId { get; set; }
 
         [ForeignKey("FK_NOM_AIRCRAFT")]
@@ -39,6 +40,7 @@ namespace MarAirRoles.Models
         public bool Critical { get; set; }
         public bool LogisticAck { get; set; }
         public bool TechnicAck { get; set; }
+        public string Comments { get; set; }
 
 
 

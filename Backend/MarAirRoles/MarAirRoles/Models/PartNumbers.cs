@@ -12,7 +12,7 @@ namespace MarAirRoles.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
+        public string PartNo { get; set; }
         public string Description { get; set; }
     }
 }

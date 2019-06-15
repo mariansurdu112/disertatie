@@ -17,10 +17,22 @@ namespace MarAirRoles.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+
+
+
         // GET: api/Shipments
-        public IQueryable<Shipments> GetShipments()
+        public List<Shipments> GetShipments()
         {
-            return db.Shipments;
+            try
+            {
+                return db.Shipments.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         // GET: api/Shipments/5
@@ -75,15 +87,54 @@ namespace MarAirRoles.Controllers
         [ResponseType(typeof(Shipments))]
         public async Task<IHttpActionResult> PostShipments(Shipments shipments)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                db.Shipments.Add(shipments);
+                await db.SaveChangesAsync();
+
+                return Ok();
             }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+           
+        }
 
-            db.Shipments.Add(shipments);
-            await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = shipments.Id }, shipments);
+        [Route("api/critical")]
+        [HttpPost]
+        public IHttpActionResult Critical(OrderMarks model)
+        {
+            var order = db.Shipments.Find(model.Id);
+            order.Critical = model.Value;
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [Route("api/acktech")]
+        [HttpPost]
+        public IHttpActionResult AckTech(OrderMarks model)
+        {
+            var order = db.Shipments.Find(model.Id);
+            order.TechnicAck = model.Value;
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [Route("api/acklog")]
+        [HttpPost]
+        public IHttpActionResult AckLog(OrderMarks model)
+        {
+            var order = db.Shipments.Find(model.Id);
+            order.LogisticAck = model.Value;
+            db.SaveChanges();
+            return Ok();
         }
 
         // DELETE: api/Shipments/5
@@ -115,5 +166,11 @@ namespace MarAirRoles.Controllers
         {
             return db.Shipments.Count(e => e.Id == id) > 0;
         }
+    }
+
+    public class OrderMarks
+    {
+        public int Id { get; set; }
+        public bool Value { get; set; }
     }
 }

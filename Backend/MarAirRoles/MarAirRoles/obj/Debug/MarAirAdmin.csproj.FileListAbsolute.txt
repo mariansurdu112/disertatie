@@ -339,3 +339,8 @@ E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.dll
 E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.pdb
 E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.rule_nom_changes.resources
 E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.airports_name_changes.resources
+E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.shipments_part_no_pno.resources
+E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.shipments_comments.resources
+E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.user_name_order.resources
+E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.flight_missing_fields.resources
+E:\FINALLLL\disertatie\Backend\MarAirRoles\MarAirRoles\obj\Debug\MarAirRoles.Migrations.flight_missing_fields3.resources
