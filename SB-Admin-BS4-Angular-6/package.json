@@ -35,7 +35,8 @@
         "ng2-charts": "^1.6.0",
         "rxjs": "^6.1.0",
         "yarn": "^1.6.0",
-        "zone.js": "^0.8.26"
+        "zone.js": "^0.8.26",
+        "totalsum": "^1.0.0"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.6.0",
