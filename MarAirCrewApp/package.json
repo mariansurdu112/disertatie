@@ -31,7 +31,8 @@
     "core-js": "^2.5.4",
     "ionicons": "4.5.5",
     "rxjs": "~6.3.3",
-    "zone.js": "~0.8.29"
+    "zone.js": "~0.8.29",
+    "totalsum": "^1.0.0"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
